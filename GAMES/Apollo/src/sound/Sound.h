@@ -16,7 +16,7 @@
 
 #include <Gamebuino-Meta.h>
 
-//constexpr Gamebuino_Meta::Sound_FX tick_fx[] = {{Gamebuino_Meta::Sound_FX_Wave::SQUARE, 0, 128, -128, 0, 5, 1}};
+constexpr Gamebuino_Meta::Sound_FX tick_fx[] = {{Gamebuino_Meta::Sound_FX_Wave::SQUARE, 0, 128, -128, 0, 5, 1}};
 
 class Sound {
 

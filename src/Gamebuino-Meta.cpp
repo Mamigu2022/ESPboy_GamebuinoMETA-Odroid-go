@@ -8,6 +8,7 @@ Copyright (c) Aadalie 2014, 2016-2017
 #include "Gamebuino-Meta.h"
 
 
+
 const uint8_t PROGMEM gamebuinoLogo[] = {80,10,
 	0b00111100,0b00111111,0b00111111,0b11110011,0b11110011,0b11110011,0b00110011,0b00111111,0b00111111,0b00011100,
 	0b00111100,0b00111111,0b00111111,0b11110011,0b11110011,0b11110011,0b00110011,0b00111111,0b00111111,0b00100110,
@@ -24,6 +25,7 @@ const uint8_t PROGMEM gamebuinoLogo[] = {80,10,
 
 namespace Gamebuino_Meta {
 
+int8_t tone_identifier = -1;
 Gamebuino* gbptr = nullptr;
 
 Gamebuino::Gamebuino(){
@@ -58,6 +60,17 @@ void Gamebuino::begin() {
 
   for(uint8_t i=0; i<200; i++) {dac.setVoltage(i*10, false); delay(10);}
   dac.setVoltage(4095, true);
+
+  //Check OTA2
+  if (getKeys()&PAD_ACT || getKeys()&PAD_ESC) { 
+    //Serial.println();
+    //Serial.println(ESP.getFreeHeap()); 
+    display.delFrameHandler(); 
+    //Serial.println(ESP.getFreeHeap()); 
+    terminalGUIobj = new ESPboyTerminalGUI(&tft._tft, &mcp);
+    OTA2obj = new ESPboyOTA2(terminalGUIobj);
+    OTA2obj -> checkOTA();
+  }
   
   WiFi.mode(WIFI_OFF); 
 
@@ -220,3 +233,18 @@ bool Gamebuino::collideBitmapBitmap(int16_t x1, int16_t y1, const uint8_t* b1, i
 
 Gamebuino gb;
 
+void tone(uint32_t outputPin, uint32_t frequency, uint32_t duration) {
+	if (Gamebuino_Meta::gbptr) {
+		if (Gamebuino_Meta::tone_identifier != -1) {
+			Gamebuino_Meta::gbptr->sound.stop(Gamebuino_Meta::tone_identifier);
+		}
+		Gamebuino_Meta::tone_identifier = Gamebuino_Meta::gbptr->sound.tone(frequency, duration);
+	}
+}
+
+void noTone(uint32_t outputPin) {
+	if (Gamebuino_Meta::gbptr) {
+		Gamebuino_Meta::gbptr->sound.stop(Gamebuino_Meta::tone_identifier);
+		Gamebuino_Meta::tone_identifier = -1;
+	}
+}

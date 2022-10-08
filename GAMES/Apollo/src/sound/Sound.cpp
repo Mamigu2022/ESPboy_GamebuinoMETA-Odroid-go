@@ -19,8 +19,8 @@ void Sound::tick(uint8_t delay) {
     if (gb.frameCount > _last_play + delay) {
         
         _last_play = gb.frameCount;
-       // gb.sound.fx(tick_fx);
-       gb.sound.playTick();
+       gb.sound.fx(tick_fx);
+       //gb.sound.playTick();
         
     }
 
