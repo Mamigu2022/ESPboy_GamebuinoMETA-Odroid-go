@@ -20,9 +20,9 @@ void* nextAvailableSegment;
 int16_t capacitorCharge;
 Z_POSITION remainingFuel;
 
-//const Gamebuino_Meta::Sound_FX* collisionFx;
+const Gamebuino_Meta::Sound_FX* collisionFx;
 uint8_t collisionFxDuration;
-//const Gamebuino_Meta::Sound_FX* swooshFx;
+const Gamebuino_Meta::Sound_FX* swooshFx;
 uint8_t swooshFxDuration;
 
 int bonusCount;
@@ -791,8 +791,8 @@ force_inline void updateCarInfo(const LevelContext& context, CarInfo& carInfo, c
           remainingFuel += (3000 << Z_POSITION_SHIFT);
           if(remainingFuel > MAX_FUEL)
             remainingFuel = MAX_FUEL;
-          //collisionFx = bonusSfx;
-          //collisionFxDuration = bonusSfxDuration;
+            collisionFx = bonusSfx;
+            collisionFxDuration = bonusSfxDuration;
           lightPattern = LIGHT_BONUS;
         }
       } // end jerrican
@@ -813,8 +813,8 @@ force_inline void updateCarInfo(const LevelContext& context, CarInfo& carInfo, c
           {
             object.visible = false;
             ++ bonusCount;
-            //collisionFx = bonusSfx;
-            //collisionFxDuration = bonusSfxDuration;
+            collisionFx = bonusSfx;
+            collisionFxDuration = bonusSfxDuration;
             lightPattern = LIGHT_BONUS;
           }
         }
@@ -925,8 +925,8 @@ force_inline void updateCarInfo(const LevelContext& context, CarInfo& carInfo, c
   
   if(collision && (collisionFxDuration == 0))
   {
-    //collisionFx = collisionSfx;
-    //collisionFxDuration = collisionSfxDuration;
+    collisionFx = collisionSfx;
+    collisionFxDuration = collisionSfxDuration;
   }
 
 
@@ -965,13 +965,13 @@ force_inline void updateCarInfo(const LevelContext& context, CarInfo& carInfo, c
   }
 
   // Handle engine sound
-/*
+
   if(carInfo.engineFxDuration == 0)
   {
     carInfo.engineFx[0].period_start = 1000 - (carInfo.speedZ*500);
     carInfo.engineFxDuration = 8;
   }
-*/
+
   carInfo.posX += carInfo.speedX;
   carInfo.posZ += carInfo.speedZ * 256;
   remainingFuel -= carInfo.speedZ * 512;
@@ -1004,8 +1004,8 @@ force_inline void updateCarInfo(const LevelContext& context, CarInfo& carInfo, c
         carInfo.fluxSprite = &context.speedSprites[1];
         if(swooshFxDuration == 0)
         {
-          //swooshFx = swoosh;
-          //swooshFxDuration = swooshDuration;
+          swooshFx = swoosh;
+          swooshFxDuration = swooshDuration;
         }
         break;
 
@@ -1379,7 +1379,7 @@ force_inline void drawFrameSkyway(GraphicsManager& gm,
   gm.EndFrame();
 }
 
-void titleLoop(const uint8_t* title, const uint32_t* palette, uint16_t width, uint16_t height/*, const Gamebuino_Meta::Sound_FX* music*/) noexcept
+void titleLoop(const uint8_t* title, const uint32_t* palette, uint16_t width, uint16_t height, const Gamebuino_Meta::Sound_FX* music) noexcept
 {
   resetAlloc();
   uint16_t* strip1 = (uint16_t*) mphAlloc(STRIP_SIZE_BYTES);
@@ -1491,10 +1491,10 @@ void titleLoop(const uint8_t* title, const uint32_t* palette, uint16_t width, ui
         if(offset == 0)
         {
           animationPhase = 1;
-          //if(music)
-          //{
-          //  gb.sound.fx(music);
-          //}
+          if(music)
+          {
+            gb.sound.fx(music);
+          }
 
         }
         break;
@@ -1520,7 +1520,7 @@ void lightUpdateTask(void* carInfo)
 
 void soundPlaybackTask(void* carInfo)
 {
-  /*
+  
   if(collisionFx)
   {
     gb.sound.fx(collisionFx);
@@ -1549,7 +1549,7 @@ void soundPlaybackTask(void* carInfo)
   {
     --((CarInfo*)carInfo)->engineFxDuration;
   }
-  */
+  
 }
 
 int gameLoop(LevelConfig& config) noexcept
@@ -1809,14 +1809,14 @@ int gameLoop(LevelConfig& config) noexcept
   carInfo.speedZ = 0.f;
   carInfo.speedX = 0.f;
   carInfo.fluxed = false;
-  //carInfo.engineFx[0].type = Gamebuino_Meta::Sound_FX_Wave::SQUARE;
-  //carInfo.engineFx[0].continue_flag = 0;
-  //carInfo.engineFx[0].volume_start = 100;
-  //carInfo.engineFx[0].volume_sweep = 0;
-  //carInfo.engineFx[0].period_sweep = 0;
-  //carInfo.engineFx[0].period_start = 1000;
-  //carInfo.engineFx[0].length = 10;
-  //carInfo.engineFxDuration = 0;
+  carInfo.engineFx[0].type = Gamebuino_Meta::Sound_FX_Wave::SQUARE;
+  carInfo.engineFx[0].continue_flag = 0;
+  carInfo.engineFx[0].volume_start = 100;
+  carInfo.engineFx[0].volume_sweep = 0;
+  carInfo.engineFx[0].period_sweep = 0;
+  carInfo.engineFx[0].period_start = 1000;
+  carInfo.engineFx[0].length = 10;
+  carInfo.engineFxDuration = 0;
 
   initDepthInfo(config, context, minSegmentSize, maxSegmentSize);
   initPalette(config.level, context);
@@ -1863,11 +1863,11 @@ int gameLoop(LevelConfig& config) noexcept
   { 
     while (!gb.update());
     taskSet.currentTask = 0;
-    //collisionFx = nullptr;
-    //swooshFx = nullptr;
-
+    collisionFx = nullptr;
+    swooshFx = nullptr;
     updateCarInfo(context, carInfo, config);
-
+    soundPlaybackTask(&carInfo);
+    
 // Update environment wrt to new car position
 
     if(unlikely(carInfo.posZ > context.segments[1].segmentStartZ))
@@ -2098,7 +2098,7 @@ void setup()
   gb.display.init(0, 0, ColorMode::rgb565);
 
   // Just to push things to the limit for this example, increase to 40fps.
-  gb.setFrameRate(40);
+  gb.setFrameRate(40); 
 
   // Init speedometer "hand" coordinates
   for(uint8_t index = 0; index < SPEED_STEP_COUNT; ++index)
@@ -2112,6 +2112,7 @@ void setup()
 
   nextAvailableSegment = memory;
 }
+
 
 int runLevel(LevelConfig& config) noexcept
 {
@@ -2150,7 +2151,7 @@ int runLevel(LevelConfig& config) noexcept
         break;
     }
   
-    titleLoop(title, palette, width, height/*, titleJingle*/);
+    titleLoop(title, palette, width, height, titleJingle);
 
   return gameLoop(config);
 }
@@ -2159,7 +2160,7 @@ void loop()
 {
   while(true)
   {
-    titleLoop(TITLE, TITLE_PALETTE, TITLE_WIDTH, TITLE_HEIGHT/*, titleMusic*/);
+    titleLoop(TITLE, TITLE_PALETTE, TITLE_WIDTH, TITLE_HEIGHT, titleMusic);
 
     remainingFuel = MAX_FUEL;
     bonusCount = 0;
@@ -2190,7 +2191,7 @@ void loop()
         config = levelSelectionMenu(Level::Skyway);
         if(runLevel(config) == 0) // level successful
         {
-          titleLoop(SUCCESS, SUCCESS_PALETTE, SUCCESS_WIDTH, SUCCESS_HEIGHT/*, successMusic*/);
+          titleLoop(SUCCESS, SUCCESS_PALETTE, SUCCESS_WIDTH, SUCCESS_HEIGHT, successMusic);
           if(bonusCount == 3)
           {
             config = levelSelectionMenu(Level::Bonus);
@@ -2199,17 +2200,17 @@ void loop()
         }
         else
         {
-          titleLoop(GAME_OVER, GAME_OVER_PALETTE, GAME_OVER_WIDTH, GAME_OVER_HEIGHT/*, gameOverMusic*/);
+          titleLoop(GAME_OVER, GAME_OVER_PALETTE, GAME_OVER_WIDTH, GAME_OVER_HEIGHT, gameOverMusic);
         }
       }
       else
       {
-        titleLoop(GAME_OVER, GAME_OVER_PALETTE, GAME_OVER_WIDTH, GAME_OVER_HEIGHT/*, gameOverMusic*/);
+        titleLoop(GAME_OVER, GAME_OVER_PALETTE, GAME_OVER_WIDTH, GAME_OVER_HEIGHT, gameOverMusic);
       }
     }
     else
     {
-      titleLoop(GAME_OVER, GAME_OVER_PALETTE, GAME_OVER_WIDTH, GAME_OVER_HEIGHT/*, gameOverMusic*/);
+      titleLoop(GAME_OVER, GAME_OVER_PALETTE, GAME_OVER_WIDTH, GAME_OVER_HEIGHT, gameOverMusic);
     }
       
   }

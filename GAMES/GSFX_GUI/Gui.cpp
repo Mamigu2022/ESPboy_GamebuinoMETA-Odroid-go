@@ -1,7 +1,6 @@
 #include "Gui.h"
 #include <Gamebuino-Meta.h>
 
-
 /*
 #define assert(condition, reason) \
 if (!(condition)) \
@@ -69,6 +68,7 @@ struct value {
 };
 
 const uint8_t FPP = Gamebuino_Meta::Sound_Handler_FX::FPP;
+
 const value _params_values[][2] =
 {
 	{ // Volume
@@ -504,7 +504,6 @@ void Gui::UpdateParams()
 	if (gb.buttons.pressed(BUTTON_B))
 	{
 		gb.sound.fx(_work_sfx_ram);
-		//OutputPattern(&_work_sfx[0], "_test");
 	}
 
 	if (gb.buttons.pressed(BUTTON_C))

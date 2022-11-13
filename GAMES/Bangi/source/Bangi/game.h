@@ -19,6 +19,7 @@
 #include "config.h"
 #include "player.h"
 #include "utils.h"
+#include "soundfx.h"
 
 
 // Delay times in millis
@@ -290,8 +291,8 @@ if (gb.buttons.pressed(BUTTON_B) || gb.buttons.pressed(BUTTON_MENU)) {
     if (sound || frameDrop == FPS_20){
         gb.sound.tone(750, 200 );        
     }else{
-      //music = gb.sound.play(FX_DEATH, false); // true for infinite looping
-      gb.sound.tone(750, 200 );   
+      music = gb.sound.play(FX_DEATH, false); // true for infinite looping
+      //gb.sound.tone(750, 200 );   
     }       
 #endif
     
@@ -376,7 +377,7 @@ if (gb.buttons.pressed(BUTTON_B) || gb.buttons.pressed(BUTTON_MENU)) {
       // time to start music!
       // we are starting the file "test.wav" in our sketch folder
       // gb.sound.play() will return the track identifier, which we will store into our music variable for later use
-      //music = gb.sound.play(FX_GAME_OVER, false); // true for infinite looping
+      music = gb.sound.play(fxGameover, false); // true for infinite looping
     }
 #endif
       
@@ -443,8 +444,8 @@ if (gb.buttons.pressed(BUTTON_B) || gb.buttons.pressed(BUTTON_MENU)) {
           if (sound || frameDrop == FPS_20){
             gb.sound.tone(FREQ_TONE, BEEP_TIME );
           } else{
-          gb.sound.tone(FREQ_TONE, BEEP_TIME );
-            //music = gb.sound.play(FX_DANGER, false); // true for infinite looping
+          //gb.sound.tone(FREQ_TONE, BEEP_TIME );
+          music = gb.sound.play(fxDanger, false); // true for infinite looping
           }
 #endif
 
@@ -476,7 +477,7 @@ if (gb.buttons.pressed(BUTTON_B) || gb.buttons.pressed(BUTTON_MENU)) {
       // clear the previous state of the lights
       gb.lights.clear();
       if (music != -1){
-        //gb.sound.stop(music);
+        gb.sound.stop(music);
     }
 
   //HACK GAMEBUINO PERFORMANCE - FORCE 20 FPS
@@ -694,8 +695,8 @@ static void checkRaysCollision() {
         if (sound || frameDrop == FPS_20){
           gb.sound.tone(175, 100 );
         } else{
-          gb.sound.tone(175, 100 );
-          //music = gb.sound.play(FX_POP, false); // true for infinite looping
+          //gb.sound.tone(175, 100 );
+          music = gb.sound.play(fxPop, false); // true for infinite looping
         }
 #endif
 

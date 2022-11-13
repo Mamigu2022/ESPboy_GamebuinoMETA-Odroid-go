@@ -200,7 +200,7 @@ struct CarInfo
   float speedX;
   const uint16_t* lights;
   SpriteDefinition* fluxSprite;
-//  Gamebuino_Meta::Sound_FX engineFx[1];
+  Gamebuino_Meta::Sound_FX engineFx[1];
   uint8_t engineFxDuration;
   bool fluxed; // goal reached
 };

@@ -8,6 +8,8 @@
 */
 
 #include <Gamebuino-Meta.h>
+#include "sounds.h"
+
 
 #define VERSION "V1.0"
 
@@ -966,7 +968,8 @@ void loop() {
       gb.display.drawImage(8,0,neo_retro_logo);
       counter++;
       if(counter>90){
-        //title_track=gb.sound.play("Omega_Horizon_Title.wav",true);
+        //title_track=gb.sound.play("Omega_Horizon_Title.wav",true)
+        title_track=gb.sound.play(soundTitle, false );
         counter=0;
         gameState = STATE_TITLE_SCREEN; 
         Raining=true;
@@ -981,7 +984,7 @@ void loop() {
       gb.display.setCursor(64,0);
       gb.display.print(PSTR(VERSION));
       if (gb.buttons.pressed(BUTTON_A)){
-        //gb.sound.stop(title_track); 
+        gb.sound.stop(title_track); 
         counter=0;
         x=0;
         y=49;
@@ -1002,7 +1005,7 @@ void loop() {
           gameState=STATE_PLANET_SCREEN;
           player.point.x=0;
           player.point.y=32*8;
-          //gb.sound.play("ship_landing.wav");
+          gb.sound.play(soundLanding, false);
         }
       }
             
@@ -1317,8 +1320,8 @@ void playerTick(){
       player.FIRE=0;  
     }
     if(player.FIRE==1){
-      //gb.sound.play("sfx_wpn_laser2.wav");
-      gb.sound.tone(200,30);
+      gb.sound.play(soundLaser, false);
+      //gb.sound.tone(200,30);
       player.cooldown=10;
       int16_t newX=0;int16_t newY=0;
       if(!player.FACELEFT){
@@ -1738,7 +1741,7 @@ void entityTakeDamage(int8_t i, int8_t damage){
   entities[i].FLASH=true;
   if(entities[i].life<0){
     if(entities[i].Type>=20){
-      //gb.sound.play("sfx_deathscream_alien6.wav");
+      gb.sound.play(soundScream, false);
     }
     entities[i].Exists=false;
     if(entities[i].Type==24){//koomer king
@@ -1771,8 +1774,8 @@ void entityTakeDamage(int8_t i, int8_t damage){
       createEntity(27,entities[i].point.x,entities[i].point.y,0);//death animation
     }
   }else{    
-    gb.sound.tone(200,50);   
-    //gb.sound.play("sfx_damage_hit2.wav");
+    //gb.sound.tone(200,50);   
+    gb.sound.play(soundDamage, false);
     //gb.sound.playCancel();
   }
 }

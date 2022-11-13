@@ -2,37 +2,6 @@
 
 //---------------------Sound-----------------
 
-
-void magicSfx(){
-  gb.sound.tone(200,100);
-  delay(100);
-  gb.sound.tone(500,100);
-  delay(100);
-  gb.sound.tone(800,100);
-};
-
-void loreSfx(){
-  gb.sound.tone(800,100);
-  delay(100);
-  gb.sound.tone(500,100);
-  delay(100);
-  gb.sound.tone(100,100);
-};
-
-void punchSfx(){
-  gb.sound.playCancel();
-};
-
-void diamondSfx(){
-  gb.sound.playOK();
-};
-
-void cupSfx(){
-  gb.sound.playOK();
-};
-
-
-/*
 const Gamebuino_Meta::Sound_FX magicSfx[] = {
     {Gamebuino_Meta::Sound_FX_Wave::NOISE,0,80,-1,10,70,15},
 };
@@ -53,7 +22,7 @@ const Gamebuino_Meta::Sound_FX diamondSfx[] = {
 const Gamebuino_Meta::Sound_FX cupSfx[] = {
     {Gamebuino_Meta::Sound_FX_Wave::SQUARE,0,130,-6,0,50,20}
 };
-*/
+
 
 //---------------------Game variables--------
 uint8_t LevelId=49;
@@ -141,17 +110,21 @@ uint8_t PROGMEM EndGraph[100]={
 
 int ScoreBoard[]={0,0,0,0,0};
 
+const SaveDefault savefileDefaults[] = {
+  { 0,SAVETYPE_INT,0,0 },
+  { 1,SAVETYPE_INT,0,0 },
+  { 2,SAVETYPE_INT,0,0 },
+  { 3,SAVETYPE_INT,0,0 },
+  { 4,SAVETYPE_INT,0,0 }
+};
+
 
 //--------------Functions-------------------------
 
 void setup() {
   Serial.begin(115200);
   gb.begin();
-  //gb.save.set(0, 0);
-  //gb.save.set(1, 0);
-  //gb.save.set(2, 0);
-  //gb.save.set(3, 0);
-  //gb.save.set(4, 0);
+  gb.save.config(savefileDefaults);
   ScoreBoard[0]=gb.save.get(0);
   ScoreBoard[1]=gb.save.get(1);
   ScoreBoard[2]=gb.save.get(2);
@@ -501,9 +474,8 @@ void game()
   {
     if(DisplayPlan[7]>0 && Lore>0)
     {
-      //gb.sound.fx(magicSfx);
+      gb.sound.fx(magicSfx);
       gb.lights.fill(BLUE);
-      magicSfx();
       if(DisplayPlan[7]<4)
       {
         DisplayPlan[7]=0;
@@ -535,8 +507,7 @@ void game()
     }
     if(Fight==true)
     {
-      //gb.sound.fx(punchSfx);
-      punchSfx();
+      gb.sound.fx(punchSfx);
       if(DisplayPlan[7]==1) //points for monster kill
       {
         Score+=50;
@@ -686,9 +657,8 @@ void checkCollider(uint8_t displayPlan[114],String moveDirection) //we check if 
 
   if(displayPlan[SelectedField]==33)//collision with the cup
   {
-    //gb.sound.fx(cupSfx);
+    gb.sound.fx(cupSfx);
     gb.lights.fill(RED);
-    cupSfx();
     displayPlan[SelectedField]=0; //clear cup base
     displayPlan[SelectedField-10]=0; //clear cup up
     PlayerHP+=11;
@@ -700,9 +670,8 @@ void checkCollider(uint8_t displayPlan[114],String moveDirection) //we check if 
   }
   else if(displayPlan[SelectedField]==31) //collision with the diamond
   {
-    //gb.sound.fx(diamondSfx);
+    gb.sound.fx(diamondSfx);
     gb.lights.fill(YELLOW);
-    diamondSfx();
     displayPlan[SelectedField]=0; //clear diamond base
     displayPlan[SelectedField-10]=0; //clear diamond up
     Score+=10;
@@ -711,9 +680,8 @@ void checkCollider(uint8_t displayPlan[114],String moveDirection) //we check if 
   }
   else if(displayPlan[SelectedField]==35) //collision with the power
   {
-    //gb.sound.fx(loreSfx);
-    gb.lights.fill(BLUE);
-    loreSfx();
+    gb.sound.fx(loreSfx);
+    gb.lights.fill(BLUE);;
     displayPlan[SelectedField]=0; //clear power base
     displayPlan[SelectedField-10]=0; //clear power up
     Lore+=2;
