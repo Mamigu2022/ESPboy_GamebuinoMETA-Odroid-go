@@ -337,7 +337,7 @@ const char PROGMEM level17[NB_ROWS_LEVELS][NB_COLUMNS_LEVELS] =
 
 // Here are stored the sprites display of the clouds
 // (White Yogurt Factory walls)
-char PROGMEM clouds[NB_ROWS_LEVELS][NB_COLUMNS_LEVELS] =
+char clouds[NB_ROWS_LEVELS][NB_COLUMNS_LEVELS] =
 { {'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a'},
   {'a', 'a', 'a', 'a', 'a', 'a', 'c', 'c', 'a', 'a', 'a'},
   {'a', 'a', 'a', 'c', 'c', 'g', ' ', ' ', 'b', 'a', 'a'},

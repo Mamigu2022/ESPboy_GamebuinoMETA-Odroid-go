@@ -13,7 +13,7 @@
 
 #include <Gamebuino-Meta.h>
 
-extern const uint8_t font5x7[];
+extern const PROGMEM uint8_t font5x7[];
 
 #include "settings.h"
 #include "assets.h"
@@ -145,26 +145,26 @@ int lastLevelWon = 0;
 
 // SOUNDS
 // little Tick
-const Gamebuino_Meta::Sound_FX littleTick[] = {
+const PROGMEM Gamebuino_Meta::Sound_FX littleTick[] = {
 //    {Gamebuino_Meta::Sound_FX_Wave::SQUARE,1,100,0,0,126,2},
 //    {Gamebuino_Meta::Sound_FX_Wave::SQUARE,0,100,0,0,169,2}
     {Gamebuino_Meta::Sound_FX_Wave::SQUARE,0,80,-10,-128,200,4}
 };
 
 // example sound
-const Gamebuino_Meta::Sound_FX mySfx[] = {
+const PROGMEM Gamebuino_Meta::Sound_FX mySfx[] = {
     {Gamebuino_Meta::Sound_FX_Wave::NOISE,1,100,2,5,96,3},
     {Gamebuino_Meta::Sound_FX_Wave::SQUARE,1,100,10,0,126,10},
     {Gamebuino_Meta::Sound_FX_Wave::SQUARE,0,120,-6,0,84,10}
 };
 
 // Square Nose sound
-const Gamebuino_Meta::Sound_FX squirrel[] = {
+const PROGMEM Gamebuino_Meta::Sound_FX squirrel[] = {
     {Gamebuino_Meta::Sound_FX_Wave::SQUARE,0,80,0,-16,32,10}
 };
 
 // Dumbulance siren sound
-const Gamebuino_Meta::Sound_FX siren[] = {
+const PROGMEM Gamebuino_Meta::Sound_FX siren[] = {
     {Gamebuino_Meta::Sound_FX_Wave::SQUARE,1,30,0,0,50,25},
     {Gamebuino_Meta::Sound_FX_Wave::SQUARE,1,60,0,0,45,25},
     {Gamebuino_Meta::Sound_FX_Wave::SQUARE,1,90,0,0,50,25},
@@ -176,24 +176,24 @@ const Gamebuino_Meta::Sound_FX siren[] = {
 };
 
 // simple hero move
-const Gamebuino_Meta::Sound_FX simpleMove[] = {
+const PROGMEM Gamebuino_Meta::Sound_FX simpleMove[] = {
     {Gamebuino_Meta::Sound_FX_Wave::NOISE,0,60,0,-120,128,6}
 };
 
 // slow move (big characters in dialogues)
-const Gamebuino_Meta::Sound_FX slowMove[] = {
+const PROGMEM Gamebuino_Meta::Sound_FX slowMove[] = {
     {Gamebuino_Meta::Sound_FX_Wave::NOISE,0,0,2,2,48,13}
 };
 
 // push a skeleton
-const Gamebuino_Meta::Sound_FX pushSkeleton[] = {
+const PROGMEM Gamebuino_Meta::Sound_FX pushSkeleton[] = {
     {Gamebuino_Meta::Sound_FX_Wave::SQUARE,1,180,0,0,200,2},
     {Gamebuino_Meta::Sound_FX_Wave::NOISE,1,0,0,0,0,1},
     {Gamebuino_Meta::Sound_FX_Wave::NOISE,0,60,0,-120,128,4}
 };
 
 // break a skeleton
-const Gamebuino_Meta::Sound_FX skeletonBreak[] = {
+const PROGMEM Gamebuino_Meta::Sound_FX skeletonBreak[] = {
     {Gamebuino_Meta::Sound_FX_Wave::NOISE,1,200,-20,0,32,2},
     {Gamebuino_Meta::Sound_FX_Wave::NOISE,1,160,-20,0,48,2},
     {Gamebuino_Meta::Sound_FX_Wave::NOISE,1,120,-20,0,64,2},
@@ -201,14 +201,14 @@ const Gamebuino_Meta::Sound_FX skeletonBreak[] = {
 };
 
 // kick a block with no move
-const Gamebuino_Meta::Sound_FX kickOnly[] = {
+const PROGMEM Gamebuino_Meta::Sound_FX kickOnly[] = {
     {Gamebuino_Meta::Sound_FX_Wave::SQUARE,1,160,0,0,200,2},
     {Gamebuino_Meta::Sound_FX_Wave::NOISE,1,0,0,0,0,1},
     {Gamebuino_Meta::Sound_FX_Wave::SQUARE,0,80,0,0,142,2}
 };
 
 // struck by lightning (death)
-const Gamebuino_Meta::Sound_FX lightningStrike[] = {
+const PROGMEM Gamebuino_Meta::Sound_FX lightningStrike[] = {
     {Gamebuino_Meta::Sound_FX_Wave::NOISE,1,230,-20,0,32,2},
     {Gamebuino_Meta::Sound_FX_Wave::NOISE,1,180,-20,0,48,2},
     {Gamebuino_Meta::Sound_FX_Wave::NOISE,1,130,-20,0,64,2},
@@ -217,7 +217,7 @@ const Gamebuino_Meta::Sound_FX lightningStrike[] = {
 
 
 // move and teeth hurt
-const Gamebuino_Meta::Sound_FX moveAndTeeth[] = {
+const PROGMEM Gamebuino_Meta::Sound_FX moveAndTeeth[] = {
     {Gamebuino_Meta::Sound_FX_Wave::NOISE,1,60,0,-120,128,4},
     {Gamebuino_Meta::Sound_FX_Wave::NOISE,1,200,0,0,256,2},
     {Gamebuino_Meta::Sound_FX_Wave::NOISE,1,140,0,0,0,2},
@@ -226,20 +226,20 @@ const Gamebuino_Meta::Sound_FX moveAndTeeth[] = {
 };
 
 // when we take the key
-const Gamebuino_Meta::Sound_FX keySound[] = {
+const PROGMEM Gamebuino_Meta::Sound_FX keySound[] = {
     {Gamebuino_Meta::Sound_FX_Wave::NOISE,1,60,0,-120,128,4},
     {Gamebuino_Meta::Sound_FX_Wave::SQUARE,1,140,0,0,25,3},
     {Gamebuino_Meta::Sound_FX_Wave::SQUARE,0,60,-2,0,25,40}
 };
 
 // open a lock
-const Gamebuino_Meta::Sound_FX openALock[] = {
+const PROGMEM Gamebuino_Meta::Sound_FX openALock[] = {
     {Gamebuino_Meta::Sound_FX_Wave::NOISE,1,200,-20,0,32,3},
     {Gamebuino_Meta::Sound_FX_Wave::NOISE,0,160,-20,0,48,3}
 };
 
 // Wedding March (une octave plus grave)
-const Gamebuino_Meta::Sound_FX WeddingMarch[] = {
+const PROGMEM Gamebuino_Meta::Sound_FX WeddingMarch[] = {
     {Gamebuino_Meta::Sound_FX_Wave::SQUARE,1,120,-10,0,119,6},
     {Gamebuino_Meta::Sound_FX_Wave::SQUARE,1,120,-10,0,119,6},
     {Gamebuino_Meta::Sound_FX_Wave::SQUARE,1,120,-10,0,119,6},

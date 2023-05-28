@@ -71,7 +71,7 @@ void Gamebuino::begin() {
     OTA2obj = new ESPboyOTA2(terminalGUIobj);
     OTA2obj -> checkOTA();
   }
-*/  
+ */ 
   WiFi.mode(WIFI_OFF); 
 
   #if USE_LITTLEFS
@@ -162,13 +162,20 @@ void Gamebuino::waitForUpdate() {
 	while(!update());
 }
 
+
+
 void IRAM_ATTR Gamebuino::updateDisplay() {
-	//tft.drawImage(0, 0, (Image&)display, 128, 128); //send the buffer to the screen
-    //tft.drawImage(0, 0, (Image&)display);
-  static uint16_t bufline[128];
+  static bool flagNewBuf = false;
   static uint16_t *bufPointer;
-  tft.setAddrWindow(0, 0, 128, 128);
-  uint8_t getPixelX;
+  static uint16_t *bufline;
+  
+  if(flagNewBuf == false){
+    flagNewBuf = true;
+    bufline = (uint16_t *)malloc(256);
+  };
+  
+  tft.setAddrWindow(0, 0, 128, 128); 
+  uint8_t getPixelX, setPixelX;
   for (uint8_t j=0; j<128; j++){
     getPixelX = 0;
     bufPointer = bufline;
