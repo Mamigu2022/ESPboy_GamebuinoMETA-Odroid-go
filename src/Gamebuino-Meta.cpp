@@ -162,13 +162,13 @@ void Gamebuino::waitForUpdate() {
 	while(!update());
 }
 
-void Gamebuino::updateDisplay() {
+void IRAM_ATTR Gamebuino::updateDisplay() {
 	//tft.drawImage(0, 0, (Image&)display, 128, 128); //send the buffer to the screen
     //tft.drawImage(0, 0, (Image&)display);
   static uint16_t bufline[128];
   static uint16_t *bufPointer;
-  tft.setAddrWindow(0, 0, 128, 128); 
-  uint8_t getPixelX, setPixelX;
+  tft.setAddrWindow(0, 0, 128, 128);
+  uint8_t getPixelX;
   for (uint8_t j=0; j<128; j++){
     getPixelX = 0;
     bufPointer = bufline;
