@@ -228,6 +228,7 @@ int8_t Sound::tone(uint32_t frequency, int32_t duration) {
 		return -1; // no free channels atm
 	}
 	channels[i].loop = duration == 0;
+	if(!frequency) frequency++;
 	handlers[i] = new Sound_Handler_Tone(&(channels[i]), frequency, duration, i);
 	return i;
 #else // SOUND_CHANNELS

@@ -15,7 +15,6 @@
 // It changes when the player moves.
 // The graphics parts of the code take the data from here at each frame.
 
-
 char level[NB_ROWS_LEVELS][NB_COLUMNS_LEVELS] =
 { {'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M'},
   {'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M'},
@@ -33,7 +32,7 @@ char level[NB_ROWS_LEVELS][NB_COLUMNS_LEVELS] =
 // when we change the level or reset the current level.
 
 // level 1 Pandemonica
-const PROGMEM char level1[NB_ROWS_LEVELS][NB_COLUMNS_LEVELS] =
+const char PROGMEM level1[NB_ROWS_LEVELS][NB_COLUMNS_LEVELS] =
 { {'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M'},
   {'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M'},
   {'M', 'M', 'M', 'M', 'M', 'M', ' ', '@', 'M', 'M', 'M'},
@@ -46,7 +45,7 @@ const PROGMEM char level1[NB_ROWS_LEVELS][NB_COLUMNS_LEVELS] =
   {'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M'} };
 
 // level 2 Modeus
-const PROGMEM char level2[NB_ROWS_LEVELS][NB_COLUMNS_LEVELS] =
+const char PROGMEM level2[NB_ROWS_LEVELS][NB_COLUMNS_LEVELS] =
 { {'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M'},
   {'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M'},
   {'M', 'M', 'M', ' ', ' ', ' ', ' ', 'M', 'M', 'M', 'M'},
@@ -59,7 +58,7 @@ const PROGMEM char level2[NB_ROWS_LEVELS][NB_COLUMNS_LEVELS] =
   {'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M'} };
 
 // level 3 Cerberus
-const PROGMEM char level3[NB_ROWS_LEVELS][NB_COLUMNS_LEVELS] =
+const char PROGMEM level3[NB_ROWS_LEVELS][NB_COLUMNS_LEVELS] =
 { {'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M'},
   {'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M'},
   {'M', 'M', 'M', 'M', 'M', 'D', 'D', 'D', ' ', 'M', 'M'},
@@ -72,7 +71,7 @@ const PROGMEM char level3[NB_ROWS_LEVELS][NB_COLUMNS_LEVELS] =
   {'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M'} };
 
 // level 4 Malina
-const PROGMEM char level4[NB_ROWS_LEVELS][NB_COLUMNS_LEVELS] =
+const char PROGMEM level4[NB_ROWS_LEVELS][NB_COLUMNS_LEVELS] =
 { {'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M'},
   {'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M'},
   {'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M'},
@@ -85,7 +84,7 @@ const PROGMEM char level4[NB_ROWS_LEVELS][NB_COLUMNS_LEVELS] =
   {'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M'} };
 
 // level 5 Zdrada
-const PROGMEM char level5[NB_ROWS_LEVELS][NB_COLUMNS_LEVELS] =
+const char PROGMEM level5[NB_ROWS_LEVELS][NB_COLUMNS_LEVELS] =
 { { 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M'},
   { 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M'},
   { 'M', 'M', 'M', 'M', 'M', ' ', 'D', 'M', 'M', 'M', 'M'},
@@ -98,7 +97,7 @@ const PROGMEM char level5[NB_ROWS_LEVELS][NB_COLUMNS_LEVELS] =
   { 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M'} };
 
 // level 6 Azazel
-const PROGMEM char level6[NB_ROWS_LEVELS][NB_COLUMNS_LEVELS] =
+const char PROGMEM level6[NB_ROWS_LEVELS][NB_COLUMNS_LEVELS] =
 { {'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M'},
   {'M', 'M', 'M', ' ', '@', ' ', 'M', 'M', 'M', 'M', 'M'},
   {'M', 'M', 'M', 'B', 'B', 'B', 'M', 'M', 'M', 'M', 'M'},
@@ -111,7 +110,7 @@ const PROGMEM char level6[NB_ROWS_LEVELS][NB_COLUMNS_LEVELS] =
   {'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M'} };
 
 // level 7 Justice
-const PROGMEM char level7[NB_ROWS_LEVELS][NB_COLUMNS_LEVELS] =
+const char PROGMEM level7[NB_ROWS_LEVELS][NB_COLUMNS_LEVELS] =
 { {'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M'},
   {'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M'},
   {'M', 'M', 'M', 'M', 'M', 'M', 'D', ' ', 'M', 'M', 'M'},
@@ -124,7 +123,7 @@ const PROGMEM char level7[NB_ROWS_LEVELS][NB_COLUMNS_LEVELS] =
   {'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M'} };
 
 // level 8 Lucifer
-const PROGMEM char level8[NB_ROWS_LEVELS][NB_COLUMNS_LEVELS] =
+const char PROGMEM level8[NB_ROWS_LEVELS][NB_COLUMNS_LEVELS] =
 { {'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M'},
   {'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M'},
   {'M', 'M', ' ', 'M', 'M', 'D', 'M', 'M', ' ', 'M', 'M'},
@@ -137,7 +136,7 @@ const PROGMEM char level8[NB_ROWS_LEVELS][NB_COLUMNS_LEVELS] =
   {'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M'} };
 
 // level 9 Judgement
-const PROGMEM char level9[NB_ROWS_LEVELS][NB_COLUMNS_LEVELS] =
+const char PROGMEM level9[NB_ROWS_LEVELS][NB_COLUMNS_LEVELS] =
 { {'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M'},
   {'M', 'M', 'M', 'M', 'M', 'D', 'M', 'M', 'M', 'M', 'M'},
   {'M', 'M', 'M', 'M', ' ', ' ', ' ', 'M', 'M', 'M', 'M'},
@@ -149,49 +148,8 @@ const PROGMEM char level9[NB_ROWS_LEVELS][NB_COLUMNS_LEVELS] =
   {'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M'},
   {'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M'} };
 
-/*
 // level 10 Beelzebub
-const PROGMEM char level10[NB_ROWS_LEVELS][NB_COLUMNS_LEVELS] =
-{ {'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M'},
-  {'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M'},
-  {'M', 'S', 'M', 'M', 'S', ' ', 'B', 'M', 'B', 'B', 'M'},
-  {'M', ' ', ' ', ' ', 'T', 'T', 'T', 'M', ' ', '@', 'M'},
-  {'M', 'L', 'M', 'M', 'T', 'i', 'T', 'M', ' ', 'M', 'M'},
-  {'M', ' ', 'B', 'M', 'T', 'T', 'T', 'S', ' ', 'B', 'M'},
-  {'M', ' ', 'D', 'M', 'S', ' ', ' ', ' ', ' ', 'S', 'M'},
-  {'M', ' ', ' ', 'M', 'B', 'K', 'B', 'B', ' ', 'B', 'M'},
-  {'M', 'M', 'M', 'M', 'B', 'S', 'B', 'B', ' ', 'M', 'M'},
-  {'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M'} };
-
-// level 10 Beelzebub
-const PROGMEM char level10[NB_ROWS_LEVELS][NB_COLUMNS_LEVELS] =
-{ {'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M'},
-  {'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M'},
-  {'M', ' ', 'B', ' ', ' ', 'B', ' ', 'M', ' ', ' ', 'M'},
-  {'M', 'S', ' ', ' ', ' ', 'i', '@', 'M', ' ', ' ', 'M'},
-  {'M', 'k', 'M', 'M', 'M', ' ', 'M', 'M', ' ', ' ', 'M'},
-  {'M', 'l', 'B', ' ', ' ', 'B', 'L', ' ', ' ', ' ', 'M'},
-  {'M', ' ', 'B', 'T', ' ', ' ', 'M', 'D', ' ', ' ', 'M'},
-  {'M', ' ', 'B', 'M', 'M', 'M', 'M', ' ', ' ', ' ', 'M'},
-  {'M', 'M', 'M', ' ', ' ', ' ', ' ', ' ', ' ', 'M', 'M'},
-  {'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M'} };
-
-
-// level 10
-const PROGMEM char level10[NB_ROWS_LEVELS][NB_COLUMNS_LEVELS] =
-{ {'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M'},
-  {'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M'},
-  {'M', 'M', ' ', ' ', ' ', 'M', ' ', ' ', ' ', 'M', 'M'},
-  {'M', 'M', ' ', ' ', ' ', ' ', ' ', ' ', 'D', 'M', 'M'},
-  {'M', 'M', 'M', ' ', ' ', 'M', ' ', ' ', 'M', 'M', 'M'},
-  {'M', 'M', 'M', ' ', ' ', 'M', ' ', ' ', 'M', 'M', 'M'},
-  {'M', 'M', ' ', ' ', ' ', ' ', ' ', ' ', '@', 'M', 'M'},
-  {'M', 'M', ' ', ' ', ' ', 'M', ' ', ' ', ' ', 'M', 'M'},
-  {'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M'},
-  {'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M'} };
-*/
-
-const PROGMEM char level10[NB_ROWS_LEVELS][NB_COLUMNS_LEVELS] =
+const char PROGMEM level10[NB_ROWS_LEVELS][NB_COLUMNS_LEVELS] =
 { {'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M'},
   {'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M'},
   {'M', 'M', 'K', 'T', ' ', 'M', ' ', 'T', ' ', 'M', 'M'},
@@ -206,6 +164,180 @@ const PROGMEM char level10[NB_ROWS_LEVELS][NB_COLUMNS_LEVELS] =
 
 // Here are stored the sprites display of the walls
 char walls[NB_ROWS_LEVELS][NB_COLUMNS_LEVELS] =
+{ {'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a'},
+  {'a', 'a', 'a', 'a', 'a', 'a', 'c', 'c', 'a', 'a', 'a'},
+  {'a', 'a', 'a', 'c', 'c', 'g', ' ', ' ', 'b', 'a', 'a'},
+  {'a', 'a', 'e', ' ', ' ', ' ', ' ', ' ', 'b', 'a', 'a'},
+  {'a', 'a', 'g', ' ', ' ', ' ', ' ', 'j', 'a', 'a', 'a'},
+  {'a', 'e', ' ', ' ', 'l', 'k', 'k', 'c', 'a', 'a', 'a'},
+  {'a', 'e', ' ', ' ', ' ', ' ', ' ', ' ', 'd', 'a', 'a'},
+  {'a', 'e', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 'b', 'a'},
+  {'a', 'a', 'i', 'i', 'i', 'i', 'i', 'i', 'i', 'a', 'a'},
+  {'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a'} };
+
+// Heaven or White Yogurt Factory
+
+// '@' player, '+' player on target, 'M' wall, ' ' empty box,
+// '$' yogurt, '*' yogurt on target, '.' target
+
+// Here are stored all the levels of the White Yogurt Factory.
+// We copy this data to the previous table
+// when we change the level or reset the current level.
+
+// level 11 PRIDE with yellow triangle
+const char PROGMEM level11[NB_ROWS_LEVELS][NB_COLUMNS_LEVELS] =
+{ {'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M'},
+  {'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M'},
+  {'M', 'M', 'M', 'M', ' ', ' ', ' ', 'M', 'M', 'M', 'M'},
+  {'M', 'M', ' ', ' ', '.', 'M', 'M', 'M', 'M', 'M', 'M'},
+  {'M', 'M', ' ', ' ', 'M', 'M', 'M', 'M', 'M', 'M', 'M'},
+  {'M', 'M', ' ', ' ', 'M', 'M', 'M', '.', '@', 'M', 'M'},
+  {'M', 'M', ' ', '$', '$', ' ', ' ', '$', ' ', 'M', 'M'},
+  {'M', 'M', 'M', ' ', ' ', ' ', ' ', '.', ' ', 'M', 'M'},
+  {'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M'},
+  {'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M'} };
+
+// level 12 GREED
+const char PROGMEM level12[NB_ROWS_LEVELS][NB_COLUMNS_LEVELS] =
+{ {'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M'},
+  {'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M'},
+  {'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M'},
+  {'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M'},
+  {'M', 'M', 'M', ' ', '@', '.', 'M', 'M', 'M', 'M', 'M'},
+  {'M', 'M', 'M', ' ', '$', '$', '$', ' ', 'M', 'M', 'M'},
+  {'M', 'M', 'M', ' ', ' ', ' ', '.', '.', 'M', 'M', 'M'},
+  {'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M'},
+  {'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M'},
+  {'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M'} };
+
+/*
+// level 13 LUST
+const char PROGMEM level13[NB_ROWS_LEVELS][NB_COLUMNS_LEVELS] =
+{ {'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M'},
+  {'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M'},
+  {'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M'},
+  {'M', 'M', 'M', ' ', ' ', ' ', ' ', '.', ' ', 'M', 'M'},
+  {'M', 'M', 'M', '$', '$', 'M', ' ', '@', ' ', 'M', 'M'},
+  {'M', 'M', ' ', ' ', ' ', 'M', 'M', 'M', 'M', 'M', 'M'},
+  {'M', 'M', ' ', 'M', ' ', 'M', 'M', 'M', 'M', 'M', 'M'},
+  {'M', 'M', ' ', '$', ' ', '.', ' ', '.', 'M', 'M', 'M'},
+  {'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M'},
+  {'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M'} };
+*/
+
+// level 13 LUST with pink circle
+const char PROGMEM level13[NB_ROWS_LEVELS][NB_COLUMNS_LEVELS] =
+{ {'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M'},
+  {'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M'},
+  {'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M'},
+  {'M', 'M', 'M', ' ', ' ', ' ', ' ', '.', ' ', 'M', 'M'},
+  {'M', 'M', 'M', '$', '$', 'M', ' ', '@', ' ', 'M', 'M'},
+  {'M', 'M', ' ', ' ', ' ', 'M', 'M', 'M', 'M', 'M', 'M'},
+  {'M', 'M', ' ', 'M', ' ', 'M', 'M', 'M', 'M', ' ', 'M'},
+  {'M', 'M', ' ', '$', ' ', '.', ' ', '.', 'M', ' ', 'M'},
+  {'M', 'M', 'M', 'M', 'M', 'M', ' ', ' ', ' ', ' ', 'M'},
+  {'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M'} };
+
+// level 14 ANGER
+const char PROGMEM level14[NB_ROWS_LEVELS][NB_COLUMNS_LEVELS] =
+{ {'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M'},
+  {'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M'},
+  {'M', 'M', 'M', 'M', ' ', ' ', 'M', 'M', 'M', 'M', 'M'},
+  {'M', 'M', '@', ' ', ' ', '$', 'M', 'M', 'M', 'M', 'M'},
+  {'M', 'M', 'M', 'M', 'M', '.', ' ', ' ', 'M', 'M', 'M'},
+  {'M', 'M', 'M', 'M', 'M', ' ', '$', ' ', ' ', 'M', 'M'},
+  {'M', 'M', 'M', 'M', ' ', ' ', ' ', '$', ' ', 'M', 'M'},
+  {'M', 'M', '.', ' ', ' ', ' ', '.', ' ', 'M', 'M', 'M'},
+  {'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M'},
+  {'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M'} };
+
+/*
+// level 15 GLUTTONY
+const char PROGMEM level15[NB_ROWS_LEVELS][NB_COLUMNS_LEVELS] =
+{ {'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M'},
+  {'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M'},
+  {'M', 'M', 'M', 'M', 'M', 'M', ' ', ' ', ' ', 'M', 'M'},
+  {'M', 'M', 'M', 'M', 'M', 'M', '$', 'M', ' ', 'M', 'M'},
+  {'M', 'M', 'M', 'M', ' ', ' ', ' ', ' ', ' ', 'M', 'M'},
+  {'M', 'M', ' ', ' ', ' ', 'M', ' ', 'M', 'M', 'M', 'M'},
+  {'M', 'M', ' ', '$', '$', '.', ' ', ' ', '.', 'M', 'M'},
+  {'M', 'M', 'M', '.', ' ', ' ', ' ', '@', 'M', 'M', 'M'},
+  {'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M'},
+  {'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M'} };
+*/
+
+/*
+// level 15 GLUTTONY
+const char PROGMEM level15[NB_ROWS_LEVELS][NB_COLUMNS_LEVELS] =
+{ {'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M'},
+  {'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M'},
+  {'M', 'M', 'M', 'M', 'M', 'M', ' ', ' ', ' ', 'M', 'M'},
+  {'M', 'M', ' ', ' ', ' ', ' ', '$', ' ', ' ', 'M', 'M'},
+  {'M', 'M', ' ', 'M', '$', 'M', '*', 'M', ' ', 'M', 'M'},
+  {'M', 'M', ' ', '.', '@', '.', '.', '$', ' ', 'M', 'M'},
+  {'M', 'M', ' ', 'M', '$', 'M', '.', 'M', 'M', 'M', 'M'},
+  {'M', 'M', ' ', ' ', ' ', 'M', 'M', 'M', 'M', 'M', 'M'},
+  {'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M'},
+  {'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M'} };
+*/
+
+// level 15 GLUTTONY with blue square
+const char PROGMEM level15[NB_ROWS_LEVELS][NB_COLUMNS_LEVELS] =
+{ {'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M'},
+  {'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M'},
+  {'M', 'M', 'M', 'M', 'M', 'M', ' ', ' ', ' ', 'M', 'M'},
+  {'M', 'M', ' ', ' ', ' ', ' ', '$', ' ', ' ', 'M', 'M'},
+  {'M', 'M', ' ', 'M', '$', 'M', '*', 'M', ' ', 'M', 'M'},
+  {'M', 'M', ' ', '.', '@', '.', '.', '$', ' ', 'M', 'M'},
+  {'M', 'M', ' ', 'M', '$', 'M', ' ', 'M', 'M', 'M', 'M'},
+  {'M', 'M', ' ', ' ', ' ', 'M', '.', ' ', ' ', 'M', 'M'},
+  {'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M'},
+  {'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M'} };
+
+// level 16 ENVY
+const char PROGMEM level16[NB_ROWS_LEVELS][NB_COLUMNS_LEVELS] =
+{ {'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M'},
+  {'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M'},
+  {'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M'},
+  {'M', 'M', 'M', '.', 'M', '.', ' ', '$', ' ', 'M', 'M'},
+  {'M', 'M', 'M', '@', 'M', 'M', 'M', ' ', ' ', 'M', 'M'},
+  {'M', 'M', ' ', '$', ' ', 'M', ' ', '*', ' ', 'M', 'M'},
+  {'M', 'M', ' ', ' ', '$', '$', '.', '$', '.', 'M', 'M'},
+  {'M', 'M', ' ', ' ', '.', ' ', ' ', '$', ' ', 'M', 'M'},
+  {'M', 'M', 'M', 'M', 'M', 'M', 'M', '.', ' ', 'M', 'M'},
+  {'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M'} };
+
+// level 17 SLOTH
+const char PROGMEM level17[NB_ROWS_LEVELS][NB_COLUMNS_LEVELS] =
+{ {'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M'},
+  {'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M'},
+  {'M', ' ', ' ', 'M', 'M', 'M', 'M', ' ', ' ', ' ', 'M'},
+  {'M', ' ', ' ', ' ', '$', ' ', ' ', ' ', ' ', ' ', 'M'},
+  {'M', ' ', '$', ' ', 'M', 'M', 'M', ' ', ' ', 'M', 'M'},
+  {'M', 'M', ' ', 'M', ' ', '.', 'M', 'M', ' ', ' ', 'M'},
+  {'M', ' ', '$', ' ', '$', ' ', 'M', 'M', ' ', ' ', 'M'},
+  {'M', '.', '.', '.', ' ', '@', 'M', 'M', ' ', ' ', 'M'},
+  {'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M'},
+  {'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M'} };
+  
+/*
+// level 17 SLOTH shorter for testing
+const char PROGMEM level17[NB_ROWS_LEVELS][NB_COLUMNS_LEVELS] =
+{ {'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M'},
+  {'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M'},
+  {'M', ' ', ' ', ' ', 'M', 'M', 'M', ' ', ' ', ' ', 'M'},
+  {'M', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 'M'},
+  {'M', ' ', ' ', ' ', 'M', 'M', 'M', ' ', ' ', 'M', 'M'},
+  {'M', 'M', ' ', 'M', ' ', '.', 'M', 'M', ' ', ' ', 'M'},
+  {'M', ' ', ' ', ' ', '$', ' ', 'M', 'M', ' ', ' ', 'M'},
+  {'M', '.', '.', '.', ' ', '@', 'M', 'M', ' ', ' ', 'M'},
+  {'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M'},
+  {'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M', 'M'} };
+*/
+
+// Here are stored the sprites display of the clouds
+// (White Yogurt Factory walls)
+char PROGMEM clouds[NB_ROWS_LEVELS][NB_COLUMNS_LEVELS] =
 { {'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a'},
   {'a', 'a', 'a', 'a', 'a', 'a', 'c', 'c', 'a', 'a', 'a'},
   {'a', 'a', 'a', 'c', 'c', 'g', ' ', ' ', 'b', 'a', 'a'},
