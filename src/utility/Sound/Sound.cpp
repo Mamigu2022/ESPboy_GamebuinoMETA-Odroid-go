@@ -434,25 +434,28 @@ static void IRAM_ATTR Audio_Handler(void) {
 		//output = (output * 4) >> (8 - globalVolume);
 		//offset the signed value to be centered around 512
 		//as the 10-bit DAC output is between 0 and 1024
+		output = output * 2;
 		
 		// we need to slowly fade up our zero-level to not have any plop when starting to play sound
-		if (flowdown < 512) {
-			flowdown++;
-		}
-		output += flowdown;
-		if (output < 0) {
-			output = 0;
-		}
+		//if (flowdown < 512) {
+		//	flowdown++;
+		//}
+		//output += flowdown;
+		//if (output < 0) {
+		//	output = 0;
+		//}
 		//analogWrite(A0, output);
-		sigmaDeltaWrite(0, output&255);
+		if(output>255)output=255;
+		if(output<0)output=0;
+		sigmaDeltaWrite(0, output);
 	} 
 	else {
 		// we need to output 0 when not in use to not have weird sound effects with the neoLeds as the interrupt isn't 100% constant there.
 		// however, jumping down from 512 (zero-positin) to 0 would give a plop
 		// so instead we gradually decrease instead
 		//analogWrite(A0, flowdown); // zero-position
-		//sigmaDeltaWrite(0, 0);
-		sigmaDeltaWrite(0, flowdown&255);
+		sigmaDeltaWrite(0, 0);
+		//sigmaDeltaWrite(0, flowdown&255);
 		if (flowdown > 0) {
 			flowdown--;
 		}

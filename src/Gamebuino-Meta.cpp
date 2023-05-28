@@ -8,7 +8,6 @@ Copyright (c) Aadalie 2014, 2016-2017
 #include "Gamebuino-Meta.h"
 
 
-
 const uint8_t PROGMEM gamebuinoLogo[] = {80,10,
 	0b00111100,0b00111111,0b00111111,0b11110011,0b11110011,0b11110011,0b00110011,0b00111111,0b00111111,0b00011100,
 	0b00111100,0b00111111,0b00111111,0b11110011,0b11110011,0b11110011,0b00110011,0b00111111,0b00111111,0b00100110,
@@ -61,8 +60,8 @@ void Gamebuino::begin() {
   for(uint8_t i=0; i<200; i++) {dac.setVoltage(i*10, false); delay(10);}
   dac.setVoltage(4095, true);
 
- /*
   //Check OTA2
+/* 
   if (getKeys()&PAD_ACT || getKeys()&PAD_ESC) { 
     //Serial.println();
     //Serial.println(ESP.getFreeHeap()); 
@@ -72,15 +71,19 @@ void Gamebuino::begin() {
     OTA2obj = new ESPboyOTA2(terminalGUIobj);
     OTA2obj -> checkOTA();
   }
-  */
+*/  
   WiFi.mode(WIFI_OFF); 
 
+  #if USE_LITTLEFS
+  LittleFS.begin();
+  #endif
+  
   myLED.begin(&mcp);
-
   myLED.setRGB(5,0,0); delay(200);
   myLED.setRGB(0,5,0); delay(200);
   myLED.setRGB(0,0,5); delay(200);
   myLED.setRGB(0,0,0);
+
   
   display.fill(Color::black);
   display.fontSize = SYSTEM_DEFAULT_FONT_SIZE;
@@ -160,8 +163,22 @@ void Gamebuino::waitForUpdate() {
 }
 
 void Gamebuino::updateDisplay() {
-	tft.drawImage(0, 0, (Image&)display, 128, 128); //send the buffer to the screen
-	//tft.drawImage(0, 0, (Image&)display); 
+	//tft.drawImage(0, 0, (Image&)display, 128, 128); //send the buffer to the screen
+    //tft.drawImage(0, 0, (Image&)display);
+  static uint16_t bufline[128];
+  static uint16_t *bufPointer;
+  tft.setAddrWindow(0, 0, 128, 128); 
+  uint8_t getPixelX, setPixelX;
+  for (uint8_t j=0; j<128; j++){
+    getPixelX = 0;
+    bufPointer = bufline;
+    for (uint8_t k=0; k<32; k++){	
+      *bufPointer++ = (uint32_t)display.getPixelColor(getPixelX++,j);
+      *bufPointer++ = (uint32_t)display.getPixelColor(getPixelX++,j);
+      *bufPointer++ = (uint32_t)display.getPixelColor(getPixelX++,j);
+      *bufPointer++ = tft.colorsBlend((uint32_t)display.getPixelColor(getPixelX++,j), (uint32_t)display.getPixelColor(getPixelX++,j));    
+    }
+    tft.pushColors(bufline, 128);}
 }
 
 void Gamebuino::setFrameRate(uint8_t fps) {

@@ -122,6 +122,7 @@ public:
     Display_ST7735();
     TFT_eSPI _tft; 
     
+    uint16_t colorsBlend(uint32_t fgc, uint32_t bgc);
 	void init();
 	void setAddrWindow(uint8_t x0, uint8_t y0, uint8_t x1, uint8_t y1);
 	void pushColor(uint16_t c);

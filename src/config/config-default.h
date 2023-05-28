@@ -6,8 +6,8 @@
 //UNCOMMENT DISPLAY MODE in config-default.h file in your ARDUINO IDE ESPboy_GamebuinoMeta lib! 
 
 #ifndef DISPLAY_MODE
-#define DISPLAY_MODE DISPLAY_MODE_RGB565
-//#define DISPLAY_MODE DISPLAY_MODE_INDEX
+//#define DISPLAY_MODE DISPLAY_MODE_RGB565
+#define DISPLAY_MODE DISPLAY_MODE_INDEX
 //#define DISPLAY_MODE DISPLAY_MODE_INDEX_HALFRES
 //#define DISPLAY_MODE DISPLAY_MODE_INDEX_128x128
 #endif
@@ -25,6 +25,7 @@
 #endif
 
 #define DEFAULT_FONT_SIZE 1
+
 
 /*
 #ifndef DEFAULT_FONT_SIZE
@@ -51,6 +52,10 @@
 ///////////////
 // save defines
 ///////////////
+
+//#ifndef USE_LITTLEFS
+//#define USE_LITTLEFS 1
+//#endif
 
 #ifndef SAVEBLOCK_NUM
 #define SAVEBLOCK_NUM 40

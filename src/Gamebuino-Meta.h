@@ -33,7 +33,12 @@ Authors:
 #include <Adafruit_MCP4725.h>
 #include <ESP8266WiFi.h> 
 
+#if USE_LITTLEFS
+#include "LittleFS.h"
+#endif
 
+//#include "utility/ESPboyLib/ESPboyOTA2.h"
+//#include "utility/ESPboyLib/ESPboyTerminalGUI.h"
 
 namespace Gamebuino_Meta {
 
@@ -67,7 +72,9 @@ public:
 	Save save;
 	Language language;
 	Collide collide;
-	Image display = DISPLAY_CONSTRUCTOR;
+	//ESPboyTerminalGUI *terminalGUIobj = NULL;
+    //ESPboyOTA2 *OTA2obj = NULL;
+    Image display = DISPLAY_CONSTRUCTOR;
     
     Gamebuino();
     

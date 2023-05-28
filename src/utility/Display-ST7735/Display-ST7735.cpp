@@ -44,6 +44,14 @@ void Display_ST7735::init() {
 	_tft.fillScreen(0);
 }
 
+uint16_t Display_ST7735::colorsBlend(uint32_t fgc, uint32_t bgc){
+    bgc = (bgc | (bgc << 16)) & 0b00000111111000001111100000011111;
+    fgc = (fgc | (fgc << 16)) & 0b00000111111000001111100000011111;
+    uint32_t result = (((fgc - bgc) >> 1) + bgc) & 0b00000111111000001111100000011111;
+    return (uint16_t)((result >> 16) | result);
+}
+
+
 void Display_ST7735::setAddrWindow(uint8_t x0, uint8_t y0, uint8_t x1, uint8_t y1) {
 	_tft.setAddrWindow(x0, y0, x1-x0, y1-y0);
 }
