@@ -86,7 +86,6 @@ public:
 #endif // USE_PRINTF
 	using Print_Language::write;
 	Graphics(int16_t w, int16_t h); // Constructor
-	virtual ~Graphics();
 
 	// This MUST be defined by the subclass:
 	virtual void _drawPixel(int16_t x, int16_t y) = 0;
@@ -298,38 +297,38 @@ using Gamebuino_Meta::ColorMode;
 using Gamebuino_Meta::Color;
 using Gamebuino_Meta::ColorIndex;
 
-const Color WHITE = Color::white;
-const Color GRAY = Color::gray;
-const Color DARKGRAY = Color::darkgray;
-const Color BLACK = Color::black;
-const Color PURPLE = Color::purple;
-const Color PINK = Color::pink;
-const Color RED = Color::red;
-const Color ORANGE = Color::orange;
-const Color BROWN = Color::brown;
-const Color BEIGE = Color::beige;
-const Color YELLOW = Color::yellow;
-const Color LIGHTGREEN = Color::lightgreen;
-const Color GREEN = Color::green;
-const Color DARKBLUE = Color::darkblue;
-const Color BLUE = Color::blue;
-const Color LIGHTBLUE = Color::lightblue;
+const PROGMEM Color WHITE = Color::white;
+const PROGMEM Color GRAY = Color::gray;
+const PROGMEM Color DARKGRAY = Color::darkgray;
+const PROGMEM Color BLACK = Color::black;
+const PROGMEM Color PURPLE = Color::purple;
+const PROGMEM Color PINK = Color::pink;
+const PROGMEM Color RED = Color::red;
+const PROGMEM Color ORANGE = Color::orange;
+const PROGMEM Color BROWN = Color::brown;
+const PROGMEM Color BEIGE = Color::beige;
+const PROGMEM Color YELLOW = Color::yellow;
+const PROGMEM Color LIGHTGREEN = Color::lightgreen;
+const PROGMEM Color GREEN = Color::green;
+const PROGMEM Color DARKBLUE = Color::darkblue;
+const PROGMEM Color BLUE = Color::blue;
+const PROGMEM Color LIGHTBLUE = Color::lightblue;
 
-const ColorIndex INDEX_WHITE = ColorIndex::white;
-const ColorIndex INDEX_GRAY = ColorIndex::gray;
-const ColorIndex INDEX_DARKGRAY = ColorIndex::darkgray;
-const ColorIndex INDEX_BLACK = ColorIndex::black;
-const ColorIndex INDEX_PURPLE = ColorIndex::purple;
-const ColorIndex INDEX_PINK = ColorIndex::pink;
-const ColorIndex INDEX_RED = ColorIndex::red;
-const ColorIndex INDEX_ORANGE = ColorIndex::orange;
-const ColorIndex INDEX_BROWN = ColorIndex::brown;
-const ColorIndex INDEX_BEIGE = ColorIndex::beige;
-const ColorIndex INDEX_YELLOW = ColorIndex::yellow;
-const ColorIndex INDEX_LIGHTGREEN = ColorIndex::lightgreen;
-const ColorIndex INDEX_GREEN = ColorIndex::green;
-const ColorIndex INDEX_DARKBLUE = ColorIndex::darkblue;
-const ColorIndex INDEX_BLUE = ColorIndex::blue;
-const ColorIndex INDEX_LIGHTBLUE = ColorIndex::lightblue;
+const PROGMEM ColorIndex INDEX_WHITE = ColorIndex::white;
+const PROGMEM ColorIndex INDEX_GRAY = ColorIndex::gray;
+const PROGMEM ColorIndex INDEX_DARKGRAY = ColorIndex::darkgray;
+const PROGMEM ColorIndex INDEX_BLACK = ColorIndex::black;
+const PROGMEM ColorIndex INDEX_PURPLE = ColorIndex::purple;
+const PROGMEM ColorIndex INDEX_PINK = ColorIndex::pink;
+const PROGMEM ColorIndex INDEX_RED = ColorIndex::red;
+const PROGMEM ColorIndex INDEX_ORANGE = ColorIndex::orange;
+const PROGMEM ColorIndex INDEX_BROWN = ColorIndex::brown;
+const PROGMEM ColorIndex INDEX_BEIGE = ColorIndex::beige;
+const PROGMEM ColorIndex INDEX_YELLOW = ColorIndex::yellow;
+const PROGMEM ColorIndex INDEX_LIGHTGREEN = ColorIndex::lightgreen;
+const PROGMEM ColorIndex INDEX_GREEN = ColorIndex::green;
+const PROGMEM ColorIndex INDEX_DARKBLUE = ColorIndex::darkblue;
+const PROGMEM ColorIndex INDEX_BLUE = ColorIndex::blue;
+const PROGMEM ColorIndex INDEX_LIGHTBLUE = ColorIndex::lightblue;
 
 #endif // _GAMEBUINO_META_GRAPHICS_H_
