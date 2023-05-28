@@ -173,10 +173,10 @@ void IRAM_ATTR Gamebuino::updateDisplay() {
     getPixelX = 0;
     bufPointer = bufline;
     for (uint8_t k=0; k<32; k++){	
-      *bufPointer++ = (uint32_t)display.getPixelColor(getPixelX++,j);
-      *bufPointer++ = (uint32_t)display.getPixelColor(getPixelX++,j);
-      *bufPointer++ = (uint32_t)display.getPixelColor(getPixelX++,j);
-      *bufPointer++ = tft.colorsBlend((uint32_t)display.getPixelColor(getPixelX++,j), (uint32_t)display.getPixelColor(getPixelX++,j));    
+      *bufPointer++ = (uint16_t)display.getPixelColor(getPixelX++,j);
+      *bufPointer++ = (uint16_t)display.getPixelColor(getPixelX++,j);
+      *bufPointer++ = (uint16_t)display.getPixelColor(getPixelX++,j);
+      *bufPointer++ = tft.colorsBlend((uint16_t)display.getPixelColor(getPixelX++,j), (uint16_t)display.getPixelColor(getPixelX++,j));    
     }
     tft.pushColors(bufline, 128);}
 }
