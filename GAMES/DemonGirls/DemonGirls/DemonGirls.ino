@@ -1956,68 +1956,68 @@ void demonText() {
         case 0:
           gb.display.setColor(GRAY);
           gb.display.setCursorX(5);
-          gb.display.print("    You find yourself\n");
+          gb.display.print(F("    You find yourself\n"));
           gb.display.setCursorX(5);
-          gb.display.print(" surrounded by the void.");
+          gb.display.print(F(" surrounded by the void."));
           break;
         case 1:
           gb.display.setCursorX(5);
-          gb.display.print("  Greetings little one.\n");
+          gb.display.print(F("  Greetings little one.\n"));
           gb.display.setCursorX(2);
-          gb.display.print(" Please don't mind me. It\n");
+          gb.display.print(F(" Please don't mind me. It\n"));
           gb.display.setCursorX(5);
-          gb.display.print("   is just I, good old\n");
+          gb.display.print(F("   is just I, good old\n"));
           gb.display.setCursorX(2);
-          gb.display.print("        Beelzebub.");
+          gb.display.print(F("        Beelzebub."));
           break;
         case 2:
           gb.display.setCursorX(2);
-          gb.display.print(" Story of the demon girls\n");
+          gb.display.print(F(" Story of the demon girls\n"));
           gb.display.setCursorX(5);
-          gb.display.print("  again? Interesting...");
+          gb.display.print(F("  again? Interesting..."));
           break;
         case 3:
           gb.display.setCursorX(2);
-          gb.display.print("  Do you, by any chance,\n");
+          gb.display.print(F("  Do you, by any chance,\n"));
           gb.display.setCursorX(2);
-          gb.display.print("     need a narrator?");
+          gb.display.print(F("     need a narrator?"));
           break;
         case 4:
           gb.display.setCursorX(2);
-          gb.display.print(" Why please, allow me. It\n");
+          gb.display.print(F(" Why please, allow me. It\n"));
           gb.display.setCursorX(5);
-          gb.display.print("   will be a pleasure.");
+          gb.display.print(F("   will be a pleasure."));
           break;
         case 5:
           gb.display.setCursorX(2);
-          gb.display.print("You woke up one day with a\n");
+          gb.display.print(F("You woke up one day with a\n"));
           gb.display.setCursorX(2);
-          gb.display.print("dream. Harem full of demon\n");
+          gb.display.print(F("dream. Harem full of demon\n"));
           gb.display.setCursorX(2);
-          gb.display.print("          girls.");
+          gb.display.print(F("          girls."));
           break;
         case 6:
           gb.display.setCursorX(5);
-          gb.display.print(" It was, however, not an\n");
+          gb.display.print(F(" It was, however, not an\n"));
           gb.display.setCursorX(5);
-          gb.display.print("easy dream to achieve. It\n");
+          gb.display.print(F("easy dream to achieve. It\n"));
           gb.display.setCursorX(5);
-          gb.display.print("could cost you your life.");
+          gb.display.print(F("could cost you your life."));
           break;
       }
       if(answered > 6) {
         gb.display.setColor(WHITE);
         gb.display.setCursorX(5);
-        gb.display.print("  \"When demon girls are\n");
+        gb.display.print(F("  \"When demon girls are\n"));
         gb.display.setCursorX(2);
-        gb.display.print("involved, no price is high\n");
+        gb.display.print(F("involved, no price is high\n"));
         gb.display.setCursorX(2);
-        gb.display.print("         enough.\"\n\n");
+        gb.display.print(F("         enough.\"\n\n"));
         gb.display.setColor(RED);
         gb.display.setCursorX(5);
-        gb.display.print("You said, as you ventured\n");
+        gb.display.print(F("You said, as you ventured\n"));
         gb.display.setCursorX(5);
-        gb.display.print("      down to Hell.");
+        gb.display.print(F("      down to Hell."));
         if(gb.buttons.pressed(BUTTON_A)) {
           clap = true;
         }
@@ -2028,41 +2028,41 @@ void demonText() {
     case 1:
     if(answered == 0) {
       gb.display.setCursorX(2);
-      gb.display.print("Name's Pandemonica. Hell's\n");
+      gb.display.print(F("Name's Pandemonica. Hell's\n"));
       gb.display.setCursorX(5);
-      gb.display.print("Customer Service. How may\n");
+      gb.display.print(F("Customer Service. How may\n"));
       gb.display.setCursorX(2);
-      gb.display.print("       I serve you?\n\n\n");
+      gb.display.print(F("       I serve you?\n\n\n"));
     } else {
       if(goodAnswer == true) {
         gb.display.setCursorX(2);
-        gb.display.print(" You have your own house?\n");
+        gb.display.print(F(" You have your own house?\n"));
         gb.display.setCursorX(2);
-        gb.display.print("  You don't live by your\n");
+        gb.display.print(F("  You don't live by your\n"));
         gb.display.setCursorX(2);
-        gb.display.print("  parents? That's a good\n");
+        gb.display.print(F("  parents? That's a good\n"));
         gb.display.setCursorX(2);
-        gb.display.print("          point!");
+        gb.display.print(F("          point!"));
       } else {
         gb.display.setCursorX(5);
-        gb.display.print("No way. I only date tough\n");
+        gb.display.print(F("No way. I only date tough\n"));
         gb.display.setCursorX(5);
-        gb.display.print("  guys. Go back to your\n");
+        gb.display.print(F("  guys. Go back to your\n"));
         gb.display.setCursorX(5);
-        gb.display.print("     little flowers.");
+        gb.display.print(F("     little flowers."));
       }
     }
     if(answered == 0) {
       gb.display.setColor(topAnswer?WHITE:GRAY);
       gb.display.setCursorX(5);
-      gb.display.print(" We can figure something\n");
+      gb.display.print(F(" We can figure something\n"));
       gb.display.setCursorX(2);
-      gb.display.print("     out at my place.\n\n");
+      gb.display.print(F("     out at my place.\n\n"));
       gb.display.setColor(topAnswer?GRAY:WHITE);
       gb.display.setCursorX(5);
-      gb.display.print("  Maybe I can serve YOU\n");
+      gb.display.print(F("  Maybe I can serve YOU\n"));
       gb.display.setCursorX(2);
-      gb.display.print("         instead?");
+      gb.display.print(F("         instead?"));
     }
     goodAnswer = topAnswer?true:false;
     break;
@@ -2071,31 +2071,31 @@ void demonText() {
     case 2:
     if(answered == 0) {
       gb.display.setCursorX(2);
-      gb.display.print("     You and me. Now.");
+      gb.display.print(F("     You and me. Now."));
     } else {
       if(goodAnswer == true) {
         gb.display.setCursorX(2);
-        gb.display.print("  You take the blacks. I\n");
+        gb.display.print(F("  You take the blacks. I\n"));
         gb.display.setCursorX(5);
-        gb.display.print("  take the whites. It's\n");
+        gb.display.print(F("  take the whites. It's\n"));
         gb.display.setCursorX(5);
-        gb.display.print("       chess time!");
+        gb.display.print(F("       chess time!"));
       } else {
-        gb.display.print("Other girls? I am the only\n");
+        gb.display.print(F("Other girls? I am the only\n"));
         gb.display.setCursorX(5);
-        gb.display.print("    one, remember it!");
+        gb.display.print(F("    one, remember it!"));
       }
     }
     if(answered == 0) {
       gb.display.setColor(topAnswer?WHITE:GRAY);
-      gb.display.print("\n\n\n\n\n");
+      gb.display.print(F("\n\n\n\n\n"));
       gb.display.setCursorX(2);
-      gb.display.print(" Deal. No question asked.\n\n\n");
+      gb.display.print(F(" Deal. No question asked.\n\n\n"));
       gb.display.setColor(topAnswer?GRAY:WHITE);
       gb.display.setCursorX(5);
-      gb.display.print(" No time. Busy gathering\n");
+      gb.display.print(F(" No time. Busy gathering\n"));
       gb.display.setCursorX(2);
-      gb.display.print("          girls.");
+      gb.display.print(F("          girls."));
     }
     goodAnswer = topAnswer?true:false;
     break;
@@ -2104,38 +2104,38 @@ void demonText() {
     case 3:
     if(answered == 0) {
       gb.display.setCursorX(5);
-      gb.display.print("  Are you human? A real\n");
+      gb.display.print(F("  Are you human? A real\n"));
       gb.display.setCursorX(2);
-      gb.display.print("  human? Please, take us\n");
+      gb.display.print(F("  human? Please, take us\n"));
       gb.display.setCursorX(5);
-      gb.display.print("        with you!");
+      gb.display.print(F("        with you!"));
     } else {
       if(goodAnswer == true) {
         gb.display.setCursorX(2);
-        gb.display.print("Great! We love to talk. Do\n");
+        gb.display.print(F("Great! We love to talk. Do\n"));
         gb.display.setCursorX(5);
-        gb.display.print("  you have an unlimited\n");
+        gb.display.print(F("  you have an unlimited\n"));
         gb.display.setCursorX(2);
-        gb.display.print("      phone package?");
+        gb.display.print(F("      phone package?"));
       } else {
         gb.display.setCursorX(5);
-        gb.display.print(" Don't be in a hurry! We\n");
+        gb.display.print(F(" Don't be in a hurry! We\n"));
         gb.display.setCursorX(5);
-        gb.display.print(" have to know each other\n");
+        gb.display.print(F(" have to know each other\n"));
         gb.display.setCursorX(5);
-        gb.display.print("         before.");
+        gb.display.print(F("         before."));
       }
     }
     if(answered == 0) {
       gb.display.setColor(topAnswer?WHITE:GRAY);
-      gb.display.print("\n\n\n");
+      gb.display.print(F("\n\n\n"));
       gb.display.setCursorX(2);
-      gb.display.print(" Deal. No question asked.\n\n\n");
+      gb.display.print(F(" Deal. No question asked.\n\n\n"));
       gb.display.setColor(topAnswer?GRAY:WHITE);
       gb.display.setCursorX(5);
-      gb.display.print("This is getting too easy.\n");
+      gb.display.print(F("This is getting too easy.\n"));
       gb.display.setCursorX(5);
-      gb.display.print("    I have questions.");
+      gb.display.print(F("    I have questions."));
     }
     goodAnswer = topAnswer?false:true;
     break;
@@ -2144,45 +2144,45 @@ void demonText() {
     case 4:
     if(answered == 0) {
       gb.display.setCursorX(5);
-      gb.display.print("  Great, more braindead\n");
+      gb.display.print(F("  Great, more braindead\n"));
       gb.display.setCursorX(5);
-      gb.display.print("idiots... Never seen your\n");
+      gb.display.print(F("idiots... Never seen your\n"));
       gb.display.setCursorX(2);
-      gb.display.print("ugly face before. What are\n");
+      gb.display.print(F("ugly face before. What are\n"));
       gb.display.setCursorX(5);
-      gb.display.print("     you playing at?");
+      gb.display.print(F("     you playing at?"));
     } else {
       if(goodAnswer == true) {
         gb.display.setCursorX(5);
-        gb.display.print("Like what... video games?\n");
+        gb.display.print(F("Like what... video games?\n"));
         gb.display.setCursorX(5);
-        gb.display.print("Sure, why not. As long as\n");
+        gb.display.print(F("Sure, why not. As long as\n"));
         gb.display.setCursorX(2);
-        gb.display.print("  you're okay with first\n");
+        gb.display.print(F("  you're okay with first\n"));
         gb.display.setCursorX(2);
-        gb.display.print("     person shooters.");
+        gb.display.print(F("     person shooters."));
       } else {
         gb.display.setCursorX(2);
-        gb.display.print("Fantastic. Just my luck to\n");
+        gb.display.print(F("Fantastic. Just my luck to\n"));
         gb.display.setCursorX(2);
-        gb.display.print("  find another masochist\n");
+        gb.display.print(F("  find another masochist\n"));
         gb.display.setCursorX(2);
-        gb.display.print("          creep!");
+        gb.display.print(F("          creep!"));
       }
     }
     if(answered == 0) {
       gb.display.setColor(topAnswer?WHITE:GRAY);
-      gb.display.print("\n\n");
+      gb.display.print(F("\n\n"));
       gb.display.setCursorX(2);
-      gb.display.print("I'd sure love to play with\n");
+      gb.display.print(F("I'd sure love to play with\n"));
       gb.display.setCursorX(2);
-      gb.display.print("           you.");
+      gb.display.print(F("           you."));
       gb.display.setColor(topAnswer?GRAY:WHITE);
-      gb.display.print("\n\n");
+      gb.display.print(F("\n\n"));
       gb.display.setCursorX(2);
-      gb.display.print("This is delicious. Please,\n");
+      gb.display.print(F("This is delicious. Please,\n"));
       gb.display.setCursorX(5);
-      gb.display.print("     insult me more!");
+      gb.display.print(F("     insult me more!"));
     }
     goodAnswer = topAnswer?true:false;
     break;
@@ -2191,38 +2191,38 @@ void demonText() {
     case 5:
     if(answered == 0) {
       gb.display.setCursorX(5);
-      gb.display.print("Yo. I've heard about your\n");
+      gb.display.print(F("Yo. I've heard about your\n"));
       gb.display.setCursorX(2);
-      gb.display.print("      harem. I'm in!");
+      gb.display.print(F("      harem. I'm in!"));
     } else {
       if(goodAnswer == true) {
         gb.display.setCursorX(2);
-        gb.display.print("Really? That's my favorite\n");
+        gb.display.print(F("Really? That's my favorite\n"));
         gb.display.setCursorX(5);
-        gb.display.print("game category! Let's turn\n");
+        gb.display.print(F("game category! Let's turn\n"));
         gb.display.setCursorX(2);
-        gb.display.print("          it ON!");
+        gb.display.print(F("          it ON!"));
       } else {
         gb.display.setCursorX(5);
-        gb.display.print("Do you mean I am not good\n");
+        gb.display.print(F("Do you mean I am not good\n"));
         gb.display.setCursorX(2);
-        gb.display.print("  enough for you? That's\n");
+        gb.display.print(F("  enough for you? That's\n"));
         gb.display.setCursorX(2);
-        gb.display.print("        unberable!");
+        gb.display.print(F("        unberable!"));
       }
     }
     if(answered == 0) {
       gb.display.setColor(topAnswer?WHITE:GRAY);
-      gb.display.print("\n\n\n\n");
+      gb.display.print(F("\n\n\n\n"));
       gb.display.setCursorX(2);
-      gb.display.print("  Wait. I have a feeling\n");
+      gb.display.print(F("  Wait. I have a feeling\n"));
       gb.display.setCursorX(5);
-      gb.display.print("     I'll regret it.\n\n");
+      gb.display.print(F("     I'll regret it.\n\n"));
       gb.display.setColor(topAnswer?GRAY:WHITE);
       gb.display.setCursorX(5);
-      gb.display.print(" It's not really a harem\n");
+      gb.display.print(F(" It's not really a harem\n"));
       gb.display.setCursorX(2);
-      gb.display.print("anymore. We just play FPS.");
+      gb.display.print(F("anymore. We just play FPS."));
     }
     goodAnswer = topAnswer?false:true;
     break;
@@ -2232,41 +2232,41 @@ void demonText() {
     if(answered == 0) {
       gb.display.setColor(BLUE);
       gb.display.setCursorX(5);
-      gb.display.print("Oh my heavens! What would\n");
+      gb.display.print(F("Oh my heavens! What would\n"));
       gb.display.setCursorX(2);
-      gb.display.print("a living human be doing in\n");
+      gb.display.print(F("a living human be doing in\n"));
       gb.display.setCursorX(5);
-      gb.display.print("   Hell? Most unusual.\n\n\n");
+      gb.display.print(F("   Hell? Most unusual.\n\n\n"));
     } else {
       gb.display.setColor(BLUE);
       if(goodAnswer == true) {
         gb.display.setCursorX(2);
-        gb.display.print("Oh, you too? Let me guess,\n");
+        gb.display.print(F("Oh, you too? Let me guess,\n"));
         gb.display.setCursorX(2);
-        gb.display.print(" thesis on Modern Sin? Or\n");
+        gb.display.print(F(" thesis on Modern Sin? Or\n"));
         gb.display.setCursorX(2);
-        gb.display.print("   is it Demonology? We\n");
+        gb.display.print(F("   is it Demonology? We\n"));
         gb.display.setCursorX(5);
-        gb.display.print("   should join forces.");
+        gb.display.print(F("   should join forces."));
       } else {
         gb.display.setCursorX(5);
-        gb.display.print(" You could search in the\n");
+        gb.display.print(F(" You could search in the\n"));
         gb.display.setCursorX(5);
-        gb.display.print("source code. But cheating\n");
+        gb.display.print(F("source code. But cheating\n"));
         gb.display.setCursorX(2);
-        gb.display.print("  is really getting away\n");
+        gb.display.print(F("  is really getting away\n"));
         gb.display.setCursorX(2);
-        gb.display.print("     from perfection!");
+        gb.display.print(F("     from perfection!"));
       }
     }
     if(answered == 0) {
       gb.display.setColor(topAnswer?WHITE:GRAY);
       gb.display.setCursorX(5);
-      gb.display.print("   Looking for demons.");
+      gb.display.print(F("   Looking for demons."));
       gb.display.setColor(topAnswer?GRAY:WHITE);
-      gb.display.print("\n\n\n");
+      gb.display.print(F("\n\n\n"));
       gb.display.setCursorX(2);
-      gb.display.print(" Looking for cheat codes.");
+      gb.display.print(F(" Looking for cheat codes."));
     }
     goodAnswer = topAnswer?true:false;
     break;
@@ -2275,36 +2275,36 @@ void demonText() {
     case 7:
     if(answered == 0) {
       gb.display.setCursorX(2);
-      gb.display.print("  Yo, did you just solve\n");
+      gb.display.print(F("  Yo, did you just solve\n"));
       gb.display.setCursorX(5);
-      gb.display.print("   that puzzle? That's\n");
+      gb.display.print(F("   that puzzle? That's\n"));
       gb.display.setCursorX(2);
-      gb.display.print("         awesome!");
+      gb.display.print(F("         awesome!"));
     } else {
       if(goodAnswer == true) {
         gb.display.setCursorX(5);
-        gb.display.print("You don't have to ask me.\n");
+        gb.display.print(F("You don't have to ask me.\n"));
         gb.display.setCursorX(5);
-        gb.display.print(" I'd never miss a party!");
+        gb.display.print(F(" I'd never miss a party!"));
       } else {
         gb.display.setCursorX(2);
-        gb.display.print("You failed the gaming law!\n");
+        gb.display.print(F("You failed the gaming law!\n"));
         gb.display.setCursorX(2);
-        gb.display.print("        How petty!");
+        gb.display.print(F("        How petty!"));
       }
     }
     if(answered == 0) {
       gb.display.setColor(topAnswer?WHITE:GRAY);
-      gb.display.print("\n\n\n");
+      gb.display.print(F("\n\n\n"));
       gb.display.setCursorX(2);
-      gb.display.print(" It took some work. Wanna\n");
+      gb.display.print(F(" It took some work. Wanna\n"));
       gb.display.setCursorX(2);
-      gb.display.print("      join my harem?\n\n");
+      gb.display.print(F("      join my harem?\n\n"));
       gb.display.setColor(topAnswer?GRAY:WHITE);
       gb.display.setCursorX(5);
-      gb.display.print("I just used a cheat code.\n");
+      gb.display.print(F("I just used a cheat code.\n"));
       gb.display.setCursorX(2);
-      gb.display.print("   Wanna join my harem?");
+      gb.display.print(F("   Wanna join my harem?"));
     }
     goodAnswer = topAnswer?true:false;
     break;
@@ -2313,34 +2313,34 @@ void demonText() {
     case 8:
     if(answered == 0) {
       gb.display.setCursorX(5);
-      gb.display.print(" We meet at last. You've\n");
+      gb.display.print(F(" We meet at last. You've\n"));
       gb.display.setCursorX(5);
-      gb.display.print("proved yourself worthy by\n");
+      gb.display.print(F("proved yourself worthy by\n"));
       gb.display.setCursorX(2);
-      gb.display.print("  passing all my trials.");
+      gb.display.print(F("  passing all my trials."));
     }
     if(answered == 1) {
       gb.display.setCursorX(2);
-      gb.display.print("Pledge your soul to me and\n");
+      gb.display.print(F("Pledge your soul to me and\n"));
       gb.display.setCursorX(5);
-      gb.display.print("  I'll make you my most\n");
+      gb.display.print(F("  I'll make you my most\n"));
       gb.display.setCursorX(2);
-      gb.display.print("     treasured slave.\n\n\n");
+      gb.display.print(F("     treasured slave.\n\n\n"));
 
       gb.display.setColor(topAnswer?WHITE:GRAY);
       gb.display.setCursorX(5);
-      gb.display.print("      Yes my queen!\n\n\n");
+      gb.display.print(F("      Yes my queen!\n\n\n"));
       gb.display.setColor(topAnswer?GRAY:WHITE);
       gb.display.setCursorX(5);
-      gb.display.print(" No, thanks. But you can\n");
+      gb.display.print(F(" No, thanks. But you can\n"));
       gb.display.setCursorX(2);
-      gb.display.print("      join my harem.");
+      gb.display.print(F("      join my harem."));
     }
     if(answered == 2) {
       goodAnswer = topAnswer?false:true;
        if(goodAnswer == false) {
         gb.display.setCursorX(2);
-        gb.display.print("   Eager little soul...");
+        gb.display.print(F("   Eager little soul..."));
       } else {
         answered = 3;
         topAnswer = true;
@@ -2348,66 +2348,66 @@ void demonText() {
     }
     if(answered == 3) {
       gb.display.setCursorX(2);
-      gb.display.print("  What are you trying to\n");
+      gb.display.print(F("  What are you trying to\n"));
       gb.display.setCursorX(5);
-      gb.display.print("accomplish? You think you\n");
+      gb.display.print(F("accomplish? You think you\n"));
       gb.display.setCursorX(2);
-      gb.display.print("can enslave demons to your\n");
+      gb.display.print(F("can enslave demons to your\n"));
       gb.display.setCursorX(5);
-      gb.display.print("          will?");
+      gb.display.print(F("          will?"));
        
       gb.display.setColor(topAnswer?WHITE:GRAY);
-      gb.display.print("\n\n");
+      gb.display.print(F("\n\n"));
       gb.display.setCursorX(2);
-      gb.display.print(" Call me Badger. And read\n");
+      gb.display.print(F(" Call me Badger. And read\n"));
       gb.display.setCursorX(2);
-      gb.display.print("my book to know the Truth.");
+      gb.display.print(F("my book to know the Truth."));
       gb.display.setColor(topAnswer?GRAY:WHITE);
-      gb.display.print("\n\n");
+      gb.display.print(F("\n\n"));
       gb.display.setCursorX(2);
-      gb.display.print(" I can offer fruit juices\n");
+      gb.display.print(F(" I can offer fruit juices\n"));
       if(slipMode == false) {
         gb.display.setCursorX(5);
-        gb.display.print(" and chocolate pancakes.");
+        gb.display.print(F(" and chocolate pancakes."));
       } else {
         gb.display.setCursorX(2);
-        gb.display.print("   and white underwear.");
+        gb.display.print(F("   and white underwear."));
       }
     }
     if(answered == 4) {
       goodAnswer = topAnswer?false:true;
       if(goodAnswer == true) {
         gb.display.setCursorX(5);
-        gb.display.print(" Really? Is that it? You\n");
+        gb.display.print(F(" Really? Is that it? You\n"));
         gb.display.setCursorX(5);
-        gb.display.print("come here, and try to buy\n");
+        gb.display.print(F("come here, and try to buy\n"));
         if(slipMode == false) {
           gb.display.setCursorX(2);
-          gb.display.print("  me over with pancakes?");
+          gb.display.print(F("  me over with pancakes?"));
         } else {
           gb.display.setCursorX(5);
-          gb.display.print(" me over with underwear?");
+          gb.display.print(F(" me over with underwear?"));
         }
       } else {
         gb.display.setCursorX(5);
-        gb.display.print(" You really think I have\n");
+        gb.display.print(F(" You really think I have\n"));
         gb.display.setCursorX(5);
-        gb.display.print("   time to read books,\n");
+        gb.display.print(F("   time to read books,\n"));
         gb.display.setCursorX(2);
-        gb.display.print(" running Hell and dealing\n");
+        gb.display.print(F(" running Hell and dealing\n"));
         gb.display.setCursorX(5);
-        gb.display.print("   with all this mess?");
+        gb.display.print(F("   with all this mess?"));
       }
     }
     if(answered > 4) {
       gb.display.setCursorX(2);
-      gb.display.print("  You're lucky, I have a\n");
+      gb.display.print(F("  You're lucky, I have a\n"));
       if(slipMode == false) {
         gb.display.setCursorX(5);
-        gb.display.print("   thing for pancakes.");
+        gb.display.print(F("   thing for pancakes."));
       } else {
         gb.display.setCursorX(2);
-        gb.display.print("   thing for underwear.");
+        gb.display.print(F("   thing for underwear."));
       }
     }
     break;
@@ -2416,42 +2416,42 @@ void demonText() {
     case 9:
     if(answered == 0) {
       gb.display.setCursorX(2);
-      gb.display.print("  Hello trespasser. Make\n");
+      gb.display.print(F("  Hello trespasser. Make\n"));
       gb.display.setCursorX(2);
-      gb.display.print(" yourself at home. You're\n");
+      gb.display.print(F(" yourself at home. You're\n"));
       gb.display.setCursorX(5);
-      gb.display.print(" just in time to test my\n");
+      gb.display.print(F(" just in time to test my\n"));
       gb.display.setCursorX(2);
-      gb.display.print("  new suffering machine.\n\n");
+      gb.display.print(F("  new suffering machine.\n\n"));
     } else {
       if(goodAnswer == true) {
         gb.display.setCursorX(5);
-        gb.display.print(" Oh, you like it? Do you\n");
+        gb.display.print(F(" Oh, you like it? Do you\n"));
         gb.display.setCursorX(5);
-        gb.display.print("  want to help me build\n");
+        gb.display.print(F("  want to help me build\n"));
         gb.display.setCursorX(2);
-        gb.display.print("    more in my fablab?");
+        gb.display.print(F("    more in my fablab?"));
       } else {
         gb.display.setCursorX(2);
-        gb.display.print(" Are you kidding me? Only\n");
+        gb.display.print(F(" Are you kidding me? Only\n"));
         gb.display.setCursorX(2);
-        gb.display.print("humans deserve to feel the\n");
+        gb.display.print(F("humans deserve to feel the\n"));
         gb.display.setCursorX(5);
-        gb.display.print("    unrelenting pain!");
+        gb.display.print(F("    unrelenting pain!"));
       }
     }
     if(answered == 0) {
       gb.display.setColor(topAnswer?WHITE:GRAY);
       gb.display.setCursorX(5);
-      gb.display.print("   Did you built it by\n");
+      gb.display.print(F("   Did you built it by\n"));
       gb.display.setCursorX(5);
-      gb.display.print("yourself? You're a maker?");
+      gb.display.print(F("yourself? You're a maker?"));
       gb.display.setColor(topAnswer?GRAY:WHITE);
-      gb.display.print("\n\n");
+      gb.display.print(F("\n\n"));
       gb.display.setCursorX(2);
-      gb.display.print("    Did you test it on\n");
+      gb.display.print(F("    Did you test it on\n"));
       gb.display.setCursorX(5);
-      gb.display.print("     animals before?");
+      gb.display.print(F("     animals before?"));
     }
     goodAnswer = topAnswer?true:false;
     break;
@@ -2460,37 +2460,37 @@ void demonText() {
     case 10:
     if(answered == 0) {
       gb.display.setCursorX(2);
-      gb.display.print("Are you going to follow me\n");
+      gb.display.print(F("Are you going to follow me\n"));
       gb.display.setCursorX(2);
-      gb.display.print(" to the farest? And leave\n");
+      gb.display.print(F(" to the farest? And leave\n"));
       gb.display.setCursorX(5);
-      gb.display.print(" the other girls behind?");
+      gb.display.print(F(" the other girls behind?"));
     } else {
       if(goodAnswer == true) {
         gb.display.setCursorX(5);
-        gb.display.print("Great! I like people with\n");
+        gb.display.print(F("Great! I like people with\n"));
         gb.display.setCursorX(2);
-        gb.display.print("    high expectations.");
+        gb.display.print(F("    high expectations."));
       } else {
         gb.display.setCursorX(5);
-        gb.display.print("Who will make us food and\n");
+        gb.display.print(F("Who will make us food and\n"));
         gb.display.setCursorX(5);
-        gb.display.print("bring some champagne? I'm\n");
+        gb.display.print(F("bring some champagne? I'm\n"));
         gb.display.setCursorX(5);
-        gb.display.print(" expecting boring times.");
+        gb.display.print(F(" expecting boring times."));
       }
     }
     if(answered == 0) {
       gb.display.setColor(topAnswer?WHITE:GRAY);
-      gb.display.print("\n\n\n");
+      gb.display.print(F("\n\n\n"));
       gb.display.setCursorX(2);
-      gb.display.print("     Only you and me.");
+      gb.display.print(F("     Only you and me."));
       gb.display.setColor(topAnswer?GRAY:WHITE);
-      gb.display.print("\n\n\n");
+      gb.display.print(F("\n\n\n"));
       gb.display.setCursorX(2);
-      gb.display.print(" I stopped counting but I\n");
+      gb.display.print(F(" I stopped counting but I\n"));
       gb.display.setCursorX(2);
-      gb.display.print("  need a full set harem.");
+      gb.display.print(F("  need a full set harem."));
     }
     goodAnswer = topAnswer?false:true;
     break;
@@ -2905,7 +2905,7 @@ void intro() {
     gb.display.setCursor(26, 103);
     gb.display.setColor(RED);
     if(beforePress > 14) {
-      gb.display.print("PRESS [A] TO START");
+      gb.display.print(F("PRESS [A] TO START"));
     }
   }
 }
@@ -2914,25 +2914,25 @@ void drawEnd() {
   gb.display.setFont(font5x7);
   gb.display.setFontSize(1);
   gb.display.setColor(RED);
-//  gb.display.print("\n\n");
+//  gb.display.print(F("\n\n"));
   gb.display.setCursorY(12);
   gb.display.setCursorX(2);
-  gb.display.print("      Demon Girls by\n\n");
+  gb.display.print(F("      Demon Girls by\n\n"));
   gb.display.setColor(WHITE);
   gb.display.setCursorX(2);
-  gb.display.print("       Juice Lizard\n\n\n");
+  gb.display.print(F("       Juice Lizard\n\n\n"));
   gb.display.setColor(RED);
   gb.display.setCursorX(2);
-  gb.display.print("       Helltaker by\n\n");
+  gb.display.print(F("       Helltaker by\n\n"));
   gb.display.setColor(WHITE);
   gb.display.setCursorX(2);
-  gb.display.print("      Lukasz Piskorz\n\n\n");
+  gb.display.print(F("      Lukasz Piskorz\n\n\n"));
   gb.display.setColor(RED);
   gb.display.setCursorX(2);
-  gb.display.print("       Music Tracks\n\n");
+  gb.display.print(F("       Music Tracks\n\n"));
   gb.display.setColor(WHITE);
   gb.display.setCursorX(2);
-  gb.display.print("         Mittsies");
+  gb.display.print(F("         Mittsies"));
   
   if(clap == true){
      drawClap();
@@ -3019,43 +3019,43 @@ void chapterSelect() {
   switch (levelNumber) {
     case 1:
       gb.display.setCursorX(5);
-      gb.display.print("     The Tired Demon");
+      gb.display.print(F("     The Tired Demon"));
       break;
     case 2:
       gb.display.setCursorX(5);
-      gb.display.print("    The Lustful Demon");
+      gb.display.print(F("    The Lustful Demon"));
       break;
     case 3:
       gb.display.setCursorX(2);
-      gb.display.print("     The Triple Demon");
+      gb.display.print(F("     The Triple Demon"));
       break;
     case 4:
       gb.display.setCursorX(2);
-      gb.display.print("      The Sour Demon");
+      gb.display.print(F("      The Sour Demon"));
       break;
     case 5:
       gb.display.setCursorX(5);
-      gb.display.print("     The Bitch Demon");
+      gb.display.print(F("     The Bitch Demon"));
       break;
     case 6:
       gb.display.setCursorX(5);
-      gb.display.print("    The Curious Angel");
+      gb.display.print(F("    The Curious Angel"));
       break;
     case 7:
       gb.display.setCursorX(5);
-      gb.display.print("    The Awesome Demon");
+      gb.display.print(F("    The Awesome Demon"));
       break;
     case 8:
       gb.display.setCursorX(5);
-      gb.display.print("     The CEO of Hell");
+      gb.display.print(F("     The CEO of Hell"));
       break;
     case 9:
       gb.display.setCursorX(5);
-      gb.display.print("   The High Prosecutor");
+      gb.display.print(F("   The High Prosecutor"));
       break;
     case 10:
       gb.display.setCursorX(5);
-      gb.display.print("      The Great Fly");
+      gb.display.print(F("      The Great Fly"));
       break;
   }
 
@@ -3124,43 +3124,43 @@ void chapterSelect() {
   switch (MittsiesTrack) {
     case 1:
       gb.display.setCursorX(2);
-      gb.display.print("         Vitality");
+      gb.display.print(F("         Vitality"));
       break;
     case 2:
       gb.display.setCursorX(5);
-      gb.display.print("         Apropos");
+      gb.display.print(F("         Apropos"));
       break;
     case 3:
       gb.display.setCursorX(5);
-      gb.display.print("        Epitomize");
+      gb.display.print(F("        Epitomize"));
       break;
     case 4:
       gb.display.setCursorX(5);
-      gb.display.print("       Luminescent");
+      gb.display.print(F("       Luminescent"));
       break;
     case 5:
       gb.display.setCursorX(5);
-      gb.display.print("         Alchemy");
+      gb.display.print(F("         Alchemy"));
       break;
     case 6:
       gb.display.setCursorX(2);
-      gb.display.print("         Titanium");
+      gb.display.print(F("         Titanium"));
       break;
     case 7:
       gb.display.setCursorX(2);
-      gb.display.print("   Epitomize (VIP Edit)");
+      gb.display.print(F("   Epitomize (VIP Edit)"));
       break;
     case 8:
       gb.display.setCursorX(5);
-      gb.display.print("   Vitality (VIP Edit)");
+      gb.display.print(F("   Vitality (VIP Edit)"));
       break;
     case 9:
       gb.display.setCursorX(2);
-      gb.display.print(" Epitomize (Sinner's VIP)");
+      gb.display.print(F(" Epitomize (Sinner's VIP)"));
       break;
     case 10:
       gb.display.setCursorX(5);
-      gb.display.print("        Brimstone");
+      gb.display.print(F("        Brimstone"));
       break;
     default:
       break;
@@ -3224,18 +3224,18 @@ void ItWasAnAccident() {
         
         if(answered == 0) {
           gb.display.setCursorX(5);
-          gb.display.print("Where is he again? I hope\n");
+          gb.display.print(F("Where is he again? I hope\n"));
           gb.display.setCursorX(2);
-          gb.display.print("  he likes the delicious\n");
+          gb.display.print(F("  he likes the delicious\n"));
           gb.display.setCursorX(2);
-          gb.display.print(" pancakes I made for him.");
+          gb.display.print(F(" pancakes I made for him."));
         } else {
           gb.display.setCursorX(2);
-          gb.display.print(" You spoil that dude! You\n");
+          gb.display.print(F(" You spoil that dude! You\n"));
           gb.display.setCursorX(2);
-          gb.display.print(" were not that sweet when\n");
+          gb.display.print(F(" were not that sweet when\n"));
           gb.display.setCursorX(5);
-          gb.display.print("      we first met.");
+          gb.display.print(F("      we first met."));
         }
       }
       break;
@@ -3269,18 +3269,18 @@ void ItWasAnAccident() {
         setText();
         if(answered == 0) {
           gb.display.setCursorX(2);          
-          gb.display.print("This place is a true mess!\n");
+          gb.display.print(F("This place is a true mess!\n"));
           gb.display.setCursorX(2);
-          gb.display.print("   I just saw a big rat\n");
+          gb.display.print(F("   I just saw a big rat\n"));
           gb.display.setCursorX(5);
-          gb.display.print("running near the kitchen.");
+          gb.display.print(F("running near the kitchen."));
         } else {
           gb.display.setCursorX(2);
-          gb.display.print("Don't fret my dear. I used\n");
+          gb.display.print(F("Don't fret my dear. I used\n"));
           gb.display.setCursorX(2);
-          gb.display.print("  a chemical to fix this\n");
+          gb.display.print(F("  a chemical to fix this\n"));
           gb.display.setCursorX(2);
-          gb.display.print(" problem two minutes ago.");
+          gb.display.print(F(" problem two minutes ago."));
         }
       }
       break;
@@ -3315,18 +3315,18 @@ void ItWasAnAccident() {
         setText();
         if(answered == 0) {
           gb.display.setCursorX(2);
-          gb.display.print("Rats seem to be growing in\n");
+          gb.display.print(F("Rats seem to be growing in\n"));
           gb.display.setCursorX(2);
-          gb.display.print("number! Luci, did you feed\n");
+          gb.display.print(F("number! Luci, did you feed\n"));
           gb.display.setCursorX(5);
-          gb.display.print("          them?");
+          gb.display.print(F("          them?"));
         } else {
           gb.display.setCursorX(2);
-          gb.display.print("Somebody! Help! He's lying\n");
+          gb.display.print(F("Somebody! Help! He's lying\n"));
           gb.display.setCursorX(2);
-          gb.display.print("on the ground and his face\n");
+          gb.display.print(F("on the ground and his face\n"));
           gb.display.setCursorX(5);
-          gb.display.print("      turned green!");
+          gb.display.print(F("      turned green!"));
         }
       }
       break;
@@ -3362,20 +3362,20 @@ void ItWasAnAccident() {
         setText();
         if(answered == 0) {
           gb.display.setCursorX(2);
-          gb.display.print(" What an idiot! How could\n");
+          gb.display.print(F(" What an idiot! How could\n"));
           gb.display.setCursorX(2);
-          gb.display.print(" you mistake Nuthella for\n");
+          gb.display.print(F(" you mistake Nuthella for\n"));
           gb.display.setCursorX(5);
-          gb.display.print("     the rat poison?");
+          gb.display.print(F("     the rat poison?"));
         } else {
           gb.display.setCursorX(5);
-          gb.display.print(" It was an accident! How\n");
+          gb.display.print(F(" It was an accident! How\n"));
           gb.display.setCursorX(5);
-          gb.display.print(" can I see sharp through\n");
+          gb.display.print(F(" can I see sharp through\n"));
           gb.display.setCursorX(5);
-          gb.display.print("those fat pixels and this\n");
+          gb.display.print(F("those fat pixels and this\n"));
           gb.display.setCursorX(2);
-          gb.display.print("       tiny screen?");
+          gb.display.print(F("       tiny screen?"));
         }
       }
       break;
@@ -3412,12 +3412,12 @@ void ItWasAnAccident() {
         setText();
         if(answered == 0) {
           gb.display.setCursorX(2);
-          gb.display.print(" Oh no! What have I done?\n");
+          gb.display.print(F(" Oh no! What have I done?\n"));
         } else {
           gb.display.setCursorX(2);
-          gb.display.print(" I called 999. They're on\n");
+          gb.display.print(F(" I called 999. They're on\n"));
           gb.display.setCursorX(2);
-          gb.display.print("         the way.\n");
+          gb.display.print(F("         the way.\n"));
         }
       }
       break;
@@ -3502,11 +3502,11 @@ void darlingImHome() {
         
     if(answered == 0) {
       gb.display.setCursorX(2);
-      gb.display.print("    Darling! I'm home!");
+      gb.display.print(F("    Darling! I'm home!"));
     }
     if (answered == 1) {
       gb.display.setCursorX(2);
-      gb.display.print("Damn! You're already here!");
+      gb.display.print(F("Damn! You're already here!"));
 // we hear a squirrel
       if(random(32)== 1) {
         gb.sound.fx(squirrel);
@@ -3514,19 +3514,19 @@ void darlingImHome() {
     }
     if (answered == 2) {
       gb.display.setCursorX(5);
-      gb.display.print(" What means this worried\n");
+      gb.display.print(F(" What means this worried\n"));
       gb.display.setCursorX(2);
-      gb.display.print(" face? Is there something\n");
+      gb.display.print(F(" face? Is there something\n"));
       gb.display.setCursorX(5);
-      gb.display.print(" you want to talk about?");
+      gb.display.print(F(" you want to talk about?"));
     }
     if (answered == 3) {
       gb.display.setCursorX(5);
-      gb.display.print("Are you suggesting that I\n");
+      gb.display.print(F("Are you suggesting that I\n"));
       gb.display.setCursorX(2);
-      gb.display.print(" don't handle this place?\n");
+      gb.display.print(F(" don't handle this place?\n"));
       gb.display.setCursorX(5);
-      gb.display.print("No, really... It's fine.");
+      gb.display.print(F("No, really... It's fine."));
 // we hear more squirrels
       if(random(24)== 1) {
         gb.sound.fx(squirrel);
@@ -3557,68 +3557,68 @@ void GoddessText() {
       switch (answered) {
         case 0:
           gb.display.setCursorX(5);
-          gb.display.print("    You find yourself\n");
+          gb.display.print(F("    You find yourself\n"));
           gb.display.setCursorX(5);
-          gb.display.print("surrounded by the clouds.");
+          gb.display.print(F("surrounded by the clouds."));
           break;
         case 1:
           gb.display.setCursorX(2);
-          gb.display.print("Welcome gentleman. You are\n");
+          gb.display.print(F("Welcome gentleman. You are\n"));
           gb.display.setCursorX(5);
-          gb.display.print(" pleased to meet me, the\n");
+          gb.display.print(F(" pleased to meet me, the\n"));
           gb.display.setCursorX(2);
-          gb.display.print(" young and mighty Captain\n");
+          gb.display.print(F(" young and mighty Captain\n"));
           gb.display.setCursorX(2);
-          gb.display.print("        of Heaven.");
+          gb.display.print(F("        of Heaven."));
           break;
         case 2:
           gb.display.setCursorX(2);
-          gb.display.print("I won't hide the fact that\n");
+          gb.display.print(F("I won't hide the fact that\n"));
           gb.display.setCursorX(2);
-          gb.display.print("  you are a little dead.\n");
+          gb.display.print(F("  you are a little dead.\n"));
           gb.display.setCursorX(5);
-          gb.display.print("      But anyway...");
+          gb.display.print(F("      But anyway..."));
           break;
         case 3:
           gb.display.setCursorX(5);
-          gb.display.print(" Let my introduce you my\n");
+          gb.display.print(F(" Let my introduce you my\n"));
           gb.display.setCursorX(2);
-          gb.display.print("          W.Y.F.\n");
+          gb.display.print(F("          W.Y.F.\n"));
           break;
         case 4:
           gb.display.setCursorX(5);
-          gb.display.print("The White Yogurt Factory.");
+          gb.display.print(F("The White Yogurt Factory."));
           break;
         case 5:
           gb.display.setCursorX(2);
-          gb.display.print(" I woke up one day with a\n");
+          gb.display.print(F(" I woke up one day with a\n"));
           gb.display.setCursorX(2);
-          gb.display.print(" dream. A world empty of\n");
+          gb.display.print(F(" dream. A world empty of\n"));
           gb.display.setCursorX(2);
-          gb.display.print("       filthiness.");
+          gb.display.print(F("       filthiness."));
           break;
         case 6:
           gb.display.setCursorX(5);
-          gb.display.print(" It was, however, not an\n");
+          gb.display.print(F(" It was, however, not an\n"));
           gb.display.setCursorX(5);
-          gb.display.print("easy dream to achieve. It\n");
+          gb.display.print(F("easy dream to achieve. It\n"));
           gb.display.setCursorX(5);
-          gb.display.print(" requires a lot of work.");
+          gb.display.print(F(" requires a lot of work."));
           break;
       }
       if(answered > 6) {
         gb.display.setColor(BLACK);
         gb.display.setCursorX(2);
-        gb.display.print("     \"When angels are\n");
+        gb.display.print(F("     \"When angels are\n"));
         gb.display.setCursorX(5);
-        gb.display.print("involved, no work is hard\n");
+        gb.display.print(F("involved, no work is hard\n"));
         gb.display.setCursorX(2);
-        gb.display.print("         enough.\"\n\n");
+        gb.display.print(F("         enough.\"\n\n"));
         gb.display.setColor(BLUE);
         gb.display.setCursorX(2);
-        gb.display.print(" You said, as you entered\n");
+        gb.display.print(F(" You said, as you entered\n"));
         gb.display.setCursorX(2);
-        gb.display.print("      the warehouse.");
+        gb.display.print(F("      the warehouse."));
         if(gb.buttons.pressed(BUTTON_A)) {
           clap = true;
         }
@@ -3630,17 +3630,17 @@ void GoddessText() {
     if(answered == 0) {
       gb.display.setColor(BLACK);
       gb.display.setCursorX(2);
-      gb.display.print("I did it! You can clap. It\n");
+      gb.display.print(F("I did it! You can clap. It\n"));
       gb.display.setCursorX(5);
-      gb.display.print("  was not an easy task.");
+      gb.display.print(F("  was not an easy task."));
     } else {
       gb.display.setColor(BLUE);
       gb.display.setCursorX(5);
-      gb.display.print("It was only the begining,\n");
+      gb.display.print(F("It was only the begining,\n"));
       gb.display.setCursorX(2);
-      gb.display.print("  worker. The next rooms\n");
+      gb.display.print(F("  worker. The next rooms\n"));
       gb.display.setCursorX(2);
-      gb.display.print("    are the real deal.");
+      gb.display.print(F("    are the real deal."));
     }
     break;
 
@@ -3649,19 +3649,19 @@ void GoddessText() {
     if(answered == 0) {
       gb.display.setColor(BLACK);
       gb.display.setCursorX(5);
-      gb.display.print("This holy salary won't be\n");
+      gb.display.print(F("This holy salary won't be\n"));
       gb.display.setCursorX(5);
-      gb.display.print(" spent foulishly. I must\n");
+      gb.display.print(F(" spent foulishly. I must\n"));
       gb.display.setCursorX(2);
-      gb.display.print("think about my retirement.");
+      gb.display.print(F("think about my retirement."));
     } else {
       gb.display.setColor(BLUE);
       gb.display.setCursorX(5);
-      gb.display.print(" What retirement? You're\n");
+      gb.display.print(F(" What retirement? You're\n"));
       gb.display.setCursorX(5);
-      gb.display.print("  dead! Give your coins\n");
+      gb.display.print(F("  dead! Give your coins\n"));
       gb.display.setCursorX(5);
-      gb.display.print("     to poor people.");
+      gb.display.print(F("     to poor people."));
     }
     break;
 
@@ -3670,21 +3670,21 @@ void GoddessText() {
     if(answered == 0) {
       gb.display.setColor(BLACK);
       gb.display.setCursorX(2);
-      gb.display.print(" All this work deserves a\n");
+      gb.display.print(F(" All this work deserves a\n"));
       gb.display.setCursorX(2);
-      gb.display.print("  little kiss! Don't you\n");
+      gb.display.print(F("  little kiss! Don't you\n"));
       gb.display.setCursorX(2);
-      gb.display.print("          think?");
+      gb.display.print(F("          think?"));
     } else {
       gb.display.setColor(BLUE);
       gb.display.setCursorX(2);
-      gb.display.print("Carnal desires do not suit\n");
+      gb.display.print(F("Carnal desires do not suit\n"));
       gb.display.setCursorX(2);
-      gb.display.print(" a pure angel like me. Go\n");
+      gb.display.print(F(" a pure angel like me. Go\n"));
       gb.display.setCursorX(5);
-      gb.display.print("  back to your yogurts,\n");
+      gb.display.print(F("  back to your yogurts,\n"));
       gb.display.setCursorX(5);
-      gb.display.print("         worker!");
+      gb.display.print(F("         worker!"));
     }
     break;
 
@@ -3693,21 +3693,21 @@ void GoddessText() {
     if(answered == 0) {
       gb.display.setColor(BLACK);
       gb.display.setCursorX(2);
-      gb.display.print(" Enough is enough! I hate\n");
+      gb.display.print(F(" Enough is enough! I hate\n"));
       gb.display.setCursorX(2);
-      gb.display.print("to work in this boring and\n");
+      gb.display.print(F("to work in this boring and\n"));
       gb.display.setCursorX(2);
-      gb.display.print(" empty place! I demand to\n");
+      gb.display.print(F(" empty place! I demand to\n"));
       gb.display.setCursorX(2);
-      gb.display.print("     go back to Hell!");
+      gb.display.print(F("     go back to Hell!"));
     } else {
       gb.display.setColor(BLUE);
       gb.display.setCursorX(5);
-      gb.display.print(" What a lack of respect!\n");
+      gb.display.print(F(" What a lack of respect!\n"));
       gb.display.setCursorX(2);
-      gb.display.print(" You just don't know your\n");
+      gb.display.print(F(" You just don't know your\n"));
       gb.display.setCursorX(2);
-      gb.display.print("     luck to be here.");
+      gb.display.print(F("     luck to be here."));
     }
     break;
 
@@ -3716,21 +3716,21 @@ void GoddessText() {
     if(answered == 0) {
       gb.display.setColor(BLACK);
       gb.display.setCursorX(5);
-      gb.display.print("    All this work has\n");
+      gb.display.print(F("    All this work has\n"));
       gb.display.setCursorX(2);
-      gb.display.print(" increased my appetite. I\n");
+      gb.display.print(F(" increased my appetite. I\n"));
       gb.display.setCursorX(5);
-      gb.display.print(" could eat seven burgers\n");
+      gb.display.print(F(" could eat seven burgers\n"));
       gb.display.setCursorX(5);
-      gb.display.print("        in a row!");
+      gb.display.print(F("        in a row!"));
     } else {
       gb.display.setColor(BLUE);
       gb.display.setCursorX(5);
-      gb.display.print("It seems way too much for\n");
+      gb.display.print(F("It seems way too much for\n"));
       gb.display.setCursorX(5);
-      gb.display.print("your health! Take time to\n");
+      gb.display.print(F("your health! Take time to\n"));
       gb.display.setCursorX(5);
-      gb.display.print("feed your spirit instead.");
+      gb.display.print(F("feed your spirit instead."));
     }
     break;
 
@@ -3739,23 +3739,23 @@ void GoddessText() {
     if(answered == 0) {
       gb.display.setColor(BLACK);
       gb.display.setCursorX(2);
-      gb.display.print(" I am still stuck here...\n");
+      gb.display.print(F(" I am still stuck here...\n"));
       gb.display.setCursorX(2);
-      gb.display.print("  Even the tiny rocks in\n");
+      gb.display.print(F("  Even the tiny rocks in\n"));
       gb.display.setCursorX(5);
-      gb.display.print("Hell must be happier than\n");
+      gb.display.print(F("Hell must be happier than\n"));
       gb.display.setCursorX(5);
-      gb.display.print("  me, surrounded by the\n");
+      gb.display.print(F("  me, surrounded by the\n"));
       gb.display.setCursorX(2);
-      gb.display.print("      lovely demons.");
+      gb.display.print(F("      lovely demons."));
     } else {
       gb.display.setColor(BLUE);
       gb.display.setCursorX(2);
-      gb.display.print(" Don't be a foul! You are\n");
+      gb.display.print(F(" Don't be a foul! You are\n"));
       gb.display.setCursorX(5);
-      gb.display.print("with me. It is infinitely\n");
+      gb.display.print(F("with me. It is infinitely\n"));
       gb.display.setCursorX(5);
-      gb.display.print("    more delightfull!");
+      gb.display.print(F("    more delightfull!"));
     }
     break;
 
@@ -3764,19 +3764,19 @@ void GoddessText() {
     if(answered == 0) {
       gb.display.setColor(BLACK);
       gb.display.setCursorX(5);
-      gb.display.print(" Pushing yogurts all day\n");
+      gb.display.print(F(" Pushing yogurts all day\n"));
       gb.display.setCursorX(5);
-      gb.display.print("long makes me so tired! I\n");
+      gb.display.print(F("long makes me so tired! I\n"));
       gb.display.setCursorX(2);
-      gb.display.print("   deserve a great nap.");
+      gb.display.print(F("   deserve a great nap."));
     } else {
       gb.display.setColor(BLUE);
       gb.display.setCursorX(2);
-      gb.display.print(" It's no time to sleep! A\n");
+      gb.display.print(F(" It's no time to sleep! A\n"));
       gb.display.setCursorX(2);
-      gb.display.print(" lot of work are still to\n");
+      gb.display.print(F(" lot of work are still to\n"));
       gb.display.setCursorX(2);
-      gb.display.print("         be done.");
+      gb.display.print(F("         be done."));
     }
     break; 
   }
@@ -3864,29 +3864,29 @@ void dismissal() {
   gb.display.setFontSize(1);
 
   gb.display.setCursor(2, 4);
-  gb.display.print("Dear worker,\n\n");
+  gb.display.print(F("Dear worker,\n\n"));
   gb.display.setCursorX(2);
-  gb.display.print("In spite of the undeniable\n");
+  gb.display.print(F("In spite of the undeniable\n"));
   gb.display.setCursorX(2);
-  gb.display.print("habilities you may surely\n");
+  gb.display.print(F("habilities you may surely\n"));
   gb.display.setCursorX(2);
-  gb.display.print("possess, it is clear that\n");
+  gb.display.print(F("possess, it is clear that\n"));
   gb.display.setCursorX(2);
-  gb.display.print("your state of mind is very\n");
+  gb.display.print(F("your state of mind is very\n"));
   gb.display.setCursorX(2);
-  gb.display.print("far from the standards of\n");
+  gb.display.print(F("far from the standards of\n"));
   gb.display.setCursorX(2);
-  gb.display.print("purity of our Enterpraise.\n\n");
+  gb.display.print(F("purity of our Enterpraise.\n\n"));
   gb.display.setCursorX(2);
-  gb.display.print("With the seven-level trial\n");
+  gb.display.print(F("With the seven-level trial\n"));
   gb.display.setCursorX(2);
-  gb.display.print("period over, please, clear\n");
+  gb.display.print(F("period over, please, clear\n"));
   gb.display.setCursorX(2);
-  gb.display.print("out of Heaven and go roast\n");
+  gb.display.print(F("out of Heaven and go roast\n"));
   gb.display.setCursorX(2);
-  gb.display.print("miserably in Hell!\n\n");
+  gb.display.print(F("miserably in Hell!\n\n"));
   gb.display.setCursorX(2);
-  gb.display.print("Yours sins early.");
+  gb.display.print(F("Yours sins early."));
 
   gb.display.drawImage(144, 112, sheetCorner);
 
@@ -4300,449 +4300,449 @@ void lyrics() {
       break;
     case 1:
       gb.display.setCursorX(5);
-      gb.display.print("    Your horn is mine\n");
+      gb.display.print(F("    Your horn is mine\n"));
       gb.display.setCursorX(2);
-      gb.display.print("      Go horny night\n");
+      gb.display.print(F("      Go horny night\n"));
       gb.display.setCursorX(5);
-      gb.display.print("  Just throw your faith\n");
+      gb.display.print(F("  Just throw your faith\n"));
       gb.display.setCursorX(2);
-      gb.display.print("       In firelight");
+      gb.display.print(F("       In firelight"));
       break;
     case 2:
       gb.display.setCursorX(5);
-      gb.display.print("    Not safe for work\n");
+      gb.display.print(F("    Not safe for work\n"));
       gb.display.setCursorX(2);
-      gb.display.print("     Fill the Discord\n");
+      gb.display.print(F("     Fill the Discord\n"));
       gb.display.setCursorX(5);
-      gb.display.print("    Now learn to code\n");
+      gb.display.print(F("    Now learn to code\n"));
       gb.display.setCursorX(2);
-      gb.display.print("    Your \"Hello world\"\n");
+      gb.display.print(F("    Your \"Hello world\"\n"));
       gb.display.setCursorX(2);
-      gb.display.print("         Turn on,");
+      gb.display.print(F("         Turn on,"));
       break;
     case 3:
       gb.display.setCursorX(2);
-      gb.display.print("         Turn on,\n");
+      gb.display.print(F("         Turn on,\n"));
       gb.display.setCursorX(5);
-      gb.display.print("      Hold the Meta\n");
+      gb.display.print(F("      Hold the Meta\n"));
       gb.display.setCursorX(2);
-      gb.display.print("      Press start...");
+      gb.display.print(F("      Press start..."));
       break;
     case 4:
       gb.display.setCursorX(2);
-      gb.display.print("       Lucifer nods\n");
+      gb.display.print(F("       Lucifer nods\n"));
       gb.display.setCursorX(2);
-      gb.display.print("     The code is free\n");
+      gb.display.print(F("     The code is free\n"));
       gb.display.setCursorX(5);
-      gb.display.print("    To play your mods\n");
+      gb.display.print(F("    To play your mods\n"));
       gb.display.setCursorX(5);
-      gb.display.print("     There is no fee");
+      gb.display.print(F("     There is no fee"));
       break;
     case 5:
       gb.display.setCursorX(2);
-      gb.display.print("      Take the power\n");
+      gb.display.print(F("      Take the power\n"));
       gb.display.setCursorX(2);
-      gb.display.print("    Just read her mind\n");
+      gb.display.print(F("    Just read her mind\n"));
       gb.display.setCursorX(2);
-      gb.display.print("     The right answer\n");
+      gb.display.print(F("     The right answer\n"));
       gb.display.setCursorX(2);
-      gb.display.print("      Is just behind");
+      gb.display.print(F("      Is just behind"));
       break;
     case 6:
       gb.display.setCursorX(5);
-      gb.display.print(" Well they say the RAM's\n");
+      gb.display.print(F(" Well they say the RAM's\n"));
       gb.display.setCursorX(5);
-      gb.display.print("        the limit\n");
+      gb.display.print(F("        the limit\n"));
       gb.display.setCursorX(5);
-      gb.display.print("And Team Meat is an issue");
+      gb.display.print(F("And Team Meat is an issue"));
       break;
     case 7:
       gb.display.setCursorX(2);
-      gb.display.print(" But the cast is not full\n");
+      gb.display.print(F(" But the cast is not full\n"));
       gb.display.setCursorX(2);
-      gb.display.print("         complete\n");
+      gb.display.print(F("         complete\n"));
       gb.display.setCursorX(5);
-      gb.display.print("Just add Baphomet through");
+      gb.display.print(F("Just add Baphomet through"));
       break;
     case 8:
       gb.display.setCursorX(2);
-      gb.display.print("  Because I bad, I bad -\n");
+      gb.display.print(F("  Because I bad, I bad -\n"));
       gb.display.setCursorX(5);
-      gb.display.print("         turn on\n");
+      gb.display.print(F("         turn on\n"));
       gb.display.setColor(GRAY);
       gb.display.setCursorX(2);
-      gb.display.print("  Bad bad - befriend all\n");
+      gb.display.print(F("  Bad bad - befriend all\n"));
       gb.display.setCursorX(2);
-      gb.display.print("          demons");
+      gb.display.print(F("          demons"));
       break;
     case 9:
       gb.display.setCursorX(5);
-      gb.display.print(" You know I bad, I bad -\n");
+      gb.display.print(F(" You know I bad, I bad -\n"));
       gb.display.setCursorX(5);
-      gb.display.print("       you know it\n");
+      gb.display.print(F("       you know it\n"));
       gb.display.setColor(GRAY);
       gb.display.setCursorX(2);
-      gb.display.print("  Bad bad - befriend all\n");
+      gb.display.print(F("  Bad bad - befriend all\n"));
       gb.display.setCursorX(2);
-      gb.display.print("          demons");
+      gb.display.print(F("          demons"));
       break;
     case 10:
       gb.display.setCursorX(5);
-      gb.display.print(" You know I bad, I bad -\n");
+      gb.display.print(F(" You know I bad, I bad -\n"));
       gb.display.setCursorX(5);
-      gb.display.print("    turn on, you know\n");
+      gb.display.print(F("    turn on, you know\n"));
       gb.display.setColor(GRAY);
       gb.display.setCursorX(2);
-      gb.display.print("  Bad bad - befriend all\n");
+      gb.display.print(F("  Bad bad - befriend all\n"));
       gb.display.setCursorX(2);
-      gb.display.print("          demons");
+      gb.display.print(F("          demons"));
       break;
     case 11:
       gb.display.setCursorX(2);
-      gb.display.print("And the whole world in not\n");
+      gb.display.print(F("And the whole world in not\n"));
       gb.display.setCursorX(2);
-      gb.display.print("       Tasty enough\n");
+      gb.display.print(F("       Tasty enough\n"));
       gb.display.setCursorX(2);
-      gb.display.print("  To fulfill my appetite\n");
+      gb.display.print(F("  To fulfill my appetite\n"));
       gb.display.setCursorX(2);
-      gb.display.print("         Who bad?");
+      gb.display.print(F("         Who bad?"));
       break;
     case 12:
       gb.display.setCursorX(5);
-      gb.display.print("     The game design\n");
+      gb.display.print(F("     The game design\n"));
       gb.display.setCursorX(2);
-      gb.display.print("     Forget your Pong\n");
+      gb.display.print(F("     Forget your Pong\n"));
       gb.display.setCursorX(5);
-      gb.display.print("     Is all but kind\n");
+      gb.display.print(F("     Is all but kind\n"));
       gb.display.setCursorX(2);
-      gb.display.print("    The maze is strong");
+      gb.display.print(F("    The maze is strong"));
       break;
     case 13:
       gb.display.setCursorX(2);
-      gb.display.print("    To choose one girl\n");
+      gb.display.print(F("    To choose one girl\n"));
       gb.display.setCursorX(5);
-      gb.display.print("     Is quite unfair\n");
+      gb.display.print(F("     Is quite unfair\n"));
       gb.display.setCursorX(5);
-      gb.display.print("     I need them all\n");
+      gb.display.print(F("     I need them all\n"));
       gb.display.setCursorX(2);
-      gb.display.print("      At Maker Faire");
+      gb.display.print(F("      At Maker Faire"));
       break;
     case 14:
       gb.display.setCursorX(5);
-      gb.display.print("     The Pocket Chip\n");
+      gb.display.print(F("     The Pocket Chip\n"));
       gb.display.setCursorX(5);
-      gb.display.print("       The Pokitto\n");
+      gb.display.print(F("       The Pokitto\n"));
       gb.display.setCursorX(5);
-      gb.display.print("       The Arduboy\n");
+      gb.display.print(F("       The Arduboy\n"));
       gb.display.setCursorX(5);
-      gb.display.print("      The Gamebuino");
+      gb.display.print(F("      The Gamebuino"));
       break;
     case 15:
       gb.display.setCursorX(5);
-      gb.display.print("But the game is full open\n");
+      gb.display.print(F("But the game is full open\n"));
       gb.display.setCursorX(2);
-      gb.display.print("          source\n");
+      gb.display.print(F("          source\n"));
       gb.display.setCursorX(2);
-      gb.display.print("     Open to polygamy");
+      gb.display.print(F("     Open to polygamy"));
       break;
     case 16:
       gb.display.setCursorX(2);
-      gb.display.print("  A master piece made of\n");
+      gb.display.print(F("  A master piece made of\n"));
       gb.display.setCursorX(2);
-      gb.display.print("          pixels\n");
+      gb.display.print(F("          pixels\n"));
       gb.display.setCursorX(2);
-      gb.display.print("  Featured on Polygon...");
+      gb.display.print(F("  Featured on Polygon..."));
       break;
     case 17:
       gb.display.setCursorX(2);
-      gb.display.print("  Because I bad, I bad -\n");
+      gb.display.print(F("  Because I bad, I bad -\n"));
       gb.display.setCursorX(5);
-      gb.display.print("         turn on\n");
+      gb.display.print(F("         turn on\n"));
       gb.display.setColor(GRAY);
       gb.display.setCursorX(2);
-      gb.display.print("  Bad bad - befriend all\n");
+      gb.display.print(F("  Bad bad - befriend all\n"));
       gb.display.setCursorX(2);
-      gb.display.print("          demons");
+      gb.display.print(F("          demons"));
       break;
     case 18:
       gb.display.setCursorX(5);
-      gb.display.print(" You know I bad, I bad -\n");
+      gb.display.print(F(" You know I bad, I bad -\n"));
       gb.display.setCursorX(5);
-      gb.display.print("       you know it\n");
+      gb.display.print(F("       you know it\n"));
       gb.display.setColor(GRAY);
       gb.display.setCursorX(2);
-      gb.display.print("  Bad bad - befriend all\n");
+      gb.display.print(F("  Bad bad - befriend all\n"));
       gb.display.setCursorX(2);
-      gb.display.print("          demons");
+      gb.display.print(F("          demons"));
       break;
     case 19:
       gb.display.setCursorX(5);
-      gb.display.print(" You know I bad, I bad -\n");
+      gb.display.print(F(" You know I bad, I bad -\n"));
       gb.display.setCursorX(5);
-      gb.display.print("  you know it, you know\n");
+      gb.display.print(F("  you know it, you know\n"));
       gb.display.setColor(GRAY);
       gb.display.setCursorX(2);
-      gb.display.print("  Bad bad - befriend all\n");
+      gb.display.print(F("  Bad bad - befriend all\n"));
       gb.display.setCursorX(2);
-      gb.display.print("          demons");
+      gb.display.print(F("          demons"));
       break;
     case 20:
       gb.display.setCursorX(2);
-      gb.display.print("And the whole world in not\n");
+      gb.display.print(F("And the whole world in not\n"));
       gb.display.setCursorX(2);
-      gb.display.print("       tasty enough\n");
+      gb.display.print(F("       tasty enough\n"));
       gb.display.setColor(GRAY);
       gb.display.setCursorX(2);
-      gb.display.print("And the whole world in not\n");
+      gb.display.print(F("And the whole world in not\n"));
       gb.display.setCursorX(2);
-      gb.display.print("       tasty enough");
+      gb.display.print(F("       tasty enough"));
       break;
     case 21:
       gb.display.setCursorX(2);
-      gb.display.print("  To fulfill my appetite\n");
+      gb.display.print(F("  To fulfill my appetite\n"));
       gb.display.setColor(GRAY);
       gb.display.setCursorX(2);
-      gb.display.print("  To fulfill my appetite\n");
+      gb.display.print(F("  To fulfill my appetite\n"));
       gb.display.setColor(WHITE);
       gb.display.setCursorX(2);
-      gb.display.print("         Who bad?\n");
+      gb.display.print(F("         Who bad?\n"));
       break;
     case 22:
       gb.display.setCursorX(5);
-      gb.display.print(" You can change the game\n");
+      gb.display.print(F(" You can change the game\n"));
       gb.display.setCursorX(2);
-      gb.display.print("       this morning\n");
+      gb.display.print(F("       this morning\n"));
       gb.display.setCursorX(2);
-      gb.display.print("  This could be a better\n");
+      gb.display.print(F("  This could be a better\n"));
       gb.display.setCursorX(2);
-      gb.display.print("           code");
+      gb.display.print(F("           code"));
       break;
     case 23:
       gb.display.setCursorX(5);
-      gb.display.print("If you prefer what you're\n");
+      gb.display.print(F("If you prefer what you're\n"));
       gb.display.setCursorX(2);
-      gb.display.print("         thinking\n");
+      gb.display.print(F("         thinking\n"));
       gb.display.setCursorX(5);
-      gb.display.print("   Won't you slap your\n");
+      gb.display.print(F("   Won't you slap your\n"));
       gb.display.setCursorX(5);
-      gb.display.print("        keyboard?");
+      gb.display.print(F("        keyboard?"));
       break;
     case 24:
       gb.display.setCursorX(2);
-      gb.display.print("  Because I bad, I bad -\n");
+      gb.display.print(F("  Because I bad, I bad -\n"));
       gb.display.setCursorX(5);
-      gb.display.print("         turn on\n");
+      gb.display.print(F("         turn on\n"));
       gb.display.setColor(GRAY);
       gb.display.setCursorX(2);
-      gb.display.print("  Bad bad - befriend all\n");
+      gb.display.print(F("  Bad bad - befriend all\n"));
       gb.display.setCursorX(2);
-      gb.display.print("          demons");
+      gb.display.print(F("          demons"));
       break;
     case 25:
       gb.display.setCursorX(5);
-      gb.display.print(" You know I bad, I bad -\n");
+      gb.display.print(F(" You know I bad, I bad -\n"));
       gb.display.setCursorX(5);
-      gb.display.print("       you know it\n");
+      gb.display.print(F("       you know it\n"));
       gb.display.setColor(GRAY);
       gb.display.setCursorX(2);
-      gb.display.print("  Bad bad - befriend all\n");
+      gb.display.print(F("  Bad bad - befriend all\n"));
       gb.display.setCursorX(2);
-      gb.display.print("          demons");
+      gb.display.print(F("          demons"));
       break;
     case 26:
       gb.display.setCursorX(5);
-      gb.display.print(" You know I bad, I bad -\n");
+      gb.display.print(F(" You know I bad, I bad -\n"));
       gb.display.setCursorX(5);
-      gb.display.print("  you know it, you know\n");
+      gb.display.print(F("  you know it, you know\n"));
       gb.display.setColor(GRAY);
       gb.display.setCursorX(2);
-      gb.display.print("  Bad bad - befriend all\n");
+      gb.display.print(F("  Bad bad - befriend all\n"));
       gb.display.setCursorX(2);
-      gb.display.print("          demons");
+      gb.display.print(F("          demons"));
       break;
     case 27:
       gb.display.setCursorX(5);
-      gb.display.print("And the... Woo! Woo! Woo!\n");
+      gb.display.print(F("And the... Woo! Woo! Woo!\n"));
       gb.display.setColor(GRAY);
       gb.display.setCursorX(2);
-      gb.display.print("And the whole world is not\n");
+      gb.display.print(F("And the whole world is not\n"));
       gb.display.setCursorX(2);
-      gb.display.print("       tasty enough\n");
+      gb.display.print(F("       tasty enough\n"));
       gb.display.setCursorX(5);
-      gb.display.print("To fulfill my appetite...");
+      gb.display.print(F("To fulfill my appetite..."));
       break;
     case 28:
       gb.display.setCursorX(5);
-      gb.display.print(" You know I bad, I bad -\n");
+      gb.display.print(F(" You know I bad, I bad -\n"));
       gb.display.setCursorX(5);
-      gb.display.print("         turn on\n");
+      gb.display.print(F("         turn on\n"));
       gb.display.setColor(GRAY);
       gb.display.setCursorX(2);
-      gb.display.print("  Bad bad - befriend all\n");
+      gb.display.print(F("  Bad bad - befriend all\n"));
       gb.display.setCursorX(2);
-      gb.display.print("          demons");
+      gb.display.print(F("          demons"));
       break;
     case 29:
       gb.display.setCursorX(5);
-      gb.display.print(" You know I bad, I bad -\n");
+      gb.display.print(F(" You know I bad, I bad -\n"));
       gb.display.setCursorX(5);
-      gb.display.print("you know it - you know it\n");
+      gb.display.print(F("you know it - you know it\n"));
       gb.display.setColor(GRAY);
       gb.display.setCursorX(2);
-      gb.display.print("  Bad bad - befriend all\n");
+      gb.display.print(F("  Bad bad - befriend all\n"));
       gb.display.setCursorX(2);
-      gb.display.print("          demons");
+      gb.display.print(F("          demons"));
       break;
     case 30:
       gb.display.setCursorX(5);
-      gb.display.print(" You know, you know, you\n");
+      gb.display.print(F(" You know, you know, you\n"));
       gb.display.setCursorX(2);
-      gb.display.print("      know - turn on\n");
+      gb.display.print(F("      know - turn on\n"));
       gb.display.setColor(GRAY);
       gb.display.setCursorX(2);
-      gb.display.print("  Bad bad - befriend all\n");
+      gb.display.print(F("  Bad bad - befriend all\n"));
       gb.display.setCursorX(2);
-      gb.display.print("          demons");
+      gb.display.print(F("          demons"));
       break;
     case 31:
       gb.display.setCursorX(2);
-      gb.display.print("And the whole world is not\n");
+      gb.display.print(F("And the whole world is not\n"));
       gb.display.setCursorX(2);
-      gb.display.print("       tasty enough\n");
+      gb.display.print(F("       tasty enough\n"));
       gb.display.setColor(GRAY);
       gb.display.setCursorX(2);
-      gb.display.print("And the whole world is not\n");
+      gb.display.print(F("And the whole world is not\n"));
       gb.display.setCursorX(2);
-      gb.display.print("       tasty enough");
+      gb.display.print(F("       tasty enough"));
       break;
     case 32:
       gb.display.setCursorX(2);
-      gb.display.print("     To fulfill my...\n");
+      gb.display.print(F("     To fulfill my...\n"));
       gb.display.setColor(GRAY);
       gb.display.setCursorX(2);
-      gb.display.print("  To fulfill my appetite");
+      gb.display.print(F("  To fulfill my appetite"));
       break;
     case 33:
       gb.display.setCursorX(5);
-      gb.display.print("You know they're smooth -\n");
+      gb.display.print(F("You know they're smooth -\n"));
       gb.display.setCursorX(5);
-      gb.display.print("   I bad - you know it\n");
+      gb.display.print(F("   I bad - you know it\n"));
       gb.display.setColor(GRAY);
       gb.display.setCursorX(2);
-      gb.display.print("  Bad bad - befriend all\n");
+      gb.display.print(F("  Bad bad - befriend all\n"));
       gb.display.setCursorX(2);
-      gb.display.print("          demons");
+      gb.display.print(F("          demons"));
       break;
     case 34:
       gb.display.setCursorX(2);
-      gb.display.print("  You know I bad - I bad\n");
+      gb.display.print(F("  You know I bad - I bad\n"));
       gb.display.setCursorX(5);
-      gb.display.print("          daily\n");
+      gb.display.print(F("          daily\n"));
       gb.display.setColor(GRAY);
       gb.display.setCursorX(2);
-      gb.display.print("  Bad bad - befriend all\n");
+      gb.display.print(F("  Bad bad - befriend all\n"));
       gb.display.setCursorX(2);
-      gb.display.print("          demons");
+      gb.display.print(F("          demons"));
       break;
     case 35:
       gb.display.setCursorX(5);
-      gb.display.print(" You know, you know, you\n");
+      gb.display.print(F(" You know, you know, you\n"));
       gb.display.setCursorX(5);
-      gb.display.print("    know it - turn on\n");
+      gb.display.print(F("    know it - turn on\n"));
       gb.display.setColor(GRAY);
       gb.display.setCursorX(2);
-      gb.display.print("  Bad bad - befriend all\n");
+      gb.display.print(F("  Bad bad - befriend all\n"));
       gb.display.setCursorX(2);
-      gb.display.print("          demons");
+      gb.display.print(F("          demons"));
       break;
     case 36:
       gb.display.setCursorX(2);
-      gb.display.print("And the whole world is not\n");
+      gb.display.print(F("And the whole world is not\n"));
       gb.display.setCursorX(2);
-      gb.display.print("       tasty enough\n");
+      gb.display.print(F("       tasty enough\n"));
       gb.display.setColor(GRAY);
       gb.display.setCursorX(2);
-      gb.display.print("And the whole world is not\n");
+      gb.display.print(F("And the whole world is not\n"));
       gb.display.setCursorX(2);
-      gb.display.print("       tasty enough");
+      gb.display.print(F("       tasty enough"));
       break;
     case 37:
       gb.display.setCursorX(2);
-      gb.display.print("           Woo!\n");
+      gb.display.print(F("           Woo!\n"));
       gb.display.setColor(GRAY);
       gb.display.setCursorX(2);
-      gb.display.print("  To fulfill my appetite\n");
+      gb.display.print(F("  To fulfill my appetite\n"));
       break;
     case 38:
       gb.display.setCursorX(5);
-      gb.display.print(" You know I bad, I bad -\n");
+      gb.display.print(F(" You know I bad, I bad -\n"));
       gb.display.setCursorX(5);
-      gb.display.print("       you know it\n");
+      gb.display.print(F("       you know it\n"));
       gb.display.setColor(GRAY);
       gb.display.setCursorX(2);
-      gb.display.print("  Bad bad - befriend all\n");
+      gb.display.print(F("  Bad bad - befriend all\n"));
       gb.display.setCursorX(2);
-      gb.display.print("          demons");
+      gb.display.print(F("          demons"));
       break;
     case 39:
       gb.display.setCursorX(5);
-      gb.display.print("You know I bad - you know\n");
+      gb.display.print(F("You know I bad - you know\n"));
       gb.display.setCursorX(2);
-      gb.display.print("          - hoo!\n");
+      gb.display.print(F("          - hoo!\n"));
       gb.display.setColor(GRAY);
       gb.display.setCursorX(2);
-      gb.display.print("  Bad bad - befriend all\n");
+      gb.display.print(F("  Bad bad - befriend all\n"));
       gb.display.setCursorX(2);
-      gb.display.print("          demons");
+      gb.display.print(F("          demons"));
       break;
     case 40:
       gb.display.setCursorX(2);
-      gb.display.print(" You know I bad - I bad -\n");
+      gb.display.print(F(" You know I bad - I bad -\n"));
       gb.display.setCursorX(5);
-      gb.display.print("  you know it, you know\n");
+      gb.display.print(F("  you know it, you know\n"));
       gb.display.setColor(GRAY);
       gb.display.setCursorX(2);
-      gb.display.print("  Bad bad - befriend all\n");
+      gb.display.print(F("  Bad bad - befriend all\n"));
       gb.display.setCursorX(2);
-      gb.display.print("          demons");
+      gb.display.print(F("          demons"));
       break;
     case 41:
       gb.display.setCursorX(2);
-      gb.display.print("And the whole world is not\n");
+      gb.display.print(F("And the whole world is not\n"));
       gb.display.setCursorX(2);
-      gb.display.print("       tasty enough\n");
+      gb.display.print(F("       tasty enough\n"));
       gb.display.setColor(GRAY);
       gb.display.setCursorX(2);
-      gb.display.print("And the whole world is not\n");
+      gb.display.print(F("And the whole world is not\n"));
       gb.display.setCursorX(2);
-      gb.display.print("       tasty enough");
+      gb.display.print(F("       tasty enough"));
       break;
     case 42:
       gb.display.setCursorX(5);
-      gb.display.print("To fulfill my appetite...\n");
+      gb.display.print(F("To fulfill my appetite...\n"));
       gb.display.setColor(GRAY);
       gb.display.setCursorX(5);
-      gb.display.print("To fulfill my appetite...\n");
+      gb.display.print(F("To fulfill my appetite...\n"));
       gb.display.setColor(WHITE);
       gb.display.setCursorX(2);
-      gb.display.print("         Who bad?");
+      gb.display.print(F("         Who bad?"));
       break;
     case 43:
       gb.display.setColor(RED);
       gb.display.setCursorX(5);
-      gb.display.print("  Music");
+      gb.display.print(F("  Music"));
       gb.display.setColor(WHITE);
-      gb.display.print(" Michael Jackson\n\n");
+      gb.display.print(F(" Michael Jackson\n\n"));
       gb.display.setColor(RED);
       gb.display.setCursorX(5);
-      gb.display.print("   Lyrics");
+      gb.display.print(F("   Lyrics"));
       gb.display.setColor(WHITE);
-      gb.display.print(" Juice Lizard\n\n");
+      gb.display.print(F(" Juice Lizard\n\n"));
       gb.display.setColor(RED);
       gb.display.setCursorX(5);
-      gb.display.print("Vocals");
+      gb.display.print(F("Vocals"));
       gb.display.setColor(WHITE);
-      gb.display.print(" Alessandro Granato");
+      gb.display.print(F(" Alessandro Granato"));
       break;
   }
 }
@@ -4841,163 +4841,163 @@ void HeavenLyrics() {
       break;
     case 1:
       gb.display.setCursorX(5);
-      gb.display.print("Acrylique peinte sagement\n");
+      gb.display.print(F("Acrylique peinte sagement\n"));
       gb.display.setCursorX(5);
-      gb.display.print("   Elle pense aux jeux\n");
+      gb.display.print(F("   Elle pense aux jeux\n"));
       gb.display.setCursorX(5);
-      gb.display.print("      \xC9""lectroniques");
+      gb.display.print(F("      \xC9""lectroniques"));
       break;
     case 2:
       gb.display.setCursorX(2);
-      gb.display.print("   Insouciance, elle se\n");
+      gb.display.print(F("   Insouciance, elle se\n"));
       gb.display.setCursorX(5);
-      gb.display.print("         d\xE9""pense\n");
+      gb.display.print(F("         d\xE9""pense\n"));
       gb.display.setCursorX(2);
-      gb.display.print(" Elle entre dans l'action");
+      gb.display.print(F(" Elle entre dans l'action"));
       break;
     case 3:
       gb.display.setCursorX(2);
-      gb.display.print("       Tetris, Sega\n");
+      gb.display.print(F("       Tetris, Sega\n"));
       gb.display.setCursorX(5);
-      gb.display.print("    Entre deux, trois\n");
+      gb.display.print(F("    Entre deux, trois\n"));
       gb.display.setCursorX(2);
-      gb.display.print("        dimensions");
+      gb.display.print(F("        dimensions"));
       break;
     case 4:
       gb.display.setCursorX(2);
-      gb.display.print(" Hors du ring elle pousse\n");
+      gb.display.print(F(" Hors du ring elle pousse\n"));
       gb.display.setCursorX(2);
-      gb.display.print("   L'ennui des journaux\n");
+      gb.display.print(F("   L'ennui des journaux\n"));
       gb.display.setCursorX(5);
-      gb.display.print("   C'est la guerre des\n");
+      gb.display.print(F("   C'est la guerre des\n"));
       gb.display.setCursorX(5);
-      gb.display.print("         boutons");
+      gb.display.print(F("         boutons"));
       break;
     case 5:
       gb.display.setCursorX(2);
-      gb.display.print("Elle se pose des questions\n");
+      gb.display.print(F("Elle se pose des questions\n"));
       gb.display.setCursorX(2);
-      gb.display.print("Sur le divorce d'une \xE9""lite\n");
+      gb.display.print(F("Sur le divorce d'une \xE9""lite\n"));
       gb.display.setCursorX(5);
-      gb.display.print("      et d'un monde\n");
+      gb.display.print(F("      et d'un monde\n"));
       gb.display.setCursorX(5);
-      gb.display.print("        Acrylique");
+      gb.display.print(F("        Acrylique"));
       break;
     case 6:
       gb.display.setCursorX(2);
-      gb.display.print("    Acrylique inspir\xE9""e\n");
+      gb.display.print(F("    Acrylique inspir\xE9""e\n"));
       gb.display.setCursorX(5);
-      gb.display.print(" Elle tape du code, code");
+      gb.display.print(F(" Elle tape du code, code"));
       break;
     case 7:
       gb.display.setCursorX(5);
-      gb.display.print("  Dans les forums, plus\n");
+      gb.display.print(F("  Dans les forums, plus\n"));
       gb.display.setCursorX(2);
-      gb.display.print("         autonome\n");
+      gb.display.print(F("         autonome\n"));
       gb.display.setCursorX(2);
-      gb.display.print("En algorithmes elle avance");
+      gb.display.print(F("En algorithmes elle avance"));
       break;
     case 8:
       gb.display.setCursorX(2);
-      gb.display.print("  Mais ce m\xE9""pris myst\xE8""re\n");
+      gb.display.print(F("  Mais ce m\xE9""pris myst\xE8""re\n"));
       gb.display.setCursorX(2);
-      gb.display.print("    Cette vraie omert\xE0""\n");
+      gb.display.print(F("    Cette vraie omert\xE0""\n"));
       gb.display.setCursorX(5);
-      gb.display.print("Acrylique reste sans voix");
+      gb.display.print(F("Acrylique reste sans voix"));
       break;
     case 9:
       gb.display.setCursorX(2);
-      gb.display.print("Elle se pose des questions\n");
+      gb.display.print(F("Elle se pose des questions\n"));
       gb.display.setCursorX(2);
-      gb.display.print("Sur le divorce d'une \xE9""lite\n");
+      gb.display.print(F("Sur le divorce d'une \xE9""lite\n"));
       gb.display.setCursorX(5);
-      gb.display.print("      et d'un monde");
+      gb.display.print(F("      et d'un monde"));
       break;
     case 10:
       gb.display.setCursorX(5);
-      gb.display.print("   Acrylique voyageuse\n");
+      gb.display.print(F("   Acrylique voyageuse\n"));
       gb.display.setCursorX(2);
-      gb.display.print("  C'est l'histoire d'une\n");
+      gb.display.print(F("  C'est l'histoire d'une\n"));
       gb.display.setCursorX(5);
-      gb.display.print("   toile et d'un monde");
+      gb.display.print(F("   toile et d'un monde"));
       break;
     case 11:
       gb.display.setCursorX(2);
-      gb.display.print("   Acrylique acrylique,\n");
+      gb.display.print(F("   Acrylique acrylique,\n"));
       gb.display.setCursorX(5);
-      gb.display.print("     peinte sagement\n");
+      gb.display.print(F("     peinte sagement\n"));
       gb.display.setCursorX(5);
-      gb.display.print("   Elle pense aux jeux\n");
+      gb.display.print(F("   Elle pense aux jeux\n"));
       gb.display.setCursorX(5);
-      gb.display.print("      \xC9""lectroniques");
+      gb.display.print(F("      \xC9""lectroniques"));
       break;
     case 12:
       gb.display.setCursorX(2);
-      gb.display.print("       Tetris, Sega\n");
+      gb.display.print(F("       Tetris, Sega\n"));
       gb.display.setCursorX(5);
-      gb.display.print("    Entre deux, trois\n");
+      gb.display.print(F("    Entre deux, trois\n"));
       gb.display.setCursorX(2);
-      gb.display.print("        dimensions");
+      gb.display.print(F("        dimensions"));
       break;
     case 13:
       gb.display.setCursorX(2);
-      gb.display.print("C'est hors du ring qu'elle\n");
+      gb.display.print(F("C'est hors du ring qu'elle\n"));
       gb.display.setCursorX(2);
-      gb.display.print("          pousse\n");
+      gb.display.print(F("          pousse\n"));
       gb.display.setCursorX(2);
-      gb.display.print("   L'ennui des journaux\n");
+      gb.display.print(F("   L'ennui des journaux\n"));
       gb.display.setCursorX(5);
-      gb.display.print("   C'est la guerre des\n");
+      gb.display.print(F("   C'est la guerre des\n"));
       gb.display.setCursorX(5);
-      gb.display.print("         boutons");
+      gb.display.print(F("         boutons"));
       break;
     case 14:
       gb.display.setCursorX(2);
-      gb.display.print("Elle se pose des questions\n");
+      gb.display.print(F("Elle se pose des questions\n"));
       gb.display.setCursorX(2);
-      gb.display.print("Sur le divorce d'une \xE9""lite\n");
+      gb.display.print(F("Sur le divorce d'une \xE9""lite\n"));
       gb.display.setCursorX(5);
-      gb.display.print("      et d'un monde");
+      gb.display.print(F("      et d'un monde"));
       break;
     case 15:
       gb.display.setCursorX(2);
-      gb.display.print("Elle se pose ");
+      gb.display.print(F("Elle se pose "));
       gb.display.setColor(LIGHTBLUE);
-      gb.display.print("(se pose)");
+      gb.display.print(F("(se pose)"));
       gb.display.setColor(BLUE);
-      gb.display.print(" des\n");
+      gb.display.print(F(" des\n"));
       gb.display.setCursorX(5);
-      gb.display.print("        questions\n");
+      gb.display.print(F("        questions\n"));
       gb.display.setCursorX(2);
-      gb.display.print("Sur le divorce d'une \xE9""lite\n");
+      gb.display.print(F("Sur le divorce d'une \xE9""lite\n"));
       gb.display.setCursorX(5);
-      gb.display.print("      et d'un monde");
+      gb.display.print(F("      et d'un monde"));
       break;
     case 16:
       gb.display.setCursorX(2);
-      gb.display.print("Elle se pose des questions\n");
+      gb.display.print(F("Elle se pose des questions\n"));
       gb.display.setCursorX(2);
-      gb.display.print("Sur le divorce d'une \xE9""lite\n");
+      gb.display.print(F("Sur le divorce d'une \xE9""lite\n"));
       gb.display.setCursorX(5);
-      gb.display.print("      et d'un monde");
+      gb.display.print(F("      et d'un monde"));
       break;
     case 17:
       gb.display.setColor(LIGHTBLUE);
       gb.display.setCursorX(5);
-      gb.display.print("  Music");
+      gb.display.print(F("  Music"));
       gb.display.setColor(BLUE);
-      gb.display.print(" Vanessa Paradis\n\n");
+      gb.display.print(F(" Vanessa Paradis\n\n"));
       gb.display.setColor(LIGHTBLUE);
       gb.display.setCursorX(5);
-      gb.display.print("   Lyrics");
+      gb.display.print(F("   Lyrics"));
       gb.display.setColor(BLUE);
-      gb.display.print(" Juice Lizard\n\n");
+      gb.display.print(F(" Juice Lizard\n\n"));
       gb.display.setColor(LIGHTBLUE);
       gb.display.setCursorX(2);
-      gb.display.print("   Vocals");
+      gb.display.print(F("   Vocals"));
       gb.display.setColor(BLUE);
-//      gb.display.print(" Fanny Krief");
-      gb.display.print(" Marine Parodi");
+//      gb.display.print(F(" Fanny Krief"));
+      gb.display.print(F(" Marine Parodi"));
       break;
   }
 }
@@ -5066,7 +5066,7 @@ void BAD() {
   }
 
       gb.display.setCursorX(5);
-      gb.display.print("   BEFRIEND ALL DEMONS");
+      gb.display.print(F("   BEFRIEND ALL DEMONS"));
 
   } else {
     gb.display.setColor(WHITE);
@@ -5162,7 +5162,7 @@ void AcryliqueEtPixels() {
   }
 
       gb.display.setCursorX(5);
-      gb.display.print("   ACRYLIQUE ET PIXELS");
+      gb.display.print(F("   ACRYLIQUE ET PIXELS"));
 
   } else {
     gb.display.setColor(BLUE);
