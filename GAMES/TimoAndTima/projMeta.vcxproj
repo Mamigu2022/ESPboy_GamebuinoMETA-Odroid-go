@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{B28197DB-CBB4-42A4-A38C-FE6FB4696347}</ProjectGuid>
+    <RootNamespace>
+    </RootNamespace>
+    <ProjectName>projMeta</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>
+    </PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>
+    </PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>
+    </PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>
+    </PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\projMeta;C:\Users\Cedric\Documents\Arduino\libraries\Gamebuino_META\src;C:\Users\Cedric\Documents\Arduino\libraries\Gamebuino_META\src\utility;C:\Program Files (x86)\Arduino\libraries;C:\Users\Cedric\Documents\Arduino\libraries;C:\Users\Cedric\AppData\Local\arduino15\packages\gamebuino\hardware\samd\1.2.0\libraries;C:\Users\Cedric\AppData\Local\arduino15\packages\gamebuino\hardware\samd\1.2.0\cores\arduino;C:\Users\Cedric\AppData\Local\arduino15\packages\gamebuino\hardware\samd\1.2.0\cores\arduino\avr;C:\Users\Cedric\AppData\Local\arduino15\packages\gamebuino\hardware\samd\1.2.0\cores\arduino\USB;C:\Users\Cedric\AppData\Local\arduino15\packages\gamebuino\hardware\samd\1.2.0\variants\gamebuino_meta;C:\Users\Cedric\AppData\Local\arduino15\packages\arduino\tools\CMSIS\4.5.0\CMSIS\Include\;C:\Users\Cedric\AppData\Local\arduino15\packages\arduino\tools\CMSIS-Atmel\1.1.0\CMSIS\Device\ATMEL\;C:\Users\Cedric\AppData\Local\Temp\VMBuilds\Sketch1\gamebuino_gamebuino_samd_gamebuino_meta_native\Release;C:\Users\Cedric\AppData\Local\arduino15\packages\arduino\tools\arm-none-eabi-gcc\4.8.3-2014q1\arm-none-eabi\include\c++\4.8.3;C:\Users\Cedric\AppData\Local\arduino15\packages\arduino\tools\arm-none-eabi-gcc\4.8.3-2014q1\arm-none-eabi\include\c++\4.8.3\arm-none-eabi;C:\Users\Cedric\AppData\Local\arduino15\packages\arduino\tools\arm-none-eabi-gcc\4.8.3-2014q1\arm-none-eabi\include\c++\4.8.3\bits;C:\Users\Cedric\AppData\Local\arduino15\packages\arduino\tools\arm-none-eabi-gcc\4.8.3-2014q1\arm-none-eabi\include;C:\Users\Cedric\AppData\Local\arduino15\packages\arduino\tools\arm-none-eabi-gcc\4.8.3-2014q1\arm-none-eabi\include\sys;C:\Users\Cedric\AppData\Local\arduino15\packages\gamebuino\hardware\samd\1.2.0\system;C:\Users\Cedric\AppData\Local\arduino15\packages\gamebuino\hardware\samd\avr;C:\Users\Cedric\AppData\Local\arduino15\packages\gamebuino\hardware\samd\usb;C:\Users\Cedric\AppData\Local\arduino15\packages\arduino\tools\arm-none-eabi-gcc\4.8.3-2014q1\lib\gcc\arm-none-eabi\4.8.3\include;C:\Users\Cedric\AppData\Local\arduino15\packages\arduino\tools\CMSIS\4.0.0-atmel;C:\Users\Cedric\AppData\Local\arduino15\packages\arduino\tools\CMSIS\4.0.0-atmel\Device\ATMEL\samd21\include;C:\Users\Cedric\AppData\Local\arduino15\packages\arduino\tools\CMSIS\4.0.0-atmel\CMSIS\include;C:\Users\Cedric\AppData\Local\arduino15\packages\arduino\tools\CMSIS\4.0.0-atmel\Device\ATMEL\samd21\include\component;C:\Users\Cedric\AppData\Local\arduino15\packages\arduino\tools\CMSIS\4.0.0-atmel\Device\ATMEL\samd21\include\instance;C:\Users\Cedric\AppData\Local\arduino15\packages\arduino\tools\CMSIS\4.0.0-atmel\Device\ATMEL\samd21\include\pio;C:\Users\Cedric\AppData\Local\arduino15\packages\arduino\tools\CMSIS\4.0.0-atmel\Device\ATMEL\samd21\include\component;C:\Users\Cedric\AppData\Local\arduino15\packages\arduino\tools\CMSIS-Atmel\1.0.0\CMSIS\Device\ATMEL\samd21\include;C:\Users\Cedric\AppData\Local\arduino15\packages\arduino\tools\CMSIS\CMSIS\include;C:\Users\Cedric\AppData\Local\arduino15\packages\arduino\tools\CMSIS\CMSIS-Atmel\1.0.0\CMSIS\Device\ATMEL\samd21\include\component;C:\Users\Cedric\AppData\Local\arduino15\packages\arduino\tools\CMSIS\CMSIS-Atmel\1.0.0\CMSIS\Device\ATMEL\samd21\include\instance;C:\Users\Cedric\AppData\Local\arduino15\packages\arduino\tools\CMSIS\CMSIS-Atmel\1.0.0\CMSIS\Device\ATMEL\samd21\include\pio;C:\Users\Cedric\AppData\Local\arduino15\packages\arduino\tools\CMSIS\CMSIS-Atmel\1.0.0\CMSIS\Device\ATMEL\samd21\include\component;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <ForcedIncludeFiles>$(ProjectDir)__vm\.projMeta.vsarduino.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <PreprocessorDefinitions>F_CPU=48000000L;ARDUINO=10805;ARDUINO_SAMD_ZERO;ARDUINO_ARCH_SAMD;__SAMD21G18A__;USB_VID=0x2341;USB_PID=0x804d;USBCON;__cplusplus=201103L;_VMICRO_INTELLISENSE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <ForcedIncludeFiles>%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <IgnoreStandardIncludePath>true</IgnoreStandardIncludePath>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ProjectCapability Include="VisualMicro" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="drawMeta.ino">
+      <FileType>CppCode</FileType>
+    </None>
+    <None Include="projMeta.ino">
+      <FileType>CppCode</FileType>
+    </None>
+    <None Include="sound.ino">
+      <FileType>CppCode</FileType>
+    </None>
+    <None Include="sprite.ino">
+      <FileType>CppCode</FileType>
+    </None>
+    <None Include="updateMeta.ino">
+      <FileType>CppCode</FileType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="sound.h">
+      <FileType>CppCode</FileType>
+    </ClInclude>
+    <ClInclude Include="sprite.h">
+      <FileType>CppCode</FileType>
+    </ClInclude>
+    <ClInclude Include="__vm\.projMeta.vsarduino.h" />
+  </ItemGroup>
+  <PropertyGroup>
+    <DebuggerFlavor>VisualMicroDebugger</DebuggerFlavor>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

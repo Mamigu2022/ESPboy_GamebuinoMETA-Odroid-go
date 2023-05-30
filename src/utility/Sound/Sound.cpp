@@ -32,25 +32,25 @@ namespace Gamebuino_Meta {
 #if SOUND_ENABLE_FX
 
 
-const Gamebuino_Meta::Sound_FX playOKFX[] = {
+const PROGMEM Gamebuino_Meta::Sound_FX playOKFX[] = {
   {Gamebuino_Meta::Sound_FX_Wave::SQUARE, 1, 110, -6, 11, 126, 2},
   {Gamebuino_Meta::Sound_FX_Wave::SQUARE, 0, 150, -25, -3, 47, 3},
 };
 
-const Gamebuino_Meta::Sound_FX playCancelFX[] = {
+const PROGMEM Gamebuino_Meta::Sound_FX playCancelFX[] = {
   {Gamebuino_Meta::Sound_FX_Wave::SQUARE, 1, 120, 3, 8, 126, 2},
   {Gamebuino_Meta::Sound_FX_Wave::SQUARE, 0, 130, -13, 10, 169, 3},
 };
 
-const Gamebuino_Meta::Sound_FX playTickFX[] = {
+const PROGMEM Gamebuino_Meta::Sound_FX playTickFX[] = {
   {Gamebuino_Meta::Sound_FX_Wave::SQUARE, 0, 196, -35, -3, 142, 1},
 };
 
 #else  // SOUND_ENABLE_FX
 
-const uint16_t playOKPattern[] = {0x0005,0x138,0x168,0x0000};
-const uint16_t playCancelPattern[] = {0x0005,0x168,0x138,0x0000};
-const uint16_t playTickP[] = {0x0045,0x168,0x0000};
+const PROGMEM uint16_t playOKPattern[] = {0x0005,0x138,0x168,0x0000};
+const PROGMEM uint16_t playCancelPattern[] = {0x0005,0x168,0x138,0x0000};
+const PROGMEM uint16_t playTickP[] = {0x0045,0x168,0x0000};
 
 #endif  // SOUND_ENABLE_FX
 
@@ -132,7 +132,6 @@ int8_t Sound::play(const char* filename, bool loop) {
 #else // SOUND_CHANNELS
 	return -1;
 #endif // SOUND_CHANNELS
-return i;
 }
 
 int8_t Sound::play(char* filename, bool loop) {
@@ -228,7 +227,7 @@ int8_t Sound::tone(uint32_t frequency, int32_t duration) {
 		return -1; // no free channels atm
 	}
 	channels[i].loop = duration == 0;
-	if(!frequency) frequency++;
+    if(!frequency) frequency++;
 	handlers[i] = new Sound_Handler_Tone(&(channels[i]), frequency, duration, i);
 	return i;
 #else // SOUND_CHANNELS
@@ -366,7 +365,7 @@ uint32_t Sound::getPos(int8_t i) {
 extern "C" {
 #endif
 
-static void Audio_Handler (void) __attribute__((optimize("-O3")));
+//static void Audio_Handler (void) __attribute__((optimize("-O3")));
 
 uint16_t flowdown = 0;
 
@@ -469,12 +468,14 @@ static void IRAM_ATTR Audio_Handler(void) {
 #endif
 
 
+#define SIGMA_DELTA_RATE 200000
 
 void dacConfigure(uint32_t sampleRate) {
   noInterrupts();
-  sigmaDeltaSetup(0, sampleRate);
+  sigmaDeltaSetup(0, SIGMA_DELTA_RATE);
   sigmaDeltaAttachPin(D3);
   sigmaDeltaEnable();
+
   timer1_attachInterrupt(Audio_Handler);
   timer1_enable(TIM_DIV1, TIM_EDGE, TIM_LOOP);
   timer1_write(80000000 / (sampleRate-1));

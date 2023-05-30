@@ -24,7 +24,7 @@ Authors:
 
 namespace Gamebuino_Meta {
 
-const uint8_t _halfPeriods[] = {
+const PROGMEM uint8_t _halfPeriods[] = {
 	95*SOUND_FREQ/44100,
 	89*SOUND_FREQ/44100,
 	84*SOUND_FREQ/44100,

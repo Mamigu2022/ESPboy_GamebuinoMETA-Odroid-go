@@ -35,7 +35,7 @@ POSSIBILITY OF SUCH DAMAGE.
 #include "Image.h"
 
 // default 3x5 font table
-//extern const PROGMEM uint8_t font3x5[];
+//extern const  uint8_t font3x5[];
 
 const PROGMEM uint8_t font3x5[] = {
 	3,5, //width and height
@@ -293,7 +293,7 @@ extern Gamebuino* gbptr;
 //uint16_t Graphics::transparentColor = 0xF81F; //magenta is the default transparent color
 uint16_t Graphics::tint = 0xFFFF;
 uint8_t Graphics::alpha = 255;
-const PROGMEM Color defaultColorPalette[16] = {
+const Color defaultColorPalette[16] = {
 	Color::black,
 	Color::darkblue,
 	Color::purple,

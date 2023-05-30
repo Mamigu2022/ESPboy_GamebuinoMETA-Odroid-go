@@ -89,7 +89,6 @@ uint8_t ESPboyLED::getB(){
 void ICACHE_RAM_ATTR ESPboyLED::ledset(uint8_t rled, uint8_t gled, uint8_t bled) {
  static uint8_t rstore=0xFF, gstore=0xFF, bstore=0xFF;
  static uint_fast32_t i, t, c, startTime, pixel, mask;
- static uint8_t cpuFreq;
  static const uint32_t pinMask = 1<<LEDPIN;
   
   if(rled==rstore && gled==gstore && bled==bstore) return;
@@ -97,6 +96,10 @@ void ICACHE_RAM_ATTR ESPboyLED::ledset(uint8_t rled, uint8_t gled, uint8_t bled)
   rstore=rled;
   gstore=gled;
   bstore=bled;
+  
+  if (rled>20) rled=20;
+  if (gled>20) gled=20;
+  if (bled>20) bled=20;
   
   GPIO_REG_WRITE(GPIO_OUT_W1TC_ADDRESS, pinMask);
   mcp->digitalWrite(LEDLOCK, HIGH); 

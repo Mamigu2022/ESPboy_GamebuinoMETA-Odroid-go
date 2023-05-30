@@ -156,7 +156,7 @@ private:
 
 using Gamebuino_Meta::Rotation;
 
-const Rotation ROTATION_LEFT = Rotation::left;
-const Rotation ROTATION_UP = Rotation::up;
-const Rotation ROTATION_RIGHT = Rotation::right;
-const Rotation ROTATION_DOWN = Rotation::down;
+const PROGMEM Rotation ROTATION_LEFT = Rotation::left;
+const PROGMEM Rotation ROTATION_UP = Rotation::up;
+const PROGMEM Rotation ROTATION_RIGHT = Rotation::right;
+const PROGMEM Rotation ROTATION_DOWN = Rotation::down;

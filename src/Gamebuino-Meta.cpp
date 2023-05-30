@@ -165,6 +165,9 @@ void Gamebuino::waitForUpdate() {
 
 
 void IRAM_ATTR Gamebuino::updateDisplay() {
+#if DISPLAY_MODE != DISPLAY_MODE_INDEX 
+  tft.drawImage(0, 0, (Image&)display, 128, 128);
+#else
   static bool flagNewBuf = false;
   static uint16_t *bufPointer;
   static uint16_t *bufline;
@@ -175,6 +178,7 @@ void IRAM_ATTR Gamebuino::updateDisplay() {
   };
   
   tft.setAddrWindow(0, 0, 128, 128); 
+  
   uint8_t getPixelX, setPixelX;
   for (uint8_t j=0; j<128; j++){
     getPixelX = 0;
@@ -186,6 +190,7 @@ void IRAM_ATTR Gamebuino::updateDisplay() {
       *bufPointer++ = tft.colorsBlend((uint16_t)display.getPixelColor(getPixelX++,j), (uint16_t)display.getPixelColor(getPixelX++,j));    
     }
     tft.pushColors(bufline, 128);}
+#endif
 }
 
 void Gamebuino::setFrameRate(uint8_t fps) {
