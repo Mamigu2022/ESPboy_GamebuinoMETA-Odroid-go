@@ -97,12 +97,14 @@ int previousStatus = GAMEMAKERS;
 //##### Game Setup ##########
 //###########################
 void setup(){
+  //Serial.begin(115200);
   gb.begin();
   game_init();
   game_initAnims();
   game_initPlayer();
   ennemy_initBird();
   gb.pickRandomSeed();
+  loop();
 }
 
 
@@ -111,6 +113,7 @@ void setup(){
 //###########################
 void loop(){
   while(1){
+    ESP.wdtFeed();
     if(gb.update()){
       game_manageGlobalCounter();
       
