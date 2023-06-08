@@ -20,6 +20,18 @@ void outputLight_fullGreen(){
   gb.lights.fill(GREEN);
 }
 
-void outputLights_shoot(){
-  gb.lights.fill(WHITE);
+void outputLight_bonus(){
+  if (player.pos == 0 && player.timer > 0) {
+    if(player.timer%2==0){
+      outputLight_fullYellow();
+    }
+  }
+}
+
+void outputLight_catched(){
+  if (player.pos == 6 && player.timer > 0) {
+    if(player.timer%2==0){
+      outputLight_fullRed();
+    }
+  }
 }
