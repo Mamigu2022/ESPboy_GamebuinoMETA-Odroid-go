@@ -20,7 +20,7 @@
 Game game;
 
 void setup() {
-    Serial.begin(115200);
+    //Serial.begin(115200);
     // initializes the META
     gb.begin();
     // default screen buffer won't be used
