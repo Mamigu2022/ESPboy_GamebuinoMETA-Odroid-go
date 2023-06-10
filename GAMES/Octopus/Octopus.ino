@@ -76,8 +76,8 @@ void setup(){
 //##### Game Loop ###########
 //###########################
 void loop(){
-  while(1){
-    ESP.wdtFeed();
+  //while(1){
+  //  ESP.wdtFeed();
     if(gb.update()){
       game_manageGlobalCounter();
       outputLights_clear();
@@ -147,5 +147,5 @@ void loop(){
             break;
       }
     }  
-  }
+ // }
 }

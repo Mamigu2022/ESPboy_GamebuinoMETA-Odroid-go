@@ -1,0 +1,5 @@
+void ennemy_init(){
+ 
+}
+
+
