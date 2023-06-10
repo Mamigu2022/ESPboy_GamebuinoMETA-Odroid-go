@@ -138,6 +138,8 @@ public:
 	void fillRect(int16_t x, int16_t y, int16_t w, int16_t h);
 	void setRotation(Rotation r);
 	void invertDisplay(bool i);
+	void pushImage(int32_t x, int32_t y, int32_t w, int32_t h, uint16_t *data);
+
 	ColorMode colorMode = ColorMode::rgb565;
 	
 	void fillScreen(uint32_t color);

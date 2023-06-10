@@ -59,9 +59,8 @@ void Gamebuino::begin() {
 
   for(uint8_t i=0; i<200; i++) {dac.setVoltage(i*10, false); delay(10);}
   dac.setVoltage(4095, true);
-
+/*
   //Check OTA2
-/* 
   if (getKeys()&PAD_ACT || getKeys()&PAD_ESC) { 
     //Serial.println();
     //Serial.println(ESP.getFreeHeap()); 
@@ -71,7 +70,7 @@ void Gamebuino::begin() {
     OTA2obj = new ESPboyOTA2(terminalGUIobj);
     OTA2obj -> checkOTA();
   }
- */ 
+*/  
   WiFi.mode(WIFI_OFF); 
 
   #if USE_LITTLEFS
@@ -152,6 +151,26 @@ bool Gamebuino::update() {
 	sound.update(); // update sound stuff once per frame
 	gui.updatePopup();
     updateDisplay();
+	frameDurationMicros = micros() - frameStartMicros;
+	frameEndFlag = true; // we are at end of frame
+	return false;
+}
+
+
+bool Gamebuino::updateNoDisplay() {
+    delay(0);
+	if (((nextFrameMillis - millis()) > timePerFrame) && frameEndFlag) { //if time to render a new frame is reached and the frame end has ran once
+		nextFrameMillis = millis() + timePerFrame;
+		frameCount++;
+		frameEndFlag = false;
+		frameStartMicros = micros();
+		buttons.update();
+		return true;
+	}
+	
+	if (frameEndFlag) { return false; }
+	sound.update(); // update sound stuff once per frame
+	gui.updatePopup();
 	frameDurationMicros = micros() - frameStartMicros;
 	frameEndFlag = true; // we are at end of frame
 	return false;

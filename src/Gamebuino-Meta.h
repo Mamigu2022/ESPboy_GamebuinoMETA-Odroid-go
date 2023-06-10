@@ -91,6 +91,7 @@ public:
 	void begin();
 	void startScreen();
 	bool update();
+	bool updateNoDisplay();
 	void waitForUpdate();
 	void updateDisplay();
 	void setFrameRate(uint8_t fps);
