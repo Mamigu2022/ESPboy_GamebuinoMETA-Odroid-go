@@ -1,5 +1,5 @@
 //----------------------Levels---------------
-uint8_t  LevelPlan1[114]={
+uint8_t LevelPlan1[114]={
   9, //frame width 
   10, //frame height
   0, //north
@@ -32,7 +32,7 @@ uint8_t  LevelPlan1[114]={
   1,1,2,2,2,20,2,2,1,0//97-106
 };
 
-uint8_t  LevelPlan2[114]={
+uint8_t LevelPlan2[114]={
   9, //frame width 
   10, //frame height
   1, //north
@@ -65,7 +65,7 @@ uint8_t  LevelPlan2[114]={
   1,1,2,2,2,2,2,2,2,2
 };
 
-uint8_t  LevelPlan3[114]={
+uint8_t LevelPlan3[114]={
   9, //frame width 
   10, //frame height
   0, //north
@@ -98,7 +98,7 @@ uint8_t  LevelPlan3[114]={
   2,2,2,2,2,2,2,2,2,2//104-1113
 };
 
-uint8_t  LevelPlan4[114]={
+uint8_t LevelPlan4[114]={
   9, //frame width 
   10, //frame height
   0, //north
@@ -131,7 +131,7 @@ uint8_t  LevelPlan4[114]={
   2,2,2,2,2,2,2,1,1,1
 };
 
-uint8_t  LevelPlan5[114]={
+uint8_t LevelPlan5[114]={
   9, //frame width 
   10, //frame height
   0, //north
@@ -164,7 +164,7 @@ uint8_t  LevelPlan5[114]={
   1,1,1,1,1,0,0,20,1,1
 };
 
-uint8_t  LevelPlan6[114]={
+uint8_t LevelPlan6[114]={
   9, //frame width 
   10, //frame height
   5, //north
@@ -197,7 +197,7 @@ uint8_t  LevelPlan6[114]={
   1,1,2,2,2,2,2,2,2,2
 };
 
-uint8_t  LevelPlan7[114]={
+uint8_t LevelPlan7[114]={
   9, //frame width 
   10, //frame height
   0, //north
@@ -230,7 +230,7 @@ uint8_t  LevelPlan7[114]={
   2,2,2,2,2,2,2,2,2,2
 };
 
-uint8_t  LevelPlan8[114]={
+uint8_t LevelPlan8[114]={
   9, //frame width 
   10, //frame height
   0, //north
@@ -263,7 +263,7 @@ uint8_t  LevelPlan8[114]={
   2,2,2,2,2,2,2,2,2,2
 };
 
-uint8_t  LevelPlan9[114]={
+uint8_t LevelPlan9[114]={
   9, //frame width 
   10, //frame height
   0, //north
@@ -296,7 +296,7 @@ uint8_t  LevelPlan9[114]={
   2,2,2,2,20,2,2,1,1,1
 };
 
-uint8_t  LevelPlan10[114]={
+uint8_t LevelPlan10[114]={
   9, //frame width 
   10, //frame height
   11, //north
@@ -329,7 +329,7 @@ uint8_t  LevelPlan10[114]={
   1,1,1,1,1,1,1,2,2,2
 };
 
-uint8_t  LevelPlan11[114]={
+uint8_t LevelPlan11[114]={
   9, //frame width 
   10, //frame height
   27, //north
@@ -362,7 +362,7 @@ uint8_t  LevelPlan11[114]={
   1,1,1,1,1,20,0,0,0,1
 };
 
-uint8_t  LevelPlan12[114]={
+uint8_t LevelPlan12[114]={
   9, //frame width 
   10, //frame height
   0, //north
@@ -395,7 +395,7 @@ uint8_t  LevelPlan12[114]={
   1,1,11,0,0,13,1,1,1,1
 };
 
-uint8_t  LevelPlan13[114]={
+uint8_t LevelPlan13[114]={
   9, //frame width 
   10, //frame height
   14, //north
@@ -428,7 +428,7 @@ uint8_t  LevelPlan13[114]={
   1,1,2,2,2,2,2,2,1,1
 };
 
-uint8_t  LevelPlan14[114]={
+uint8_t LevelPlan14[114]={
   9, //frame width 
   10, //frame height
   15, //north
@@ -461,7 +461,7 @@ uint8_t  LevelPlan14[114]={
   1,2,2,20,2,2,2,2,1,0
 };
 
-uint8_t  LevelPlan15[114]={
+uint8_t LevelPlan15[114]={
   9, //frame width 
   10, //frame height
   0, //north
@@ -494,7 +494,7 @@ uint8_t  LevelPlan15[114]={
   1,11,1,1,1,1,20,13,1,0
 };
 
-uint8_t  LevelPlan16[114]={ //secret 1
+uint8_t LevelPlan16[114]={ //secret 1
   9, //frame width 
   10, //frame height
   0, //north
@@ -527,7 +527,7 @@ uint8_t  LevelPlan16[114]={ //secret 1
   1,2,2,2,2,2,2,2,2,1
 };
 
-uint8_t  LevelPlan17[114]={ //secret 2
+uint8_t LevelPlan17[114]={ //secret 2
   9, //frame width 
   10, //frame height
   0, //north
@@ -560,7 +560,7 @@ uint8_t  LevelPlan17[114]={ //secret 2
   1,1,2,2,2,2,2,2,2,1
 };
 
-uint8_t  LevelPlan18[114]={
+uint8_t LevelPlan18[114]={
   9, //frame width 
   10, //frame height
   19, //north
@@ -593,7 +593,7 @@ uint8_t  LevelPlan18[114]={
   2,2,2,2,2,2,1,20,0,1
 };
 
-uint8_t  LevelPlan19[114]={
+uint8_t LevelPlan19[114]={
   9, //frame width 
   10, //frame height
   0, //north
@@ -626,7 +626,7 @@ uint8_t  LevelPlan19[114]={
   1,1,1,1,1,1,0,20,0,1
 };
 
-uint8_t  LevelPlan20[114]={
+uint8_t LevelPlan20[114]={
   9, //frame width 
   10, //frame height
   0, //north
@@ -659,7 +659,7 @@ uint8_t  LevelPlan20[114]={
   1,1,1,1,1,1,1,1,1,1
 };
 
-uint8_t  LevelPlan21[114]={
+uint8_t LevelPlan21[114]={
   9, //frame width 
   10, //frame height
   0, //north
@@ -692,7 +692,7 @@ uint8_t  LevelPlan21[114]={
   1,1,1,1,1,1,0,20,0,1
 };
 
-uint8_t  LevelPlan22[114]={
+uint8_t LevelPlan22[114]={
   9, //frame width 
   10, //frame height
   21, //north
@@ -725,7 +725,7 @@ uint8_t  LevelPlan22[114]={
   1,1,1,1,1,1,20,0,0,1
 };
 
-uint8_t  LevelPlan23[114]={
+uint8_t LevelPlan23[114]={
   9, //frame width 
   10, //frame height
   22, //north
@@ -758,7 +758,7 @@ uint8_t  LevelPlan23[114]={
   2,2,2,2,2,2,2,2,2,2
 };
 
-uint8_t  LevelPlan24[114]={
+uint8_t LevelPlan24[114]={
   9, //frame width 
   10, //frame height
   25, //north
@@ -791,7 +791,7 @@ uint8_t  LevelPlan24[114]={
   1,2,2,2,2,2,2,2,2,2
 };
 
-uint8_t  LevelPlan25[114]={
+uint8_t LevelPlan25[114]={
   9, //frame width 
   10, //frame height
   0, //north
@@ -824,7 +824,7 @@ uint8_t  LevelPlan25[114]={
   1,20,2,2,2,2,2,2,2,1
 };
 
-uint8_t  LevelPlan26[114]={
+uint8_t LevelPlan26[114]={
   9, //frame width 
   10, //frame height
   36, //north
@@ -857,7 +857,7 @@ uint8_t  LevelPlan26[114]={
   2,2,2,2,2,2,2,2,2,1
 };
 
-uint8_t  LevelPlan27[114]={
+uint8_t LevelPlan27[114]={
   9, //frame width 
   10, //frame height
   0, //north
@@ -890,7 +890,7 @@ uint8_t  LevelPlan27[114]={
   1,1,1,1,1,20,2,2,2,2
 };
 
-uint8_t  LevelPlan28[114]={
+uint8_t LevelPlan28[114]={
   9, //frame width 
   10, //frame height
   0, //north
@@ -923,7 +923,7 @@ uint8_t  LevelPlan28[114]={
   2,2,2,14,17,16,2,2,2,2
 };
 
-uint8_t  LevelPlan29[114]={
+uint8_t LevelPlan29[114]={
   9, //frame width 
   10, //frame height
   0, //north
@@ -956,7 +956,7 @@ uint8_t  LevelPlan29[114]={
   2,2,2,2,2,2,2,2,2,2
 };
 
-uint8_t  LevelPlan30[114]={
+uint8_t LevelPlan30[114]={
   9, //frame width 
   10, //frame height
   31, //north
@@ -989,7 +989,7 @@ uint8_t  LevelPlan30[114]={
   2,2,2,2,2,2,2,2,2,1
 };
 
-uint8_t  LevelPlan31[114]={
+uint8_t LevelPlan31[114]={
   9, //frame width 
   10, //frame height
   0, //north
@@ -1022,7 +1022,7 @@ uint8_t  LevelPlan31[114]={
   1,11,2,2,2,2,2,20,13,1
 };
 
-uint8_t  LevelPlan32[114]={ //secret
+uint8_t LevelPlan32[114]={ //secret
   9, //frame width 
   10, //frame height
   0, //north
@@ -1055,7 +1055,7 @@ uint8_t  LevelPlan32[114]={ //secret
   1,2,2,2,2,2,2,2,1,1
 };
 
-uint8_t  LevelPlan33[114]={
+uint8_t LevelPlan33[114]={
   9, //frame width 
   10, //frame height
   9, //north
@@ -1088,7 +1088,7 @@ uint8_t  LevelPlan33[114]={
   2,2,2,2,2,2,2,2,2,2
 };
 
-uint8_t  LevelPlan34[114]={
+uint8_t LevelPlan34[114]={
   9, //frame width 
   10, //frame height
   0, //north
@@ -1121,7 +1121,7 @@ uint8_t  LevelPlan34[114]={
   2,2,2,2,2,2,2,2,2,1
 };
 
-uint8_t  LevelPlan35[114]={
+uint8_t LevelPlan35[114]={
   9, //frame width 
   10, //frame height
   18, //north
@@ -1154,7 +1154,7 @@ uint8_t  LevelPlan35[114]={
   1,20,1,1,1,1,0,0,0,1
 };
 
-uint8_t  LevelPlan36[114]={ //secret
+uint8_t LevelPlan36[114]={ //secret
   9, //frame width 
   10, //frame height
   0, //north
@@ -1187,7 +1187,7 @@ uint8_t  LevelPlan36[114]={ //secret
   1,1,1,1,1,1,1,20,1,1
 };
 
-uint8_t  LevelPlan37[114]={
+uint8_t LevelPlan37[114]={
   9, //frame width 
   10, //frame height
   0, //north
@@ -1220,7 +1220,7 @@ uint8_t  LevelPlan37[114]={
   6,6,6,6,2,2,2,2,2,2
 };
 
-uint8_t  LevelPlan38[114]={
+uint8_t LevelPlan38[114]={
   9, //frame width 
   10, //frame height
   0, //north
@@ -1253,7 +1253,7 @@ uint8_t  LevelPlan38[114]={
   6,6,6,6,6,6,6,6,6,6
 };
 
-uint8_t  LevelPlan39[114]={
+uint8_t LevelPlan39[114]={
   9, //frame width 
   10, //frame height
   0, //north
@@ -1286,7 +1286,7 @@ uint8_t  LevelPlan39[114]={
   6,6,6,6,6,6,6,6,6,6
 };
 
-uint8_t  LevelPlan40[114]={
+uint8_t LevelPlan40[114]={
   9, //frame width 
   10, //frame height
   35, //north
@@ -1319,7 +1319,7 @@ uint8_t  LevelPlan40[114]={
   2,2,2,2,2,2,2,2,2,2
 };
 
-uint8_t  LevelPlan41[114]={
+uint8_t LevelPlan41[114]={
   9, //frame width 
   10, //frame height
   0, //north
@@ -1352,7 +1352,7 @@ uint8_t  LevelPlan41[114]={
   2,2,2,2,2,2,2,2,2,2
 };
 
-uint8_t  LevelPlan42[114]={
+uint8_t LevelPlan42[114]={
   9, //frame width 
   10, //frame height
   0, //north
@@ -1385,7 +1385,7 @@ uint8_t  LevelPlan42[114]={
   1,1,1,1,1,2,2,2,2,2
 };
 
-uint8_t  LevelPlan43[114]={
+uint8_t LevelPlan43[114]={
   9, //frame width 
   10, //frame height
   0, //north
@@ -1418,7 +1418,7 @@ uint8_t  LevelPlan43[114]={
   2,2,2,2,2,2,2,2,1,1
 };
 
-uint8_t  LevelPlan44[114]={
+uint8_t LevelPlan44[114]={
   9, //frame width 
   10, //frame height
   0, //north
@@ -1451,7 +1451,7 @@ uint8_t  LevelPlan44[114]={
   2,2,2,2,2,2,2,2,2,2
 };
 
-uint8_t  LevelPlan45[114]={
+uint8_t LevelPlan45[114]={
   9, //frame width 
   10, //frame height
   0, //north
@@ -1484,7 +1484,7 @@ uint8_t  LevelPlan45[114]={
   1,1,1,1,2,2,2,2,2,2
 };
 
-uint8_t  LevelPlan46[114]={
+uint8_t LevelPlan46[114]={
   9, //frame width 
   10, //frame height
   54, //north
@@ -1517,7 +1517,7 @@ uint8_t  LevelPlan46[114]={
   2,2,2,2,2,2,2,2,1,1
 };
 
-uint8_t  LevelPlan47[114]={
+uint8_t LevelPlan47[114]={
   9, //frame width 
   10, //frame height
   46, //north
@@ -1550,7 +1550,7 @@ uint8_t  LevelPlan47[114]={
   5,5,5,5,5,5,5,5,5,5
 };
 
-uint8_t  LevelPlan48[114]={
+uint8_t LevelPlan48[114]={
   9, //frame width 
   10, //frame height
   0, //north
@@ -1583,7 +1583,7 @@ uint8_t  LevelPlan48[114]={
   2,2,2,2,2,2,2,2,2,2
 };
 
-uint8_t  LevelPlan49[114]={
+uint8_t LevelPlan49[114]={
   9, //frame width 
   10, //frame height
   50, //north
@@ -1616,7 +1616,7 @@ uint8_t  LevelPlan49[114]={
   1,20,2,2,2,2,2,2,2,2
 };
 
-uint8_t  LevelPlan50[114]={
+uint8_t LevelPlan50[114]={
   9, //frame width 
   10, //frame height
   53, //north
@@ -1649,7 +1649,7 @@ uint8_t  LevelPlan50[114]={
   1,2,2,2,2,2,2,20,2,2
 };
 
-uint8_t  LevelPlan51[114]={
+uint8_t LevelPlan51[114]={
   9, //frame width 
   10, //frame height
   52, //north
@@ -1682,7 +1682,7 @@ uint8_t  LevelPlan51[114]={
   2,2,2,2,2,2,1,1,1,1
 };
 
-uint8_t  LevelPlan52[114]={
+uint8_t LevelPlan52[114]={
   9, //frame width 
   10, //frame height
   0, //north
@@ -1715,7 +1715,7 @@ uint8_t  LevelPlan52[114]={
   1,20,1,1,1,1,1,1,1,1
 };
 
-uint8_t  LevelPlan53[114]={
+uint8_t LevelPlan53[114]={
   9, //frame width 
   10, //frame height
   0, //north
@@ -1748,7 +1748,7 @@ uint8_t  LevelPlan53[114]={
   1,2,20,2,2,2,2,2,2,1
 };
 
-uint8_t  LevelPlan54[114]={
+uint8_t LevelPlan54[114]={
   9, //frame width 
   10, //frame height
   0, //north
@@ -1781,7 +1781,7 @@ uint8_t  LevelPlan54[114]={
   1,2,2,20,2,2,2,2,2,1
 };
 
-uint8_t  LevelPlan55[114]={
+uint8_t LevelPlan55[114]={
   9, //frame width 
   10, //frame height
   0, //north
@@ -1814,7 +1814,7 @@ uint8_t  LevelPlan55[114]={
   2,2,2,2,2,2,2,20,1,1
 };
 
-uint8_t  LevelPlan56[114]={
+uint8_t LevelPlan56[114]={
   9, //frame width 
   10, //frame height
   0, //north
@@ -1847,7 +1847,7 @@ uint8_t  LevelPlan56[114]={
   1,2,2,2,2,2,2,2,2,2
 };
 
-uint8_t  LevelPlan57[114]={
+uint8_t LevelPlan57[114]={
   9, //frame width 
   10, //frame height
   0, //north
@@ -1880,7 +1880,7 @@ uint8_t  LevelPlan57[114]={
   2,2,2,2,2,2,2,2,2,2
 };
 
-uint8_t  LevelPlan58[114]={
+uint8_t LevelPlan58[114]={
   9, //frame width 
   10, //frame height
   49, //north
@@ -1913,7 +1913,7 @@ uint8_t  LevelPlan58[114]={
   5,11,0,0,0,0,0,0,5,5
 };
 
-uint8_t  LevelPlan59[114]={
+uint8_t LevelPlan59[114]={
   9, //frame width 
   10, //frame height
   0, //north
@@ -1946,7 +1946,7 @@ uint8_t  LevelPlan59[114]={
   5,0,0,20,0,0,0,0,5,5
 };
 
-uint8_t  LevelPlan60[114]={
+uint8_t LevelPlan60[114]={
   9, //frame width 
   10, //frame height
   59, //north
@@ -1979,7 +1979,7 @@ uint8_t  LevelPlan60[114]={
   5,5,5,5,5,5,5,5,5,5
 };
 
-uint8_t  LevelPlan61[114]={
+uint8_t LevelPlan61[114]={
   9, //frame width 
   10, //frame height
   0, //north
@@ -2012,7 +2012,7 @@ uint8_t  LevelPlan61[114]={
   5,5,5,5,5,5,5,5,5,5
 };
 
-uint8_t  LevelPlan62[114]={
+uint8_t LevelPlan62[114]={
   9, //frame width 
   10, //frame height
   0, //north
@@ -2045,7 +2045,7 @@ uint8_t  LevelPlan62[114]={
   5,5,5,5,5,5,5,5,5,5
 };
 
-uint8_t  LevelPlan63[114]={
+uint8_t LevelPlan63[114]={
   9, //frame width 
   10, //frame height
   64, //north
@@ -2078,7 +2078,7 @@ uint8_t  LevelPlan63[114]={
   5,5,5,5,5,5,5,5,5,5
 };
 
-uint8_t  LevelPlan64[114]={
+uint8_t LevelPlan64[114]={
   9, //frame width 
   10, //frame height
   0, //north
@@ -2111,7 +2111,7 @@ uint8_t  LevelPlan64[114]={
   5,5,5,0,0,0,20,5,5,5
 };
 
-uint8_t  LevelPlan65[114]={
+uint8_t LevelPlan65[114]={
   9, //frame width 
   10, //frame height
   0, //north
@@ -2144,7 +2144,7 @@ uint8_t  LevelPlan65[114]={
   5,20,5,5,5,5,5,5,5,5
 };
 
-uint8_t  LevelPlan66[114]={
+uint8_t LevelPlan66[114]={
   9, //frame width 
   10, //frame height
   67, //north
@@ -2177,7 +2177,7 @@ uint8_t  LevelPlan66[114]={
   5,5,5,0,20,0,0,5,5,5
 };
 
-uint8_t  LevelPlan67[114]={
+uint8_t LevelPlan67[114]={
   9, //frame width 
   10, //frame height
   0, //north
@@ -2210,7 +2210,7 @@ uint8_t  LevelPlan67[114]={
   5,5,5,0,0,20,0,5,5,5
 };
 
-uint8_t  LevelPlan68[114]={
+uint8_t LevelPlan68[114]={
   9, //frame width 
   10, //frame height
   0, //north
@@ -2243,7 +2243,7 @@ uint8_t  LevelPlan68[114]={
   5,5,5,5,5,5,5,5,5,5
 };
 
-uint8_t  LevelPlan69[114]={
+uint8_t LevelPlan69[114]={
   9, //frame width 
   10, //frame height
   65, //north
@@ -2276,7 +2276,7 @@ uint8_t  LevelPlan69[114]={
   5,5,5,5,5,5,5,5,5,5
 };
 
-uint8_t  LevelPlan70[114]={
+uint8_t LevelPlan70[114]={
   9, //frame width 
   10, //frame height
   66, //north
@@ -2309,7 +2309,7 @@ uint8_t  LevelPlan70[114]={
   5,5,5,5,5,5,5,5,5,5
 };
 
-uint8_t  LevelPlan71[114]={
+uint8_t LevelPlan71[114]={
   9, //frame width 
   10, //frame height
   76, //north
@@ -2342,7 +2342,7 @@ uint8_t  LevelPlan71[114]={
   5,5,5,5,5,5,5,5,5,5
 };
 
-uint8_t  LevelPlan72[114]={
+uint8_t LevelPlan72[114]={
   9, //frame width 
   10, //frame height
   0, //north
@@ -2375,7 +2375,7 @@ uint8_t  LevelPlan72[114]={
   5,5,5,5,5,5,5,5,5,5
 };
 
-uint8_t  LevelPlan73[114]={
+uint8_t LevelPlan73[114]={
   9, //frame width 
   10, //frame height
   0, //north
@@ -2408,7 +2408,7 @@ uint8_t  LevelPlan73[114]={
   5,5,5,5,5,5,5,5,5,5
 };
 
-uint8_t  LevelPlan74[114]={
+uint8_t LevelPlan74[114]={
   9, //frame width 
   10, //frame height
   0, //north
@@ -2441,7 +2441,7 @@ uint8_t  LevelPlan74[114]={
   5,5,5,5,5,5,5,5,5,5
 };
 
-uint8_t  LevelPlan75[114]={
+uint8_t LevelPlan75[114]={
   9, //frame width 
   10, //frame height
   0, //north
@@ -2474,7 +2474,7 @@ uint8_t  LevelPlan75[114]={
   5,5,5,5,5,5,5,5,5,5
 };
 
-uint8_t  LevelPlan76[114]={
+uint8_t LevelPlan76[114]={
   9, //frame width 
   10, //frame height
   0, //north
@@ -2507,7 +2507,7 @@ uint8_t  LevelPlan76[114]={
   5,5,5,5,5,5,5,20,5,5
 };
 
-uint8_t  LevelPlan77[114]={
+uint8_t LevelPlan77[114]={
   9, //frame width 
   10, //frame height
   0, //north
@@ -2540,7 +2540,7 @@ uint8_t  LevelPlan77[114]={
   5,5,20,5,5,5,5,5,5,5
 };
 
-uint8_t  LevelPlan78[114]={
+uint8_t LevelPlan78[114]={
   9, //frame width 
   10, //frame height
   0, //north
@@ -2573,7 +2573,7 @@ uint8_t  LevelPlan78[114]={
   5,5,20,5,5,5,5,5,5,5
 };
 
-uint8_t  LevelPlan79[114]={
+uint8_t LevelPlan79[114]={
   9, //frame width 
   10, //frame height
   90, //north
@@ -2606,7 +2606,7 @@ uint8_t  LevelPlan79[114]={
   5,5,5,5,5,5,5,5,20,5
 };
 
-uint8_t  LevelPlan80[114]={
+uint8_t LevelPlan80[114]={
   9, //frame width 
   10, //frame height
   0, //north
@@ -2639,7 +2639,7 @@ uint8_t  LevelPlan80[114]={
   5,5,5,5,5,5,5,17,5,5
 };
 
-uint8_t  LevelPlan81[114]={
+uint8_t LevelPlan81[114]={
   9, //frame width 
   10, //frame height
   0, //north
@@ -2672,7 +2672,7 @@ uint8_t  LevelPlan81[114]={
   5,5,5,5,5,5,5,5,5,5
 };
 
-uint8_t  LevelPlan82[114]={
+uint8_t LevelPlan82[114]={
   9, //frame width 
   10, //frame height
   0, //north
@@ -2705,7 +2705,7 @@ uint8_t  LevelPlan82[114]={
   5,5,5,5,5,5,5,5,5,5
 };
 
-uint8_t  LevelPlan83[114]={
+uint8_t LevelPlan83[114]={
   9, //frame width 
   10, //frame height
   0, //north
@@ -2738,7 +2738,7 @@ uint8_t  LevelPlan83[114]={
   5,5,11,1,1,1,1,1,0,5
 };
 
-uint8_t  LevelPlan84[114]={
+uint8_t LevelPlan84[114]={
   9, //frame width 
   10, //frame height
   79, //north
@@ -2771,7 +2771,7 @@ uint8_t  LevelPlan84[114]={
   5,5,5,5,5,5,5,5,5,5
 };
 
-uint8_t  LevelPlan85[114]={
+uint8_t LevelPlan85[114]={
   9, //frame width 
   10, //frame height
   78, //north
@@ -2804,7 +2804,7 @@ uint8_t  LevelPlan85[114]={
   5,5,5,5,5,5,5,5,5,5
 };
 
-uint8_t  LevelPlan86[114]={
+uint8_t LevelPlan86[114]={
   9, //frame width 
   10, //frame height
   77, //north
@@ -2837,7 +2837,7 @@ uint8_t  LevelPlan86[114]={
   5,5,5,5,5,5,5,5,5,5
 };
 
-uint8_t  LevelPlan87[114]={
+uint8_t LevelPlan87[114]={
   9, //frame width 
   10, //frame height
   0, //north
@@ -2870,7 +2870,7 @@ uint8_t  LevelPlan87[114]={
   12,12,12,12,12,12,12,12,12,12
 };
 
-uint8_t  LevelPlan88[114]={
+uint8_t LevelPlan88[114]={
   9, //frame width 
   10, //frame height
   0, //north
@@ -2903,7 +2903,7 @@ uint8_t  LevelPlan88[114]={
   12,5,5,5,5,5,5,5,5,5
 };
 
-uint8_t  LevelPlan89[114]={
+uint8_t LevelPlan89[114]={
   9, //frame width 
   10, //frame height
   0, //north
@@ -2936,7 +2936,7 @@ uint8_t  LevelPlan89[114]={
   5,5,5,5,5,5,5,5,5,5
 };
 
-uint8_t  LevelPlan90[114]={
+uint8_t LevelPlan90[114]={
   9, //frame width 
   10, //frame height
   55, //north
@@ -2969,7 +2969,7 @@ uint8_t  LevelPlan90[114]={
   5,20,5,5,5,5,5,5,5,5
 };
 
-uint8_t  LevelPlan91[114]={
+uint8_t LevelPlan91[114]={
   9, //frame width 
   10, //frame height
   0, //north
@@ -3002,7 +3002,7 @@ uint8_t  LevelPlan91[114]={
   5,5,5,5,5,5,5,5,5,5
 };
 
-uint8_t  LevelPlan92[114]={
+uint8_t LevelPlan92[114]={
   9, //frame width 
   10, //frame height
   0, //north
@@ -3821,3 +3821,4 @@ void sealSecrets()
   LevelPlan57[70]=7;
   LevelPlan57[9]=48;
 }
+

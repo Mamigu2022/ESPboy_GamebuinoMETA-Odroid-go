@@ -1,7 +1,6 @@
 #include<Gamebuino-Meta.h>
 
 //---------------------Sound-----------------
-
 const Gamebuino_Meta::Sound_FX magicSfx[] = {
     {Gamebuino_Meta::Sound_FX_Wave::NOISE,0,80,-1,10,70,15},
 };
@@ -22,7 +21,6 @@ const Gamebuino_Meta::Sound_FX diamondSfx[] = {
 const Gamebuino_Meta::Sound_FX cupSfx[] = {
     {Gamebuino_Meta::Sound_FX_Wave::SQUARE,0,130,-6,0,50,20}
 };
-
 
 //---------------------Game variables--------
 uint8_t LevelId=49;
@@ -56,7 +54,7 @@ uint8_t menuChoice=1;
 uint8_t pauseChoice=1;
 int8_t cursorPosY=41;
 
-uint8_t PROGMEM TitleGraph[100]={
+uint8_t TitleGraph[100]={
   1,1,1,1,1,1,1,1,1,1,
   1,1,1,1,1,1,1,1,1,1,
   1,1,1,1,1,1,1,1,1,1,
@@ -69,7 +67,7 @@ uint8_t PROGMEM TitleGraph[100]={
   1,1,1,1,1,1,1,1,1,1
 };
 
-uint8_t PROGMEM MainGraph[100]={
+uint8_t MainGraph[100]={
   0,0,0,0,0,0,0,0,0,0,
   1,1,0,0,1,1,0,0,1,1,
   1,1,1,1,1,1,1,1,1,1,
@@ -82,7 +80,7 @@ uint8_t PROGMEM MainGraph[100]={
   0,0,0,0,0,0,0,0,0,0
 };
 
-uint8_t PROGMEM ScoreGraph[100]={
+uint8_t ScoreGraph[100]={
   1,1,1,1,1,1,1,1,1,1,
   1,0,0,0,0,0,0,0,0,1,
   1,0,0,0,0,0,0,0,0,1,
@@ -95,7 +93,7 @@ uint8_t PROGMEM ScoreGraph[100]={
   1,1,1,1,1,1,1,1,1,1
 };
 
-uint8_t PROGMEM EndGraph[100]={
+uint8_t EndGraph[100]={
   14,17,17,17,17,17,17,17,17,16,
   11,0,0,0,0,0,0,0,0,13,
   11,0,0,0,0,0,0,0,0,13,
@@ -118,11 +116,9 @@ const SaveDefault savefileDefaults[] = {
   { 4,SAVETYPE_INT,0,0 }
 };
 
-
 //--------------Functions-------------------------
 
 void setup() {
-  Serial.begin(115200);
   gb.begin();
   gb.save.config(savefileDefaults);
   ScoreBoard[0]=gb.save.get(0);
@@ -681,7 +677,7 @@ void checkCollider(uint8_t displayPlan[114],String moveDirection) //we check if 
   else if(displayPlan[SelectedField]==35) //collision with the power
   {
     gb.sound.fx(loreSfx);
-    gb.lights.fill(BLUE);;
+    gb.lights.fill(BLUE);
     displayPlan[SelectedField]=0; //clear power base
     displayPlan[SelectedField-10]=0; //clear power up
     Lore+=2;
@@ -928,3 +924,4 @@ void checkEnemyCollision(uint8_t displayPlan[114]) //we check if enemy and playe
     frameMod=0;
   }
 }
+
