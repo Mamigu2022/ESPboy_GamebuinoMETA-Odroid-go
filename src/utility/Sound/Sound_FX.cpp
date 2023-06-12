@@ -32,7 +32,7 @@ void Sound_Handler_FX::init() {
 	_current_pattern_length = 0;
 	_current_pattern = nullptr;
 
-	_pitch_scale = (uint16_t)(1 << FPP);
+	_pitch_scale = (1 << FPP);
 
 	_headP = (uint32_t *)parent_channel->buffer;
 	_firstZeroP = nullptr;

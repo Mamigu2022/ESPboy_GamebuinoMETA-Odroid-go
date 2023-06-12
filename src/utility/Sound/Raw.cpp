@@ -33,7 +33,6 @@ Sound_Handler_Raw::Sound_Handler_Raw(Sound_Channel* chan, uint8_t* _buffer, uint
 void Sound_Handler_Raw::update() {
 	channel->buffer += channel->index;
 	channel->index = 0;
-	
 	uint32_t cursor = getPos();
 	if (cursor + 0xFFFF > length) {
 		channel->total = length - cursor;

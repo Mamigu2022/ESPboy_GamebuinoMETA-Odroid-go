@@ -56,8 +56,8 @@
 #define min_(x,y) ((x)<(y)?(x):(y))
 #endif
 
-#define SETTING_VOLUME 0
-#define SETTING_VOLUME_MUTE 1
+#define SETTING_VOLUME 6
+#define SETTING_VOLUME_MUTE 0
 #define SETTING_DEFAULTNAME 2
 #define SETTING_LANGUAGE 3
 #define SETTING_SETUP 5

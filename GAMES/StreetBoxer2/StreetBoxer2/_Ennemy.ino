@@ -235,5 +235,3 @@ void ennemy_strategiesInit(){
   strategies[4][8] = 3;//attack then protect
   strategies[4][9] = 99;
 }
-
-

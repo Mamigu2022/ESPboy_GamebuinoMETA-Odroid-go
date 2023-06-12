@@ -101,7 +101,7 @@ public:
 
 	uint32_t* _headP;
 	uint32_t* _firstZeroP;
-	int16_t _pitch_scale;
+	int32_t _pitch_scale;
 
 	int32_t _noise_period;
 	int32_t _square_period;
@@ -112,7 +112,7 @@ public:
 
 	inline uint8_t getVolume() {
 		_current_Sound_FX_volume += _current_Sound_FX_volume_sweep;
-		return (min(127, max(0, (_current_Sound_FX_volume >> FPP))));
+		return (min_(127, max_(0, (_current_Sound_FX_volume >> FPP))));
 	} __attribute__((optimize("-O3")));
 
 	inline int32_t getFrequency() {

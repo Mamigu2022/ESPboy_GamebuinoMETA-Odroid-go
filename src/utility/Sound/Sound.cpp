@@ -32,25 +32,25 @@ namespace Gamebuino_Meta {
 #if SOUND_ENABLE_FX
 
 
-const PROGMEM Gamebuino_Meta::Sound_FX playOKFX[] = {
+const Gamebuino_Meta::Sound_FX playOKFX[] = {
   {Gamebuino_Meta::Sound_FX_Wave::SQUARE, 1, 110, -6, 11, 126, 2},
   {Gamebuino_Meta::Sound_FX_Wave::SQUARE, 0, 150, -25, -3, 47, 3},
 };
 
-const PROGMEM Gamebuino_Meta::Sound_FX playCancelFX[] = {
+const Gamebuino_Meta::Sound_FX playCancelFX[] = {
   {Gamebuino_Meta::Sound_FX_Wave::SQUARE, 1, 120, 3, 8, 126, 2},
   {Gamebuino_Meta::Sound_FX_Wave::SQUARE, 0, 130, -13, 10, 169, 3},
 };
 
-const PROGMEM Gamebuino_Meta::Sound_FX playTickFX[] = {
+const Gamebuino_Meta::Sound_FX playTickFX[] = {
   {Gamebuino_Meta::Sound_FX_Wave::SQUARE, 0, 196, -35, -3, 142, 1},
 };
 
 #else  // SOUND_ENABLE_FX
 
-const PROGMEM uint16_t playOKPattern[] = {0x0005,0x138,0x168,0x0000};
-const PROGMEM uint16_t playCancelPattern[] = {0x0005,0x168,0x138,0x0000};
-const PROGMEM uint16_t playTickP[] = {0x0045,0x168,0x0000};
+const uint16_t playOKPattern[] = {0x0005,0x138,0x168,0x0000};
+const uint16_t playCancelPattern[] = {0x0005,0x168,0x138,0x0000};
+const uint16_t playTickP[] = {0x0045,0x168,0x0000};
 
 #endif  // SOUND_ENABLE_FX
 
@@ -365,13 +365,15 @@ uint32_t Sound::getPos(int8_t i) {
 extern "C" {
 #endif
 
-//static void Audio_Handler (void) __attribute__((optimize("-O3")));
+static void Audio_Handler (void) __attribute__((optimize("-O3")));
 
 uint16_t flowdown = 0;
 
 
 //void Audio_Handler (void) {
 static void IRAM_ATTR Audio_Handler(void) {
+    globalVolume=8;
+
 	if (!globalVolume || muted) {
 		return;
 	}
@@ -432,43 +434,39 @@ static void IRAM_ATTR Audio_Handler(void) {
 		//255			5			127		//reduced volume
 		
 		//output = (output * 4) >> (8 - globalVolume);
+		
 		//offset the signed value to be centered around 512
 		//as the 10-bit DAC output is between 0 and 1024
-		output = output * 2;
 		
 		// we need to slowly fade up our zero-level to not have any plop when starting to play sound
-		//if (flowdown < 512) {
-		//	flowdown++;
-		//}
-		//output += flowdown;
-		//if (output < 0) {
-		//	output = 0;
-		//}
-		//analogWrite(A0, output);
-		if(output>255)output=255;
-		if(output<0)output=0;
+		if (flowdown < 255) {
+			flowdown++;
+		}
+		output += flowdown;
+		if (output < 0) {
+			output = 0;
+		}
 		sigmaDeltaWrite(0, output);
-	} 
-	else {
+		//analogWrite(A0, output);
+	} else {
 		// we need to output 0 when not in use to not have weird sound effects with the neoLeds as the interrupt isn't 100% constant there.
 		// however, jumping down from 512 (zero-positin) to 0 would give a plop
 		// so instead we gradually decrease instead
+		sigmaDeltaWrite(0, flowdown);
 		//analogWrite(A0, flowdown); // zero-position
-		sigmaDeltaWrite(0, 0);
-		//sigmaDeltaWrite(0, flowdown&255);
 		if (flowdown > 0) {
 			flowdown--;
 		}
 	}
 }
 
-
 #ifdef __cplusplus
 }
 #endif
 
 
-#define SIGMA_DELTA_RATE 200000
+
+#define SIGMA_DELTA_RATE SOUND_FREQ*2
 
 void dacConfigure(uint32_t sampleRate) {
   noInterrupts();
@@ -478,7 +476,7 @@ void dacConfigure(uint32_t sampleRate) {
 
   timer1_attachInterrupt(Audio_Handler);
   timer1_enable(TIM_DIV1, TIM_EDGE, TIM_LOOP);
-  timer1_write(80000000 / (sampleRate-1));
+  timer1_write(80000000 / sampleRate);
   interrupts(); 
 }
 

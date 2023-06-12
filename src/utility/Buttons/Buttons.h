@@ -40,7 +40,7 @@ Authors:
 
 namespace Gamebuino_Meta {
 
-const PROGMEM uint8_t NUM_BTN = 8;
+const uint8_t NUM_BTN = 8;
 
 enum class Button : uint8_t {
 	home  = 7,
@@ -72,15 +72,15 @@ protected:
 
 using Gamebuino_Meta::Button;
 
-const PROGMEM Button BUTTON_DOWN = Button::down;
-const PROGMEM Button BUTTON_LEFT = Button::left;
-const PROGMEM Button BUTTON_RIGHT = Button::right;
-const PROGMEM Button BUTTON_UP = Button::up;
-const PROGMEM Button BUTTON_A = Button::a;
-const PROGMEM Button BUTTON_B = Button::b;
-const PROGMEM Button BUTTON_MENU = Button::menu;
-const PROGMEM Button BUTTON_HOME = Button::home;
-const PROGMEM Button BUTTON_C = Button::menu;
-const PROGMEM Button BUTTON_D = Button::home;
+const Button BUTTON_DOWN = Button::down;
+const Button BUTTON_LEFT = Button::left;
+const Button BUTTON_RIGHT = Button::right;
+const Button BUTTON_UP = Button::up;
+const Button BUTTON_A = Button::a;
+const Button BUTTON_B = Button::b;
+const Button BUTTON_MENU = Button::menu;
+const Button BUTTON_HOME = Button::home;
+const Button BUTTON_C = Button::menu;
+const Button BUTTON_D = Button::home;
 
 #endif	// _GAMEBUINO_META_BUTTONS_H_
