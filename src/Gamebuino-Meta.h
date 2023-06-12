@@ -96,7 +96,7 @@ public:
 	void updateDisplay();
 	void setFrameRate(uint8_t fps);
 	void pickRandomSeed();
-	uint16_t createColor(uint8_t r, uint8_t g, uint8_t b);
+	Gamebuino_Meta::Color createColor(uint8_t r, uint8_t g, uint8_t b);
 	
     bool collidePointRect(int16_t x1, int16_t y1 ,int16_t x2 ,int16_t y2, int16_t w, int16_t h);  // deprecated. Use collide.pointRect() instead
 	bool collideRectRect(int16_t x1, int16_t y1, int16_t w1, int16_t h1 ,int16_t x2 ,int16_t y2, int16_t w2, int16_t h2);  // deprecated. Use collide.rectRect() instead

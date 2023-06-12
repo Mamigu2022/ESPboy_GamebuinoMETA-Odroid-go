@@ -6,8 +6,8 @@
 
 #include "Utils.h"
 
-#define min(a,b) ((a) <= (b) ? (a) : (b))
-#define max(a,b) ((a) >= (b) ? (a) : (b))
+#define min(a,b) ((a) < (b) ? (a) : (b))
+#define max(a,b) ((a) > (b) ? (a) : (b))
 
 // column Delta for heading
 const int8_t colDelta[] = {0, 1, 0, -1 };
@@ -153,18 +153,17 @@ int16_t fastCos(int16_t value) {
 }
 
 namespace Gamebuino_Meta {
-//  extern FX_Channel fx_channel; // Declared in src/utility/Sound/Sound.cpp
+  extern FX_Channel fx_channel; // Declared in src/utility/Sound/Sound.cpp
 }
 
 /* Inspects Gamebuino internals to determine if a sound effect started via
  * gb.sound.fx is still playing.
  */
 bool isFxPlaying() {
-return(0);
-//  return (
-//    Gamebuino_Meta::fx_channel.handler != nullptr &&
-//    Gamebuino_Meta::fx_channel.handler->_current_Sound_FX_time != UINT32_MAX
-//  );
+  return (
+    Gamebuino_Meta::fx_channel.handler != nullptr &&
+    Gamebuino_Meta::fx_channel.handler->_current_Sound_FX_time != UINT32_MAX
+  );
 }
 
 /* Based on Graphics::indexTo565
@@ -281,13 +280,16 @@ void safeDrawFastHLine(int16_t x, int16_t y, int16_t w) {
 }
 
 void assertFailed(const char *function, const char *file, int lineNo, const char *expression) {
-  Serial.println("=== ASSERT FAILED ===");
-  Serial.println(function);
-  Serial.println(file);
-  Serial.println(lineNo, DEC);
-  Serial.println(expression);
-  Serial.flush();
-
+ /*
+  if (SerialUSB) {
+    SerialUSB.println("=== ASSERT FAILED ===");
+    SerialUSB.println(function);
+    SerialUSB.println(file);
+    SerialUSB.println(lineNo, DEC);
+    SerialUSB.println(expression);
+    SerialUSB.flush();
+  }
+*/
   while (1) {
     if (gb.update()) {
       gb.display.clear();

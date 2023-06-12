@@ -71,22 +71,20 @@ Animation* Game::gameOver() {
 void Game::signalDeath(const char* cause) {
   _causeOfDeath = cause;
 }
-/*
+
 const Gamebuino_Meta::Sound_FX pickupCollectedSfx[] = {
   {Gamebuino_Meta::Sound_FX_Wave::SQUARE,1,128,0,0,50,3},
   {Gamebuino_Meta::Sound_FX_Wave::SQUARE,1,128,0,0,89,3},
   {Gamebuino_Meta::Sound_FX_Wave::SQUARE,0,128,-1,0,63,3},
 };
 const Gamebuino_Meta::Sound_FX* boxDestroyedSfx = pickupCollectedSfx;
-*/
 
 void Game::signalPickupCollected() {
   _level.pickupCollected();
 
   addToScore(10);
-  //gb.sound.fx(pickupCollectedSfx);
-  gb.sound.playOK();
-  
+  gb.sound.fx(pickupCollectedSfx);
+
   if (_level.isCompleted()) {
     _activeAnimation = _levelDoneAnimation.init();
   }
@@ -95,9 +93,8 @@ void Game::signalPickupCollected() {
 void Game::signalBoxDestroyed(Box& box) {
   if (box.mustBeDestroyed()) {
     addToScore(10);
-    //gb.sound.fx(boxDestroyedSfx);
-    gb.sound.playCancel();
-  
+    gb.sound.fx(boxDestroyedSfx);
+
     _level.boxDestroyed();
 
     if (_level.isCompleted()) {
@@ -173,3 +170,4 @@ void Game::draw() {
     }
   }
 }
+

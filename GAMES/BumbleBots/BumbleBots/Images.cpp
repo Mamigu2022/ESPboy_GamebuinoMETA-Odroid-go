@@ -6,7 +6,7 @@
 
 #include "Images.h"
 
-const PROGMEM  uint8_t botImageData[] = {
+const PROGMEM uint8_t botImageData[] = {
   8, 10, 10, 0, 0, (uint8_t)INDEX_BLACK, 1,
 
   0x00, 0x00, 0xc0, 0x00,
@@ -121,7 +121,7 @@ const PROGMEM  uint8_t botImageData[] = {
 };
 Image botImage = Image(botImageData);
 
-const PROGMEM  uint8_t box1Data[] = {
+const PROGMEM uint8_t box1Data[] = {
   10, 10, 1, 0, 1, (uint8_t)INDEX_BLACK, 1,
   0x00, 0x0f, 0xff, 0x00, 0x00,
   0x0f, 0xff, 0xff, 0xff, 0x00,
@@ -136,7 +136,7 @@ const PROGMEM  uint8_t box1Data[] = {
 };
 Image box1Image = Image(box1Data);
 
-const PROGMEM  uint8_t box2Data[] = {
+const PROGMEM uint8_t box2Data[] = {
   10, 11, 1, 0, 1, (uint8_t)INDEX_BLACK, 1,
   0x00, 0x0a, 0xaa, 0x00, 0x00,
   0x0a, 0xaa, 0xaa, 0xaa, 0x00,
@@ -152,7 +152,7 @@ const PROGMEM  uint8_t box2Data[] = {
 };
 Image box2Image = Image(box2Data);
 
-const PROGMEM  uint8_t pickupData[] = {
+const PROGMEM uint8_t pickupData[] = {
   8, 8, 1, 0, 1, (uint8_t)INDEX_BLACK, 1,
   0x00, 0x99, 0x99, 0x00,
   0x09, 0xa9, 0x99, 0x90,
@@ -165,7 +165,7 @@ const PROGMEM  uint8_t pickupData[] = {
 };
 Image pickupImage = Image(pickupData);
 
-const PROGMEM  uint8_t teleportData[] = {
+const PROGMEM uint8_t teleportData[] = {
   9, 5, 1, 0, 1, (uint8_t)INDEX_BLACK, 1,
   0x00, 0x00, 0x80, 0x00, 0x00,
   0x00, 0x88, 0x98, 0x80, 0x00,
@@ -175,7 +175,7 @@ const PROGMEM  uint8_t teleportData[] = {
 };
 Image teleportImage = Image(teleportData);
 
-const PROGMEM  uint8_t teleportPuffsData[] = {
+const PROGMEM uint8_t teleportPuffsData[] = {
   5, 5, 3, 0, 1, (uint8_t)INDEX_BLACK, 1,
   0x00, 0x80, 0x00,
   0x00, 0x00, 0x00,
@@ -197,7 +197,7 @@ const PROGMEM  uint8_t teleportPuffsData[] = {
 };
 Image teleportPuffsImage = Image(teleportPuffsData);
 
-const PROGMEM  uint8_t gapData[] = {
+const PROGMEM uint8_t gapData[] = {
   9, 5, 1, 0, 1, (uint8_t)INDEX_PINK, 1,
   0xee, 0xe1, 0x16, 0xee, 0xe0,
   0xe1, 0x15, 0x56, 0x66, 0xe0,
@@ -207,7 +207,7 @@ const PROGMEM  uint8_t gapData[] = {
 };
 Image gapImage = Image(gapData);
 
-const PROGMEM  uint8_t liveIconData[] = {
+const PROGMEM uint8_t liveIconData[] = {
   4, 6, 1, 0, 1, (uint8_t)INDEX_BLACK, 1,
   0x0c, 0xc0,
   0xcc, 0xcc,
@@ -218,7 +218,7 @@ const PROGMEM  uint8_t liveIconData[] = {
 };
 Image liveIconImage = Image(liveIconData);
 
-const PROGMEM  uint8_t gameOverData[] = {
+const PROGMEM uint8_t gameOverData[] = {
   29, 19, 1, 0, 1, (uint8_t)INDEX_BLACK, 1,
   0x00, 0x11, 0x11, 0x00, 0x01, 0x11, 0x00, 0x11, 0x11, 0x11, 0x10, 0x01, 0x11, 0x11, 0x00,
   0x01, 0xcc, 0xcc, 0x10, 0x1c, 0xcc, 0x11, 0xcc, 0xcc, 0xcc, 0xc1, 0x1c, 0xcc, 0xcc, 0x10,
@@ -242,7 +242,7 @@ const PROGMEM  uint8_t gameOverData[] = {
 };
 Image gameOverImage = Image(gameOverData);
 
-const PROGMEM  uint8_t bestGameEverData[] = {
+const PROGMEM uint8_t bestGameEverData[] = {
   29, 28, 1, 0, 1, (uint8_t)INDEX_BLACK, 1,
   0x00, 0x01, 0x11, 0x10, 0x01, 0x11, 0x11, 0x00, 0x11, 0x11, 0x01, 0x11, 0x11, 0x10, 0x00,
   0x00, 0x1c, 0xcc, 0xc1, 0x1c, 0xcc, 0xcc, 0x11, 0xcc, 0xcc, 0x1c, 0xcc, 0xcc, 0xc1, 0x00,
@@ -275,7 +275,7 @@ const PROGMEM  uint8_t bestGameEverData[] = {
 };
 Image bestGameEverImage = Image(bestGameEverData);
 
-const PROGMEM  uint8_t gameDoneData[] = {
+const PROGMEM uint8_t gameDoneData[] = {
   43, 19, 1, 0, 1, (uint8_t)INDEX_BLACK, 1,
   0x00, 0x00, 0x00, 0x01, 0x11, 0x11, 0x01, 0x11, 0x11, 0x01, 0x11, 0x10, 0x00, 0x00, 0x11, 0x10, 0x01, 0x11, 0x11, 0x00, 0x00, 0x00,
   0x00, 0x00, 0x00, 0x1c, 0xcc, 0xcc, 0x1c, 0xcc, 0xc1, 0x1c, 0xcc, 0xc1, 0x00, 0x01, 0xcc, 0xc1, 0x1c, 0xcc, 0xcc, 0x10, 0x00, 0x00,
@@ -299,7 +299,7 @@ const PROGMEM  uint8_t gameDoneData[] = {
 };
 Image gameDoneImage = Image(gameDoneData);
 
-const PROGMEM  uint8_t levelHiData[] = {
+const PROGMEM uint8_t levelHiData[] = {
   31, 28, 1, 0, 1, (uint8_t)INDEX_BLACK, 1,
   0x00, 0x00, 0x00, 0x11, 0x11, 0x00, 0x11, 0x11, 0x10, 0x11, 0x00, 0x01, 0x10, 0x00, 0x00, 0x00,
   0x00, 0x00, 0x01, 0xcc, 0xcc, 0x11, 0xcc, 0xcc, 0xc1, 0xcc, 0x10, 0x1c, 0xc1, 0x00, 0x00, 0x00,
@@ -332,7 +332,7 @@ const PROGMEM  uint8_t levelHiData[] = {
 };
 Image levelHiImage = Image(levelHiData);
 
-const PROGMEM  uint8_t rock1Data[] = {
+const PROGMEM uint8_t rock1Data[] = {
   8, 7, 1, 0, 1, (uint8_t)INDEX_PINK, 1,
   0xee, 0x66, 0x5e, 0xee,
   0xe6, 0x66, 0x55, 0xee,
@@ -344,7 +344,7 @@ const PROGMEM  uint8_t rock1Data[] = {
 };
 Image rock1Image = Image(rock1Data);
 
-const PROGMEM  uint8_t rock2Data[] = {
+const PROGMEM uint8_t rock2Data[] = {
   8, 7, 1, 0, 1, (uint8_t)INDEX_PINK, 1,
   0xee, 0x66, 0x5e, 0xee,
   0xe6, 0x66, 0x55, 0xee,
@@ -356,7 +356,7 @@ const PROGMEM  uint8_t rock2Data[] = {
 };
 Image rock2Image = Image(rock2Data);
 
-const PROGMEM  uint8_t tree1Data[] = {
+const PROGMEM uint8_t tree1Data[] = {
   8, 9, 1, 0, 1, (uint8_t)INDEX_PINK, 1,
   0xee, 0x33, 0x33, 0xee,
   0xe3, 0xbb, 0x33, 0x3e,
@@ -370,7 +370,7 @@ const PROGMEM  uint8_t tree1Data[] = {
 };
 Image tree1Image = Image(tree1Data);
 
-const PROGMEM  uint8_t tree2Data[] = {
+const PROGMEM uint8_t tree2Data[] = {
   7, 8, 1, 0, 1, (uint8_t)INDEX_PINK, 1,
   0xee, 0xe3, 0xee, 0xe0,
   0xee, 0xe3, 0xee, 0xe0,
@@ -383,7 +383,7 @@ const PROGMEM  uint8_t tree2Data[] = {
 };
 Image tree2Image = Image(tree2Data);
 
-const PROGMEM  uint8_t botMediumData[] = {
+const PROGMEM uint8_t botMediumData[] = {
   20, 23, 1, 0, 1, (uint8_t)INDEX_DARKGRAY, 1,
   0x55, 0x55, 0x55, 0x55, 0x5c, 0x55, 0x55, 0x55, 0x55, 0x55,
   0x55, 0x55, 0x55, 0x5c, 0xcc, 0xcc, 0x55, 0x55, 0x55, 0x55,

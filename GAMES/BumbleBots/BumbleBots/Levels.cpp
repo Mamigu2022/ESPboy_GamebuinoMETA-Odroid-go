@@ -10,101 +10,100 @@
 #include "Palettes.h"
 #include "TileTypes.h"
 
-#define min(a,b) ((a) <= (b) ? (a) : (b))
-#define max(a,b) ((a) >= (b) ? (a) : (b))
+
 
 //-----------------------------------------------------------------------------
 // Level definitions
 
-const  uint8_t H0 = 0x00;
-const  uint8_t H1 = 0x20;
-const  uint8_t H2 = 0x40;
-const  uint8_t H3 = 0x60;
-const  uint8_t H4 = 0x80;
-const  uint8_t H5 = 0xa0;
-const  uint8_t H6 = 0xc0;
-const  uint8_t H7 = 0xe0;
+const uint8_t H0 = 0x00;
+const uint8_t H1 = 0x20;
+const uint8_t H2 = 0x40;
+const uint8_t H3 = 0x60;
+const uint8_t H4 = 0x80;
+const uint8_t H5 = 0xa0;
+const uint8_t H6 = 0xc0;
+const uint8_t H7 = 0xe0;
 
-const  TilePos enemyStartPosLevel1[1] = { makeTilePos(6, 1) };
-const  TilePos enemyStartPosLevel2[2] = { makeTilePos(4, 0), makeTilePos(4, 1) };
-const  TilePos enemyStartPosLevel3[3] = { makeTilePos(7, 0), makeTilePos(0, 7) };
-const  TilePos enemyStartPosLevel4[1] = { makeTilePos(1, 1) };
-const  TilePos enemyStartPosLevel6[1] = { makeTilePos(0, 0) };
-const  TilePos enemyStartPosLevel8[2] = { makeTilePos(0, 0), makeTilePos(1, 0) };
-const  TilePos enemyStartPosLevel9[7] = {
+const TilePos enemyStartPosLevel1[1] = { makeTilePos(6, 1) };
+const TilePos enemyStartPosLevel2[2] = { makeTilePos(4, 0), makeTilePos(4, 1) };
+const TilePos enemyStartPosLevel3[3] = { makeTilePos(7, 0), makeTilePos(0, 7) };
+const TilePos enemyStartPosLevel4[1] = { makeTilePos(1, 1) };
+const TilePos enemyStartPosLevel6[1] = { makeTilePos(0, 0) };
+const TilePos enemyStartPosLevel8[2] = { makeTilePos(0, 0), makeTilePos(1, 0) };
+const TilePos enemyStartPosLevel9[7] = {
   makeTilePos(7, 4),
   makeTilePos(6, 5), makeTilePos(7, 5),
   makeTilePos(6, 6), makeTilePos(7, 6),
   makeTilePos(6, 7), makeTilePos(7, 7)
 };
-const  TilePos enemyStartPosLevel10[5] = {
+const TilePos enemyStartPosLevel10[5] = {
   makeTilePos(2, 0),
   makeTilePos(3, 3), makeTilePos(4, 3), makeTilePos(5, 3),
   makeTilePos(0, 7)
 };
-const  TilePos enemyStartPosLevel12[2] = {
+const TilePos enemyStartPosLevel12[2] = {
   makeTilePos(0, 0), makeTilePos(7, 0)
 };
-const  TilePos enemyStartPosLevel13[2] = {
+const TilePos enemyStartPosLevel13[2] = {
   makeTilePos(2, 0), makeTilePos(5, 0)
 };
-const  TilePos enemyStartPosLevel15[6] = {
+const TilePos enemyStartPosLevel15[6] = {
   makeTilePos(0, 0), makeTilePos(1, 0),
   makeTilePos(7, 0), makeTilePos(7, 1),
   makeTilePos(7, 7), makeTilePos(6, 7)
 };
 
-const  TilePos pickupStartPosLevel0[13] = {
+const TilePos pickupStartPosLevel0[13] = {
   makeTilePos(0, 0), makeTilePos(0, 2), makeTilePos(0, 3), makeTilePos(0, 5), makeTilePos(0, 7),
   makeTilePos(2, 1), makeTilePos(2, 3), makeTilePos(2, 5), makeTilePos(2, 7),
   makeTilePos(7, 0), makeTilePos(7, 2), makeTilePos(7, 4), makeTilePos(7, 6),
 };
-const  TilePos pickupStartPosLevel1[4] = {
+const TilePos pickupStartPosLevel1[4] = {
   makeTilePos(0, 0), makeTilePos(0, 7), makeTilePos(7, 0), makeTilePos(7, 7)
 };
-const  TilePos pickupStartPosLevel2[6] = {
+const TilePos pickupStartPosLevel2[6] = {
   makeTilePos(0, 0), makeTilePos(7, 0),
   makeTilePos(2, 2), makeTilePos(6, 2), makeTilePos(2, 6), makeTilePos(6, 6),
 };
-const  TilePos pickupStartPosLevel3[3] = {
+const TilePos pickupStartPosLevel3[3] = {
   makeTilePos(0, 0), makeTilePos(4, 0), makeTilePos(0, 4)
 };
-const  TilePos pickupStartPosLevel4[6] = {
+const TilePos pickupStartPosLevel4[6] = {
   makeTilePos(3, 0), makeTilePos(0, 3),
   makeTilePos(3, 5), makeTilePos(5, 3),
   makeTilePos(3, 7), makeTilePos(7, 3)
 };
-const  TilePos pickupStartPosLevel5[8] = {
+const TilePos pickupStartPosLevel5[8] = {
   makeTilePos(0, 0), makeTilePos(0, 7), makeTilePos(7, 0), makeTilePos(7, 7),
   makeTilePos(1, 4), makeTilePos(4, 1), makeTilePos(5, 6), makeTilePos(6, 3)
 };
-const  TilePos pickupStartPosLevel6[4] = {
+const TilePos pickupStartPosLevel6[4] = {
   makeTilePos(1, 1), makeTilePos(6, 1),
   makeTilePos(1, 6), makeTilePos(6, 6)
 };
-const  TilePos pickupStartPosLevel7[1] = {
+const TilePos pickupStartPosLevel7[1] = {
   makeTilePos(0, 2)
 };
-const  TilePos pickupStartPosLevel8[1] = {
+const TilePos pickupStartPosLevel8[1] = {
   makeTilePos(7, 0)
 };
-const  TilePos pickupStartPosLevel9[2] = {
+const TilePos pickupStartPosLevel9[2] = {
   makeTilePos(0, 7),  makeTilePos(5, 7)
 };
-const  TilePos pickupStartPosLevel10[9] = {
+const TilePos pickupStartPosLevel10[9] = {
   makeTilePos(1, 0), makeTilePos(0, 3), makeTilePos(7, 3),
   makeTilePos(2, 4), makeTilePos(4, 4), makeTilePos(6, 4),
   makeTilePos(2, 6), makeTilePos(4, 6), makeTilePos(6, 6)
 };
-const  TilePos pickupStartPosLevel12[4] = {
+const TilePos pickupStartPosLevel12[4] = {
   makeTilePos(2, 1), makeTilePos(6, 2), makeTilePos(1, 5), makeTilePos(5, 6)
 };
-const  TilePos* pickupStartPosLevel13 = pickupStartPosLevel1;
-const  TilePos pickupStartPosLevel14[1] = {
+const TilePos* pickupStartPosLevel13 = pickupStartPosLevel1;
+const TilePos pickupStartPosLevel14[1] = {
   makeTilePos(0, 6)
 };
 
-const  TeleportPairSpec teleportSpecsLevel4[4] = {
+const TeleportPairSpec teleportSpecsLevel4[4] = {
   TeleportPairSpec {
     .tile1 = makeTilePos(3, 3),
     .tile2 = makeTilePos(0, 7),
@@ -126,7 +125,7 @@ const  TeleportPairSpec teleportSpecsLevel4[4] = {
     .paletteIndex = PALETTE_TELEPORT4
   }
 };
-const  TeleportPairSpec teleportSpecsLevel7[4] = {
+const TeleportPairSpec teleportSpecsLevel7[4] = {
   TeleportPairSpec {
     .tile1 = makeTilePos(4, 2),
     .tile2 = makeTilePos(6, 3),
@@ -148,7 +147,7 @@ const  TeleportPairSpec teleportSpecsLevel7[4] = {
     .paletteIndex = PALETTE_TELEPORT4
   }
 };
-const  TeleportPairSpec teleportSpecsLevel10[3] = {
+const TeleportPairSpec teleportSpecsLevel10[3] = {
   TeleportPairSpec {
     .tile1 = makeTilePos(0, 0),
     .tile2 = makeTilePos(0, 1),
@@ -165,7 +164,7 @@ const  TeleportPairSpec teleportSpecsLevel10[3] = {
     .paletteIndex = PALETTE_TELEPORT3
   },
 };
-const  TeleportPairSpec teleportSpecsLevel12[4] = {
+const TeleportPairSpec teleportSpecsLevel12[4] = {
   TeleportPairSpec {
     .tile1 = makeTilePos(1, 1),
     .tile2 = makeTilePos(2, 3),
@@ -187,7 +186,7 @@ const  TeleportPairSpec teleportSpecsLevel12[4] = {
     .paletteIndex = PALETTE_TELEPORT5
   },
 };
-const  TeleportPairSpec teleportSpecsLevel13[4] = {
+const TeleportPairSpec teleportSpecsLevel13[4] = {
   TeleportPairSpec {
     .tile1 = makeTilePos(1, 1),
     .tile2 = makeTilePos(4, 3),
@@ -209,7 +208,7 @@ const  TeleportPairSpec teleportSpecsLevel13[4] = {
     .paletteIndex = PALETTE_TELEPORT4
   }
 };
-const  TeleportPairSpec teleportSpecsLevel14[2] = {
+const TeleportPairSpec teleportSpecsLevel14[2] = {
   TeleportPairSpec {
     .tile1 = makeTilePos(2, 7),
     .tile2 = makeTilePos(5, 7),
@@ -222,7 +221,7 @@ const  TeleportPairSpec teleportSpecsLevel14[2] = {
   }
 };
 
-const  GapSpec gapSpecsLevel6[4] = {
+const GapSpec gapSpecsLevel6[4] = {
   GapSpec {
     .pos = makeTilePos(2, 1),
     .paletteIndex = PALETTE_GAP_DEFAULT
@@ -240,13 +239,13 @@ const  GapSpec gapSpecsLevel6[4] = {
     .paletteIndex = PALETTE_GAP_DEFAULT
   }
 };
-const  GapSpec gapSpecsLevel7[1] = {
+const GapSpec gapSpecsLevel7[1] = {
   GapSpec {
     .pos = makeTilePos(2, 2),
     .paletteIndex = PALETTE_GAP_DARK
   }
 };
-const  GapSpec gapSpecsLevel8[3] = {
+const GapSpec gapSpecsLevel8[3] = {
   GapSpec {
     .pos = makeTilePos(7, 1),
     .paletteIndex = PALETTE_GAP_BLUE
@@ -260,7 +259,7 @@ const  GapSpec gapSpecsLevel8[3] = {
     .paletteIndex = PALETTE_GAP_BLUE
   },
 };
-const  GapSpec gapSpecsLevel9[4] = {
+const GapSpec gapSpecsLevel9[4] = {
   GapSpec {
     .pos = makeTilePos(1, 7),
     .paletteIndex = PALETTE_GAP_EARTH
@@ -278,7 +277,7 @@ const  GapSpec gapSpecsLevel9[4] = {
     .paletteIndex = PALETTE_GAP_EARTH
   }
 };
-const  GapSpec gapSpecsLevel11[5] = {
+const GapSpec gapSpecsLevel11[5] = {
   GapSpec {
     .pos = makeTilePos(2, 1),
     .paletteIndex = PALETTE_GAP_DEFAULT
@@ -296,7 +295,7 @@ const  GapSpec gapSpecsLevel11[5] = {
     .paletteIndex = PALETTE_GAP_DEFAULT
   }
 };
-const  GapSpec gapSpecsLevel14[6] = {
+const GapSpec gapSpecsLevel14[6] = {
   GapSpec {
     .pos = makeTilePos(7, 3),
     .paletteIndex = PALETTE_GAP_EARTH
@@ -322,7 +321,7 @@ const  GapSpec gapSpecsLevel14[6] = {
     .paletteIndex = PALETTE_GAP_BLUE
   }
 };
-const  GapSpec gapSpecsLevel15[3] = {
+const GapSpec gapSpecsLevel15[3] = {
   GapSpec {
     .pos = makeTilePos(4, 0),
     .paletteIndex = PALETTE_GAP_DEFAULT
@@ -337,7 +336,7 @@ const  GapSpec gapSpecsLevel15[3] = {
   }
 };
 
-const  ObstacleSpec obstacleSpecsLevel8[4] = {
+const ObstacleSpec obstacleSpecsLevel8[4] = {
   ObstacleSpec {
     .pos = makeTilePos(6, 0),
     .type = ObstacleType::Rock1
@@ -355,7 +354,7 @@ const  ObstacleSpec obstacleSpecsLevel8[4] = {
     .type = ObstacleType::Rock2
   }
 };
-const  ObstacleSpec obstacleSpecsLevel9[6] = {
+const ObstacleSpec obstacleSpecsLevel9[6] = {
   ObstacleSpec {
     .pos = makeTilePos(0, 6),
     .type = ObstacleType::Tree1
@@ -381,7 +380,7 @@ const  ObstacleSpec obstacleSpecsLevel9[6] = {
     .type = ObstacleType::Tree1
   }
 };
-const  ObstacleSpec obstacleSpecsLevel10[8] = {
+const ObstacleSpec obstacleSpecsLevel10[8] = {
   ObstacleSpec {
     .pos = makeTilePos(1, 4),
     .type = ObstacleType::Tree1
@@ -415,7 +414,7 @@ const  ObstacleSpec obstacleSpecsLevel10[8] = {
     .type = ObstacleType::Tree1
   }
 };
-const  ObstacleSpec obstacleSpecsLevel11[4] = {
+const ObstacleSpec obstacleSpecsLevel11[4] = {
   ObstacleSpec {
     .pos = makeTilePos(1, 2),
     .type = ObstacleType::Tree2
@@ -433,14 +432,14 @@ const  ObstacleSpec obstacleSpecsLevel11[4] = {
     .type = ObstacleType::Tree2
   }
 };
-const  ObstacleSpec obstacleSpecsLevel14[1] = {
+const ObstacleSpec obstacleSpecsLevel14[1] = {
   ObstacleSpec {
     .pos = makeTilePos(6, 3),
     .type = ObstacleType::Tree1
   }
 };
 
-const  BoxSpec boxSpecsLevel6[4] = {
+const BoxSpec boxSpecsLevel6[4] = {
   BoxSpec {
     .pos = makeTilePos(2, 4),
     .type = BoxType::Box1
@@ -458,13 +457,13 @@ const  BoxSpec boxSpecsLevel6[4] = {
     .type = BoxType::Box1
   }
 };
-const  BoxSpec boxSpecsLevel7[1] = {
+const BoxSpec boxSpecsLevel7[1] = {
   BoxSpec {
     .pos = makeTilePos(3, 5),
     .type = BoxType::Box1
   }
 };
-const  BoxSpec boxSpecsLevel8[7] = {
+const BoxSpec boxSpecsLevel8[7] = {
   BoxSpec {
     .pos = makeTilePos(0, 6),
     .type = BoxType::Box1
@@ -494,7 +493,7 @@ const  BoxSpec boxSpecsLevel8[7] = {
     .type = BoxType::Box1
   }
 };
-const  BoxSpec boxSpecsLevel9[9] = {
+const BoxSpec boxSpecsLevel9[9] = {
   BoxSpec {
     .pos = makeTilePos(0, 3),
     .type = BoxType::Box1
@@ -532,7 +531,7 @@ const  BoxSpec boxSpecsLevel9[9] = {
     .type = BoxType::Box1
   }
 };
-const  BoxSpec boxSpecsLevel10[2] = {
+const BoxSpec boxSpecsLevel10[2] = {
   BoxSpec {
     .pos = makeTilePos(2, 2),
     .type = BoxType::Box1
@@ -542,7 +541,7 @@ const  BoxSpec boxSpecsLevel10[2] = {
     .type = BoxType::Box1
   }
 };
-const  BoxSpec boxSpecsLevel11[12] = {
+const BoxSpec boxSpecsLevel11[12] = {
   BoxSpec {
     .pos = makeTilePos(1, 1),
     .type = BoxType::Box2
@@ -588,7 +587,7 @@ const  BoxSpec boxSpecsLevel11[12] = {
     .type = BoxType::Box1
   }
 };
-const  BoxSpec boxSpecsLevel12[4] = {
+const BoxSpec boxSpecsLevel12[4] = {
   BoxSpec {
     .pos = makeTilePos(4, 0),
     .type = BoxType::Box2
@@ -606,7 +605,7 @@ const  BoxSpec boxSpecsLevel12[4] = {
     .type = BoxType::Box2
   },
 };
-const  BoxSpec boxSpecsLevel13[8] = {
+const BoxSpec boxSpecsLevel13[8] = {
   BoxSpec {
     .pos = makeTilePos(1, 0),
     .type = BoxType::Box2
@@ -640,7 +639,7 @@ const  BoxSpec boxSpecsLevel13[8] = {
     .type = BoxType::Box2
   }
 };
-const  BoxSpec boxSpecsLevel14[10] = {
+const BoxSpec boxSpecsLevel14[10] = {
   BoxSpec {
     .pos = makeTilePos(0, 1),
     .type = BoxType::Box2
@@ -682,7 +681,7 @@ const  BoxSpec boxSpecsLevel14[10] = {
     .type = BoxType::Box1
   }
 };
-const  BoxSpec boxSpecsLevel15[18] = {
+const BoxSpec boxSpecsLevel15[18] = {
   BoxSpec {
     .pos = makeTilePos(0, 1),
     .type = BoxType::Box2
@@ -757,7 +756,7 @@ const  BoxSpec boxSpecsLevel15[18] = {
   }
 };
 
-const  uint8_t PROGMEM tilesLevel0[maxTiles] = {
+const uint8_t tilesLevel0[maxTiles] = {
   0x00|H7, 0x00|H7, 0x00|H7, 0x00|H7, 0x00|H7, 0x00|H7, 0x00|H7, 0x00|H7,
   0x00|H7, 0x00|H7, 0x00|H6, 0x00|H6, 0x00|H6, 0x00|H6, 0x00|H6, 0x00|H6,
   0x00|H7, 0x00|H7, 0x00|H5, 0x00|H5, 0x00|H5, 0x00|H5, 0x00|H5, 0x00|H5,
@@ -767,7 +766,7 @@ const  uint8_t PROGMEM tilesLevel0[maxTiles] = {
   0x00|H4, 0x00|H3, 0x00|H1, 0x00|H1, 0x00|H1, 0x00|H1, 0x00|H1, 0x00|H1,
   0x00|H4, 0x00|H3, 0x00|H0, 0x00|H0, 0x00|H0, 0x00|H0, 0x00|H0, 0x00|H0
 };
-const  uint8_t PROGMEM tilesLevel1[maxTiles] = {
+const uint8_t tilesLevel1[maxTiles] = {
   0x01|H0, 0x01|H0, 0x01|H0, 0x01|H0, 0x01|H0, 0x01|H0, 0x01|H0, 0x01|H0,
   0x01|H0, 0x01|H0, 0x01|H0, 0x01|H0, 0x01|H0, 0x01|H0, 0x01|H0, 0x01|H0,
   0x01|H0, 0x01|H0, 0x01|H0, 0x01|H0, 0x01|H0, 0x01|H0, 0x01|H0, 0x01|H0,
@@ -777,7 +776,7 @@ const  uint8_t PROGMEM tilesLevel1[maxTiles] = {
   0x01|H0, 0x01|H0, 0x01|H0, 0x01|H0, 0x01|H0, 0x01|H0, 0x01|H0, 0x01|H0,
   0x01|H0, 0x01|H0, 0x01|H0, 0x01|H0, 0x01|H0, 0x01|H0, 0x01|H0, 0x01|H0
 };
-const  uint8_t PROGMEM tilesLevel2[maxTiles] = {
+const uint8_t tilesLevel2[maxTiles] = {
   0x07|H0, 0x04|H4, 0x05|H4, 0x06|H4, 0x04|H4, 0x05|H4, 0x06|H4, 0x07|H0,
   0x02|H0, 0x02|H1, 0x02|H1, 0x02|H1, 0x02|H1, 0x02|H1, 0x02|H1, 0x02|H1,
   0x02|H0, 0x02|H1, 0x16|H2, 0x03|H1, 0x03|H1, 0x03|H1, 0x16|H2, 0x02|H1,
@@ -787,7 +786,7 @@ const  uint8_t PROGMEM tilesLevel2[maxTiles] = {
   0x02|H0, 0x02|H1, 0x16|H2, 0x03|H1, 0x03|H1, 0x03|H1, 0x16|H2, 0x02|H1,
   0x03|H1, 0x02|H1, 0x02|H1, 0x02|H1, 0x02|H1, 0x02|H1, 0x02|H1, 0x02|H1
 };
-const  uint8_t PROGMEM tilesLevel3[maxTiles] = {
+const uint8_t tilesLevel3[maxTiles] = {
   0x09|H7, 0x08|H6, 0x08|H5, 0x08|H3, 0x09|H6, 0x08|H4, 0x08|H3, 0x08|H2,
   0x08|H2, 0x08|H3, 0x08|H4, 0x08|H2, 0x08|H5, 0x08|H3, 0x08|H3, 0x08|H2,
   0x08|H4, 0x08|H5, 0x08|H5, 0x08|H3, 0x08|H5, 0x08|H2, 0x08|H3, 0x08|H1,
@@ -797,7 +796,7 @@ const  uint8_t PROGMEM tilesLevel3[maxTiles] = {
   0x08|H2, 0x08|H2, 0x08|H2, 0x08|H2, 0x08|H1, 0x08|H0, 0x08|H0, 0x08|H0,
   0x08|H1, 0x08|H3, 0x08|H2, 0x08|H1, 0x08|H1, 0x08|H0, 0x08|H0, 0x08|H0
 };
-const  uint8_t PROGMEM tilesLevel4[maxTiles] = {
+const uint8_t tilesLevel4[maxTiles] = {
   0x00|H4, 0x00|H4, 0x00|H4, 0x00|H3, 0x00|H2, 0x00|H2, 0x00|H2, 0x00|H2,
   0x00|H4, 0x00|H4, 0x00|H4, 0x00|H4, 0x00|H2, 0x00|H2, 0x00|H2, 0x00|H2,
   0x00|H4, 0x00|H4, 0x00|H4, 0x00|H4, 0x00|H2, 0x00|H2, 0x00|H2, 0x00|H2,
@@ -807,9 +806,8 @@ const  uint8_t PROGMEM tilesLevel4[maxTiles] = {
   0x00|H2, 0x00|H2, 0x00|H2, 0x00|H2, 0x00|H0, 0x00|H0, 0x00|H0, 0x00|H0,
   0x00|H2, 0x00|H2, 0x00|H2, 0x00|H1, 0x00|H0, 0x00|H0, 0x00|H0, 0x00|H0
 };
-const  uint8_t* tilesLevel5 = tilesLevel1;
-
-const  uint8_t PROGMEM tilesLevel6[maxTiles] = {
+const uint8_t* tilesLevel5 = tilesLevel1;
+const uint8_t tilesLevel6[maxTiles] = {
   0x0b|H0, 0x0b|H0, 0x0b|H0, 0x0b|H0, 0x0b|H0, 0x0b|H0, 0x0b|H0, 0x0b|H0,
   0x0b|H0, 0x00|H1, 0x00|H1, 0x00|H1, 0x00|H1, 0x0a|H2, 0x00|H1, 0x0b|H0,
   0x0b|H0, 0x00|H1, 0x00|H1, 0x00|H1, 0x00|H1, 0x0a|H2, 0x00|H1, 0x0b|H0,
@@ -819,7 +817,7 @@ const  uint8_t PROGMEM tilesLevel6[maxTiles] = {
   0x0b|H0, 0x00|H1, 0x0a|H2, 0x0a|H2, 0x00|H1, 0x00|H1, 0x00|H1, 0x0b|H0,
   0x0b|H0, 0x0b|H0, 0x0b|H0, 0x0b|H0, 0x0b|H0, 0x0b|H0, 0x0b|H0, 0x0b|H0,
 };
-const  uint8_t PROGMEM tilesLevel7[maxTiles] = {
+const uint8_t tilesLevel7[maxTiles] = {
   0x0c|H0, 0x0c|H0, 0x0c|H0, 0x0c|H0, 0x0c|H0, 0x0c|H0, 0x0c|H0, 0x0c|H0,
   0x0c|H0, 0x0c|H0, 0x0c|H0, 0x0c|H0, 0x0c|H0, 0x0c|H0, 0x0c|H0, 0x0c|H0,
   0x16|H7, 0x16|H7, 0x16|H7, 0x16|H7, 0x16|H7, 0x16|H7, 0x16|H7, 0x0c|H0,
@@ -829,7 +827,7 @@ const  uint8_t PROGMEM tilesLevel7[maxTiles] = {
   0x16|H0, 0x16|H0, 0x16|H0, 0x16|H0, 0x16|H0, 0x16|H0, 0x16|H0, 0x0c|H0,
   0x0c|H0, 0x0c|H0, 0x0c|H0, 0x0c|H0, 0x0c|H0, 0x0c|H0, 0x0c|H0, 0x0c|H0,
 };
-const  uint8_t PROGMEM tilesLevel8[maxTiles] = {
+const uint8_t tilesLevel8[maxTiles] = {
   0x0b|H0, 0x0b|H0, 0x0b|H0, 0x0b|H0, 0x0b|H0, 0x0b|H0, 0x0b|H0, 0x0b|H0,
   0x0b|H0, 0x0b|H0, 0x0b|H0, 0x0b|H0, 0x0b|H0, 0x0b|H0, 0x0b|H0, 0x0b|H0,
   0x0b|H0, 0x0b|H0, 0x0b|H0, 0x0b|H0, 0x0b|H0, 0x0b|H0, 0x0b|H0, 0x0b|H0,
@@ -839,7 +837,7 @@ const  uint8_t PROGMEM tilesLevel8[maxTiles] = {
   0x0d|H0, 0x0d|H0, 0x0d|H0, 0x0d|H0, 0x0d|H0, 0x0d|H0, 0x0d|H0, 0x0e|H0,
   0x0e|H0, 0x0d|H0, 0x0d|H0, 0x0d|H0, 0x0d|H0, 0x0d|H0, 0x0d|H0, 0x0d|H0,
 };
-const  uint8_t PROGMEM tilesLevel9[maxTiles] = {
+const uint8_t tilesLevel9[maxTiles] = {
   0x12|H0, 0x12|H0, 0x12|H0, 0x12|H0, 0x12|H0, 0x15|H0, 0x10|H0, 0x10|H0,
   0x12|H0, 0x12|H0, 0x12|H0, 0x12|H0, 0x12|H0, 0x15|H0, 0x10|H0, 0x10|H0,
   0x12|H0, 0x12|H0, 0x12|H0, 0x12|H0, 0x12|H0, 0x15|H0, 0x10|H0, 0x10|H0,
@@ -849,7 +847,7 @@ const  uint8_t PROGMEM tilesLevel9[maxTiles] = {
   0x11|H0, 0x11|H0, 0x11|H0, 0x11|H0, 0x11|H0, 0x11|H0, 0x10|H0, 0x10|H0,
   0x10|H0, 0x10|H0, 0x10|H0, 0x10|H0, 0x10|H0, 0x10|H0, 0x10|H0, 0x10|H0,
 };
-const  uint8_t PROGMEM tilesLevel10[maxTiles] = {
+const uint8_t tilesLevel10[maxTiles] = {
   0x0b|H2, 0x0b|H2, 0x0b|H2, 0x0b|H2, 0x0b|H2, 0x0b|H2, 0x0b|H2, 0x0b|H1,
   0x10|H3, 0x10|H3, 0x10|H3, 0x10|H3, 0x10|H3, 0x10|H3, 0x10|H3, 0x0b|H1,
   0x10|H3, 0x10|H3, 0x10|H3, 0x10|H3, 0x10|H3, 0x10|H3, 0x10|H3, 0x0b|H1,
@@ -859,7 +857,7 @@ const  uint8_t PROGMEM tilesLevel10[maxTiles] = {
   0x0b|H1, 0x11|H2, 0x10|H2, 0x11|H2, 0x10|H2, 0x11|H2, 0x10|H2, 0x11|H2,
   0x0b|H1, 0x0b|H0, 0x0b|H0, 0x0b|H0, 0x0b|H0, 0x0b|H0, 0x0b|H0, 0x0b|H0,
 };
-const  uint8_t PROGMEM tilesLevel11[maxTiles] = {
+const uint8_t tilesLevel11[maxTiles] = {
   0x0c|H0, 0x0c|H0, 0x0c|H0, 0x0c|H0, 0x0c|H0, 0x0c|H0, 0x0c|H0, 0x0c|H0,
   0x0c|H0, 0x00|H0, 0x00|H0, 0x00|H0, 0x00|H0, 0x00|H0, 0x00|H0, 0x0c|H0,
   0x0c|H0, 0x17|H0, 0x00|H0, 0x00|H0, 0x00|H0, 0x00|H0, 0x00|H0, 0x0c|H0,
@@ -869,7 +867,7 @@ const  uint8_t PROGMEM tilesLevel11[maxTiles] = {
   0x0c|H0, 0x00|H0, 0x00|H0, 0x00|H0, 0x00|H0, 0x00|H0, 0x00|H0, 0x0c|H0,
   0x0c|H0, 0x0c|H0, 0x0c|H0, 0x0c|H0, 0x0c|H0, 0x0c|H0, 0x0c|H0, 0x0c|H0
 };
-const  uint8_t PROGMEM tilesLevel12[maxTiles] = {
+const uint8_t tilesLevel12[maxTiles] = {
   0x18|H0, 0x1a|H0, 0x18|H0, 0x18|H0, 0x18|H0, 0x18|H0, 0x1a|H0, 0x18|H0,
   0x18|H0, 0x1c|H0, 0x1b|H0, 0x19|H0, 0x1b|H0, 0x19|H0, 0x1c|H0, 0x18|H0,
   0x18|H0, 0x1a|H0, 0x18|H0, 0x18|H0, 0x18|H0, 0x18|H0, 0x1b|H0, 0x18|H0,
@@ -879,7 +877,7 @@ const  uint8_t PROGMEM tilesLevel12[maxTiles] = {
   0x18|H0, 0x1c|H0, 0x19|H0, 0x1b|H0, 0x19|H0, 0x1b|H0, 0x1c|H0, 0x18|H0,
   0x18|H0, 0x1a|H0, 0x18|H0, 0x18|H0, 0x18|H0, 0x18|H0, 0x1a|H0, 0x18|H0,
 };
-const  uint8_t PROGMEM tilesLevel13[maxTiles] = {
+const uint8_t tilesLevel13[maxTiles] = {
   0x01|H0, 0x01|H0, 0x01|H0, 0x01|H0, 0x01|H0, 0x01|H0, 0x01|H0, 0x01|H0,
   0x01|H0, 0x02|H2, 0x01|H0, 0x01|H0, 0x01|H0, 0x01|H0, 0x02|H2, 0x01|H0,
   0x01|H0, 0x01|H0, 0x01|H0, 0x01|H0, 0x01|H0, 0x01|H0, 0x01|H0, 0x01|H0,
@@ -889,7 +887,7 @@ const  uint8_t PROGMEM tilesLevel13[maxTiles] = {
   0x01|H0, 0x02|H2, 0x01|H0, 0x01|H0, 0x01|H0, 0x01|H0, 0x02|H2, 0x01|H0,
   0x01|H0, 0x01|H0, 0x01|H0, 0x01|H0, 0x01|H0, 0x01|H0, 0x01|H0, 0x01|H0
 };
-const  uint8_t PROGMEM tilesLevel14[maxTiles] = {
+const uint8_t tilesLevel14[maxTiles] = {
   0x1e|H1, 0x1e|H1, 0x1e|H1, 0x1e|H1, 0x1d|H1, 0x10|H1, 0x10|H1, 0x10|H1,
   0x1e|H1, 0x1d|H1, 0x1e|H1, 0x1d|H1, 0x1e|H1, 0x10|H1, 0x10|H1, 0x10|H1,
   0x10|H1, 0x10|H1, 0x10|H1, 0x10|H1, 0x10|H1, 0x10|H1, 0x10|H1, 0x10|H1,
@@ -899,7 +897,7 @@ const  uint8_t PROGMEM tilesLevel14[maxTiles] = {
   0x10|H1, 0x0b|H0, 0x0b|H0, 0x0b|H0, 0x10|H1, 0x10|H1, 0x10|H1, 0x10|H1,
   0x10|H1, 0x10|H1, 0x0e|H0, 0x0e|H0, 0x10|H1, 0x10|H1, 0x10|H1, 0x10|H1
 };
-const  uint8_t PROGMEM tilesLevel15[maxTiles] = {
+const uint8_t tilesLevel15[maxTiles] = {
   0x1f|H1, 0x1f|H1, 0x1f|H1, 0x1f|H1, 0x1f|H1, 0x1f|H1, 0x1f|H1, 0x1f|H1,
   0x1f|H1, 0x1f|H1, 0x1f|H1, 0x1f|H1, 0x1f|H1, 0x1f|H1, 0x1f|H1, 0x1f|H1,
   0x1f|H1, 0x1f|H1, 0x1f|H1, 0x1f|H1, 0x1f|H1, 0x1f|H1, 0x1f|H1, 0x1f|H1,
@@ -910,7 +908,7 @@ const  uint8_t PROGMEM tilesLevel15[maxTiles] = {
   0x1f|H0, 0x1f|H1, 0x1f|H1, 0x1f|H1, 0x1f|H1, 0x1f|H1, 0x1f|H1, 0x1f|H1,
 };
 
-const  LevelSpec levelSpecs[numLevels] = {
+const LevelSpec levelSpecs[numLevels] = {
   LevelSpec {
     .title = "Going Down",
     .playerStartPos = makeTilePos(1, 1),
@@ -1242,7 +1240,7 @@ struct TimebarSpec {
   ColorIndex colorDark;
 };
 
-const  TimebarSpec timebarSpecs[6] = {
+const TimebarSpec timebarSpecs[6] = {
   {.len = 4, .unit =  1, .colorMain = INDEX_RED, .colorDark = INDEX_PURPLE},
   {.len = 4, .unit =  2, .colorMain = INDEX_ORANGE, .colorDark = INDEX_BROWN},
   {.len = 8, .unit =  4, .colorMain = INDEX_YELLOW, .colorDark = INDEX_ORANGE},
@@ -1436,7 +1434,7 @@ void Level::reset() {
 }
 
 // Height from which bots drop from sky on level start
-const  int8_t initialBotHeight = 40;
+const int8_t initialBotHeight = 40;
 
 void Level::start() {
   _player.reset();

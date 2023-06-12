@@ -61,6 +61,7 @@ void Gamebuino::begin() {
   dac.setVoltage(4095, true);
 
   //Check OTA2
+
 /*
   if (getKeys()&PAD_ACT || getKeys()&PAD_ESC) { 
     //Serial.println();
@@ -71,7 +72,7 @@ void Gamebuino::begin() {
     OTA2obj = new ESPboyOTA2(terminalGUIobj);
     OTA2obj -> checkOTA();
   }
-*/
+  */
   
   WiFi.mode(WIFI_OFF); 
 
@@ -104,13 +105,13 @@ void Gamebuino::getDefaultName(char* string){
 }
 
 
-uint16_t Gamebuino::createColor(uint8_t r, uint8_t g, uint8_t b) {
+Gamebuino_Meta::Color Gamebuino::createColor(uint8_t r, uint8_t g, uint8_t b) {
 
    uint16_t rr = (r << 8) & 0xF800;
    uint16_t gg = (g << 3) & 0x07E0;
    uint16_t bb = (b >> 3) & 0x001F;
     
-   return (rr | gg | bb);
+   return ((Gamebuino_Meta::Color)(rr | gg | bb));
 }
 
 

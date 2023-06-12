@@ -4,6 +4,9 @@
  * Copyright 2018, Erwin Bonsma
  */
 
+#define min(a,b) ((a) < (b) ? (a) : (b))
+#define max(a,b) ((a) > (b) ? (a) : (b))
+
 const uint8_t maxNumMovers = 25;
 const uint8_t maxNumObjects = 64;
 
