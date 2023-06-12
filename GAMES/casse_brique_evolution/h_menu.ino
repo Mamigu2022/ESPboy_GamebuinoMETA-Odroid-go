@@ -1,14 +1,11 @@
+
 //MENU
 void displayMenu() {
 
   if (!menuSongPlaying) {
     gb.sound.stop(track);
-    //track = gb.sound.play(menuSong);
+    track = gb.sound.play(menuSong);
     menuSongPlaying = true;
-    for (uint8_t i=0; i<10; i++){
-      gb.sound.tone(random(300)+50, 50);
-      delay (random(50)+30);
-    }
   }
   
   gb.display.clear();
@@ -47,15 +44,13 @@ void displayMenu() {
 bool chooseLevel() {
   bool isUnlocked = true;
   
-  if (chosenLevel > NB_LEVELS) {chosenLevel = NB_LEVELS;gb.sound.playTick();}
+  if (chosenLevel > NB_LEVELS) chosenLevel = NB_LEVELS;
   
   if (gb.buttons.released(BUTTON_LEFT)) {
-    gb.sound.playTick();
       if (chosenLevel == 1) chosenLevel = NB_LEVELS;
       else chosenLevel --;
     }
   if (gb.buttons.released(BUTTON_RIGHT)) {
-    gb.sound.playTick();
     if (chosenLevel == NB_LEVELS) chosenLevel = 1;
     else chosenLevel ++;
   }
@@ -67,8 +62,6 @@ bool chooseLevel() {
   }
 
   if (gb.buttons.released(BUTTON_A)) {
-    if(isUnlocked)gb.sound.playOK();
-    else gb.sound.playCancel();
     launchLevel(chosenLevel, isUnlocked);
   }
 

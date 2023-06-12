@@ -1,3 +1,5 @@
+
+
 //DISPLAY
 void drawBackground(int index) {
   gb.display.drawImage(0,0, backgrounds[index - 1], gb.display.width(), gb.display.height());
@@ -8,13 +10,7 @@ void displayWinLose(char winOrLose[5]) {
   if (winOrLose == "lose") {
     if (!winOrLosePlaying) {
       gb.sound.stop(track);
-      //track = gb.sound.play(loseSound, false);
-      gb.sound.tone(200,50);
-      delay(50);
-      gb.sound.tone(100,50);
-      delay(50);
-      gb.sound.tone(10,500);
-      delay(500);
+      track = gb.sound.play(loseSound, false);
       winOrLosePlaying = true;
     }
     gb.display.clear();
@@ -28,13 +24,7 @@ void displayWinLose(char winOrLose[5]) {
   else if (winOrLose == "win") {
     if (!winOrLosePlaying) {
       gb.sound.stop(track);
-      //track = gb.sound.play(winSound, false);
-      gb.sound.tone(200,50);
-      delay(50);
-      gb.sound.tone(300,50);
-      delay(50);
-      gb.sound.tone(400,500);
-      delay(500);
+      track = gb.sound.play(winSound, false);
       winOrLosePlaying = true;
     }
     gb.display.clear();
@@ -58,11 +48,11 @@ void displayGame() {
 
   if (lose) {
     gameOn = false;
-    displayWinLose((char*)((String)"lose").c_str());
+    displayWinLose("lose");
   }
   else if (win) {
     gameOn = false;
-    displayWinLose((char*)((String)"win").c_str());
+    displayWinLose("win");
   }
   else if (levelNameScreen) {
     displayLevelName();
@@ -110,12 +100,8 @@ void displayLevelName() {
 
 void playSong() {
   if (!songPlaying) {
-    //gb.sound.stop(track);
-    //track = gb.sound.play(levelSongs[currentLevel - 1], true);
-      gb.sound.tone(200,50);
-      delay(50);
-      gb.sound.tone(400,50);
-      delay(50);
+    gb.sound.stop(track);
+    track = gb.sound.play(levelSongs[currentLevel - 1], true);
     songPlaying = true;
     winOrLosePlaying = false;
   }

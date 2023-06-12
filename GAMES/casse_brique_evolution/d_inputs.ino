@@ -6,10 +6,10 @@ void getInputs() {
       launched = true;
     }
     if (gb.buttons.repeat(BUTTON_LEFT,0)) {
-      movePad(1);
+      movePad("left");
     }
     if (gb.buttons.repeat(BUTTON_RIGHT,0)) {
-      movePad(2);
+      movePad("right");
     }
     if (gb.buttons.pressed(BUTTON_MENU)) {
       gameOn = false;

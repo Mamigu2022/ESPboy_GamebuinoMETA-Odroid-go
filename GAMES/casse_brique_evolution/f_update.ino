@@ -1,13 +1,13 @@
 //UPDATE
-void movePad(char dr) {
-  if (dr == 1) {
+void movePad(char dir[6]) {
+  if (dir == "left") {
     if (padX <=0) {
       padX = 0;
     } else {
       padX -= 2;
     }
   }
-  else if (dr == 2) {
+  else if (dir == "right") {
     if (padX + PAD_W >= gb.display.width()) {
       padX = gb.display.width() - PAD_W;
     } else {
@@ -55,13 +55,11 @@ void updateGame() {
       speedX = 0;
     }
     speedY *= -1;
-    //gb.sound.fx(bouncePaddle);
-    gb.sound.tone(200,30);
+    gb.sound.fx(bouncePaddle);
   }
   
   if (ballTop <= -2) {//collide top wall
-    //gb.sound.fx(collideWall);
-    gb.sound.tone(100,30);
+    gb.sound.fx(collideWall);
     speedY *= -1;
   }
     
@@ -78,18 +76,11 @@ void updateGame() {
       speedX = speedX;
     }
     speedX *= -1;
-    //gb.sound.fx(collideWall);
-    gb.sound.tone(100,30);
+    gb.sound.fx(collideWall);
   }
   //passed bellow paddle, you lose!
   if (ballY + BALL_SIZE > PAD_Y + PAD_H + 1) {
     lose = true;
-      gb.sound.tone(200,50);
-      delay(50);
-      gb.sound.tone(100,50);
-      delay(50);
-      gb.sound.tone(10,500);
-      delay(500);
   }
 
   
@@ -142,8 +133,7 @@ void updateGame() {
             speedY = -1;
           }
           
-          //gb.sound.fx(collideBrick);
-          gb.sound.tone(50,30);
+          gb.sound.fx(collideBrick);
           briques[rangee][colonne].state --;
           touched = true;
         }
@@ -184,8 +174,8 @@ void updateGame() {
       
       //play sound when a brick is destroyed
       if (briques[rangee][colonne].state <=0 && briques[rangee][colonne].type != 3) {
-        gb.sound.playOK();
-        //gb.sound.fx(destroyBrick);
+        //gb.sound.playOK();
+        gb.sound.fx(destroyBrick);
       }
       //noter l'heure de la destruction des briques type 8 9 10 11 pour les faire respawner après l'interval.
         if (briques[rangee][colonne].type == 8 || briques[rangee][colonne].type == 9 

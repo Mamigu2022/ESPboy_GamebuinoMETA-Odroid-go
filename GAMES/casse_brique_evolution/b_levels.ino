@@ -1,5 +1,5 @@
 //LEVELS (types of bricks arrays)
-const uint8_t levels[NB_LEVELS][NB_RANGEES][NB_COLONNES] = {
+const PROGMEM uint8_t levels[NB_LEVELS][NB_RANGEES][NB_COLONNES] = {
   {
     {0,1,1,1,1,1,1,0},
     {0,2,0,2,1,0,2,0},
@@ -92,7 +92,7 @@ const Image backgrounds[NB_LEVELS] = {
   bg_1, bg_2, bg_3, bg_4, bg_5, bg_6
 };
 
-const char * levelNames[NB_LEVELS] = {
+const PROGMEM char * levelNames[NB_LEVELS] = {
   " Down Town ",
   " Industrial ",
   "Space Colony",
@@ -109,6 +109,7 @@ const char* levelSongs[NB_LEVELS] = {
   "gb_breakout_lv5.wav",
   "gb_breakout_lv6.wav"
 };
+
 const char* winSound = "gb_breakout_win.wav";
 const char* loseSound = "gb_breakout_lose.wav";
 const char* menuSong = "gb_breakout_menu.wav";
