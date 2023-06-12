@@ -639,7 +639,7 @@ const PROGMEM Gamebuino_Meta::Sound_FX WeddingMarch[] = {
 
 // This part runs once at the start of the game.
 void setup() {
-  Serial.begin(115200);
+  //Serial.begin(115200);
   gb.begin();
 // we take the game progress from the block zero
   lastLevelWon = gb.save.get(0);
