@@ -32,17 +32,17 @@ namespace Gamebuino_Meta {
 #if SOUND_ENABLE_FX
 
 
-const Gamebuino_Meta::Sound_FX playOKFX[] = {
+const PROGMEM Gamebuino_Meta::Sound_FX playOKFX[] = {
   {Gamebuino_Meta::Sound_FX_Wave::SQUARE, 1, 110, -6, 11, 126, 2},
   {Gamebuino_Meta::Sound_FX_Wave::SQUARE, 0, 150, -25, -3, 47, 3},
 };
 
-const Gamebuino_Meta::Sound_FX playCancelFX[] = {
+const PROGMEM Gamebuino_Meta::Sound_FX playCancelFX[] = {
   {Gamebuino_Meta::Sound_FX_Wave::SQUARE, 1, 120, 3, 8, 126, 2},
   {Gamebuino_Meta::Sound_FX_Wave::SQUARE, 0, 130, -13, 10, 169, 3},
 };
 
-const Gamebuino_Meta::Sound_FX playTickFX[] = {
+const PROGMEM Gamebuino_Meta::Sound_FX playTickFX[] = {
   {Gamebuino_Meta::Sound_FX_Wave::SQUARE, 0, 196, -35, -3, 142, 1},
 };
 
@@ -54,7 +54,7 @@ const uint16_t playTickP[] = {0x0045,0x168,0x0000};
 
 #endif  // SOUND_ENABLE_FX
 
-uint8_t globalVolume = 6;
+uint8_t globalVolume = 8;
 bool muted = false;
 
 #if SOUND_CHANNELS > 0
@@ -372,8 +372,6 @@ uint16_t flowdown = 0;
 
 //void Audio_Handler (void) {
 static void IRAM_ATTR Audio_Handler(void) {
-    globalVolume=8;
-
 	if (!globalVolume || muted) {
 		return;
 	}
@@ -434,6 +432,9 @@ static void IRAM_ATTR Audio_Handler(void) {
 		//255			5			127		//reduced volume
 		
 		//output = (output * 4) >> (8 - globalVolume);
+		
+		output = output >> (8 - globalVolume);
+		
 		
 		//offset the signed value to be centered around 512
 		//as the 10-bit DAC output is between 0 and 1024

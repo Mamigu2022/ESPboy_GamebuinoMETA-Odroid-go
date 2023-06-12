@@ -26,8 +26,8 @@ Authors:
 
 namespace Gamebuino_Meta {
 
-const char keyboardLayoutPage0[] = "1234567890qwertyuiop[]*asdfghjkl;'\\*zxcvbnm,./-=*AB";
-const char keyboardLayoutPage1[] = "!@*$%^&*()QWERTYUIOP{}*ASDFGHJKL:\"|*ZXCVBNM<>?_+*ab";
+const char PROGMEM keyboardLayoutPage0[] = "1234567890qwertyuiop[]*asdfghjkl;'\\*zxcvbnm,./-=*AB";
+const char PROGMEM keyboardLayoutPage1[] = "!@*$%^&*()QWERTYUIOP{}*ASDFGHJKL:\"|*ZXCVBNM<>?_+*ab";
 const char* keyboardLayout[] = {
 	keyboardLayoutPage0,
 	keyboardLayoutPage1,

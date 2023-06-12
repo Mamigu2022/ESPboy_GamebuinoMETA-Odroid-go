@@ -72,6 +72,7 @@ void Gamebuino::begin() {
     OTA2obj -> checkOTA();
   }
 */
+  
   WiFi.mode(WIFI_OFF); 
 
   #if USE_LITTLEFS
@@ -150,7 +151,7 @@ bool Gamebuino::update() {
 	
 	if (frameEndFlag) { return false; }
 	sound.update(); // update sound stuff once per frame
-	//gui.updatePopup();
+	gui.updatePopup();
   updateDisplay();
 	frameDurationMicros = micros() - frameStartMicros;
 	frameEndFlag = true; // we are at end of frame
@@ -171,7 +172,7 @@ bool Gamebuino::updateNoDisplay() {
 	
 	if (frameEndFlag) { return false; }
 	sound.update(); // update sound stuff once per frame
-	//gui.updatePopup();
+	gui.updatePopup();
 	frameDurationMicros = micros() - frameStartMicros;
 	frameEndFlag = true; // we are at end of frame
 	return false;
