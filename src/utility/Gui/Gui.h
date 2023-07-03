@@ -62,7 +62,7 @@ public:
 		return menu(title, items, O);
 	}
 #else
-	uint8_t menu(const MultiLang* title, const MultiLang** items, uint8_t length, uint8_t numLang);
+	uint8_t menu(const MultiLang* title, const MultiLang** items, uint8_t length, uint8_t numLang = 1);
 #endif
 	template<uint8_t O, uint8_t N>
 	uint8_t menu(const MultiLang (&title) [N], const MultiLang* (&items) [O]) {

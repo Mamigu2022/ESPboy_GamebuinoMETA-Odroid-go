@@ -181,6 +181,7 @@ void Gui::keyboard(const char* title, char* text, uint8_t length) {
 	int8_t cursorY = 2;
 	int8_t activeChar = 0;
 	while(1) {
+		ESP.wdtFeed();
 		while(!gbptr->update());
 		// update cursor movement
 		int8_t cursorXPrev = cursorX;
@@ -322,6 +323,7 @@ uint8_t Gui::menu(const char* title, const char** items, uint8_t length, uint8_t
 	int32_t cameraY_actual = 0;
 	
 	while(1) {
+		ESP.wdtFeed();
 		while(!gbptr->update());
 		gbptr->display.clear();
 		gbptr->display.setFontSize(1);

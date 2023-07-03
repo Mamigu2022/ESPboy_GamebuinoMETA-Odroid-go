@@ -367,7 +367,11 @@ extern "C" {
 
 static void Audio_Handler (void) __attribute__((optimize("-O3")));
 
-uint16_t flowdown = 0;
+//uint16_t flowdown = 0;
+
+bool saveFlag=0;
+bool offFlag=0;
+uint32_t cntr=0;
 
 
 //void Audio_Handler (void) {
@@ -375,6 +379,7 @@ static void IRAM_ATTR Audio_Handler(void) {
 	if (!globalVolume || muted) {
 		return;
 	}
+		
 	int16_t output = 0;
 	for (uint8_t i = 0; i < SOUND_CHANNELS; i++) {
 		if (channels[i].use) {
@@ -420,44 +425,29 @@ static void IRAM_ATTR Audio_Handler(void) {
 		}
 	}
 
-	if (output) {
-		//we multiply by 4 to use the whole 0..1024 DAC range even with 8-bit 0..255 waves
-		//then we attenuate the signal. The attenuation is not linear because human ear's response isn't ;)
-		//we use a >> instead of division for better performances as this interrupt runs quite often
-		//RAW VALUE		VOLUME		OUTPUT
-		//255			8			1024	//amplify sound to use full DAC range
-											//might cause clipping if several sounds are played simultaneously
-		//255			7			512
-		//255			6			255		//keep sound as original
-		//255			5			127		//reduced volume
-		
-		//output = (output * 4) >> (8 - globalVolume);
-		
-		output = output >> (8 - globalVolume);
-		
-		
-		//offset the signed value to be centered around 512
-		//as the 10-bit DAC output is between 0 and 1024
-		
-		// we need to slowly fade up our zero-level to not have any plop when starting to play sound
-		if (flowdown < 255) {
-			flowdown++;
-		}
-		output += flowdown;
-		if (output < 0) {
-			output = 0;
-		}
+
+    if (saveFlag == true){
+      cntr=millis();
+      offFlag = true;
+      saveFlag = false;
+    };
+    
+    if(offFlag==true && cntr+500<millis()){
+      offFlag = false;
+      saveFlag = false;
+    };
+
+
+	if (output != 0 && offFlag == 0) {
+	    output = (output * SOUND_GAINFACTOR) >> (8 - globalVolume);
+
+#if SOUND_SETZERO
+		static int16_t minout=0, maxout=0;
+		if(minout>output) minout = output;
+		if(maxout<output) maxout = output;
+		output = output + minout;
+#endif
 		sigmaDeltaWrite(0, output);
-		//analogWrite(A0, output);
-	} else {
-		// we need to output 0 when not in use to not have weird sound effects with the neoLeds as the interrupt isn't 100% constant there.
-		// however, jumping down from 512 (zero-positin) to 0 would give a plop
-		// so instead we gradually decrease instead
-		sigmaDeltaWrite(0, flowdown);
-		//analogWrite(A0, flowdown); // zero-position
-		if (flowdown > 0) {
-			flowdown--;
-		}
 	}
 }
 
@@ -467,18 +457,23 @@ static void IRAM_ATTR Audio_Handler(void) {
 
 
 
-#define SIGMA_DELTA_RATE SOUND_FREQ*2
-
-void dacConfigure(uint32_t sampleRate) {
+void Sound::dacConfigure() {
   noInterrupts();
-  sigmaDeltaSetup(0, SIGMA_DELTA_RATE);
+  sigmaDeltaSetup(0, SOUND_FREQ);
   sigmaDeltaAttachPin(D3);
   sigmaDeltaEnable();
 
   timer1_attachInterrupt(Audio_Handler);
   timer1_enable(TIM_DIV1, TIM_EDGE, TIM_LOOP);
-  timer1_write(80000000 / sampleRate);
+  timer1_write(80000000 / SOUND_FREQ);
   interrupts(); 
+}
+
+void Sound::dacStop() {
+  noInterrupts();
+  timer1_disable();
+  sigmaDeltaDisable();
+  interrupts();
 }
 
 
@@ -486,7 +481,7 @@ void dacConfigure(uint32_t sampleRate) {
 
 void Sound::begin() {
 #if SOUND_CHANNELS > 0
-	dacConfigure(SOUND_FREQ);
+	dacConfigure();
 	//tcConfigure(SOUND_FREQ);
 	//tcStart();
 #endif

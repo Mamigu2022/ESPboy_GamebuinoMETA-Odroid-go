@@ -74,6 +74,8 @@ struct FX_Channel {
 class Sound {
 public:
 	void begin();
+	void dacConfigure();
+	void dacStop();
 	int8_t play(const char* filename, bool loop = false);
 	int8_t play(char* filename, bool loop = false);
 	int8_t play(const uint16_t* buf, bool loop = false);
@@ -113,8 +115,8 @@ public:
 	
 	void setVolume(uint8_t volume);
 	uint8_t getVolume();
-	
 	uint32_t getPos(int8_t i);
+	
 };
 
 } // namespace Gamebuino_Meta

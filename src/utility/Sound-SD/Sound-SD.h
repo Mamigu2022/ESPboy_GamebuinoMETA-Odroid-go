@@ -25,7 +25,7 @@ Authors:
 
 #include "../../config/config.h"
 #include "../Sound.h"
-#if USE_SDFAT
+#if USE_SDFAT_HERE
 #include "../SdFat.h"
 #endif
 
@@ -40,7 +40,7 @@ public:
 	void rewind();
 	uint32_t getPos();
 private:
-#if USE_SDFAT
+#if USE_SDFAT_HERE
 	File file;
 #endif
 	uint16_t head_index;

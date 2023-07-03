@@ -23,7 +23,7 @@ Authors:
 #include "Sound-SD.h"
 //#include "../Misc.h"
 
-#if USE_SDFAT
+#if USE_SDFAT_HERE
 #include "../SdFat.h"
 extern SdFat SD;
 #endif
@@ -43,7 +43,7 @@ Sound_Handler_Wav::Sound_Handler_Wav(Sound_Channel* chan) : Sound_Handler(chan) 
 };
 
 Sound_Handler_Wav::~Sound_Handler_Wav() {
-#if USE_SDFAT
+#if USE_SDFAT_HERE
 	if (file) {
 		file.close();
 	}
@@ -58,7 +58,7 @@ Sound_Handler_Wav::~Sound_Handler_Wav() {
 }
 
 bool Sound_Handler_Wav::init(const char* filename) {
-#if USE_SDFAT
+#if USE_SDFAT_HERE
 	file = SD.open(filename);
 	if (!file) {
 		return false;
@@ -113,13 +113,13 @@ bool Sound_Handler_Wav::init(const char* filename) {
 	file.read(channel->buffer, NUM_SAMPLES);
 	channel->use = true;
 	return true;
-#else // USE_SDFAT
+#else // USE_SDFAT_HERE
 	return false;
 #endif
 }
 
 uint32_t Sound_Handler_Wav::getPos() {
-#if USE_SDFAT
+#if USE_SDFAT_HERE
 	return file.position() - wav_offset - head_index;
 #else
 	return 0;
@@ -131,7 +131,7 @@ void Sound_Handler_Wav::rewind() {
 }
 
 void Sound_Handler_Wav::update() {
-#if USE_SDFAT
+#if USE_SDFAT_HERE
 	if (rewind_flag) {
 		rewind_flag = false;
 		file.seekSet(wav_offset);
@@ -170,7 +170,7 @@ void Sound_Handler_Wav::update() {
 		file.read(channel->buffer, current__SampleIndex);
 	}
 	head_index = current__SampleIndex;
-#endif // USE_SDFAT
+#endif // USE_SDFAT_HERE
 }
 
 } // namespace Gamebuino_Meta

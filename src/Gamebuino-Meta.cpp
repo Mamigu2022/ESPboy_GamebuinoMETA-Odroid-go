@@ -61,7 +61,6 @@ void Gamebuino::begin() {
   dac.setVoltage(4095, true);
 
   //Check OTA2
-
 /*
   if (getKeys()&PAD_ACT || getKeys()&PAD_ESC) { 
     //Serial.println();
@@ -73,7 +72,6 @@ void Gamebuino::begin() {
     OTA2obj -> checkOTA();
   }
   */
-  
   WiFi.mode(WIFI_OFF); 
 
   #if USE_LITTLEFS
@@ -94,7 +92,7 @@ void Gamebuino::begin() {
   
   startScreen();
   sound.begin();
-  save.begin();	
+  save.begin(SAVEFILE_NAME, CHECKBYTES);	
   display.clear();
   inited = true;
 }
