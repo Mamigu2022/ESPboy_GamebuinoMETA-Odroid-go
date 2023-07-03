@@ -2,6 +2,29 @@
 #define SOUND_MANAGER_H
 #include "Gamebuino-Meta.h"
 
+extern const uint8_t 
+      coinWav[], 
+      enemyHitWav[], 
+      enemyHit2Wav[], 
+      playerHitWav[], 
+      portalOpenedWav[], 
+      heartWav[], 
+      arcadeOffWav[], 
+      skillUpWav[], 
+      rerollWav[], 
+      lackOfGoldWav[],
+      explosionWav[],
+      skipWav[],
+      burnedWav[],
+      frozenWav[],
+      thunderWav[];
+
+extern const uint16_t
+coinWavSize, enemyHitWavSize, enemyHit2WavSize, playerHitWavSize, portalOpenedWavSize, heartWavSize,
+arcadeOffWavSize, skillUpWavSize, rerollWavSize, lackOfGoldWavSize, explosionWavSize, skipWavSize, 
+coinWavSizeSize, burnedWavSize, thunderWavSize;
+
+
 #define COIN 0
 #define ENEMY_HIT 1
 #define ENEMY_HIT2 2
@@ -18,29 +41,37 @@
 #define FROZEN 13
 #define THUNDER 14
 
+
+
 class SoundManager {
   public:
     byte track = -1;
     
     void playFX(byte trackNumber);
   private:
-    char* tracks[15] = { 
-      "coin.wav", 
-      "enemyHit.wav", 
-      "enemyHit2.wav", 
-      "playerHit.wav", 
-      "portalOpened.wav", 
-      "heart.wav", 
-      "arcadeOff.wav", 
-      "skillUp.wav", 
-      "reroll.wav", 
-      "lackOfGold.wav",
-      "explosion.wav",
-      "skip.wav",
-      "burned.wav",
-      "frozen.wav",
-      "thunder.wav"
+    const uint8_t* tracks[15] = { 
+      coinWav, 
+      enemyHitWav, 
+      enemyHit2Wav, 
+      playerHitWav, 
+      portalOpenedWav, 
+      heartWav, 
+      arcadeOffWav, 
+      skillUpWav, 
+      rerollWav, 
+      lackOfGoldWav,
+      explosionWav,
+      skipWav,
+      burnedWav,
+      frozenWav,
+      thunderWav
     };
+    const uint16_t sze[15]={
+      coinWavSize, enemyHitWavSize, enemyHit2WavSize, playerHitWavSize, portalOpenedWavSize, heartWavSize,
+      arcadeOffWavSize, skillUpWavSize, rerollWavSize, lackOfGoldWavSize, explosionWavSize, skipWavSize, 
+      coinWavSizeSize, burnedWavSize, thunderWavSize
+      };
+
 };
 
 extern SoundManager soundManager;

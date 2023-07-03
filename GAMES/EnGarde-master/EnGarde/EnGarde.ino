@@ -262,7 +262,7 @@ namespace Game {
 };
 
 void setup() {
-  Serial.begin(115200);
+  //Serial.begin(115200);
   gb.pickRandomSeed();
   //Game::seed = analogRead(0);
   //randomSeed(Game::seed);
@@ -271,6 +271,7 @@ void setup() {
 
 void loop() {
   while(1) {
+    ESP.wdtFeed();
     while (!gb.update());
     gb.display.clear();
 
@@ -279,6 +280,7 @@ void loop() {
     } else if (ui.tutorial) {
       Game::init();
       while(1) {
+        ESP.wdtFeed();
         while (!gb.update());
         gb.display.clear();
 
@@ -289,6 +291,7 @@ void loop() {
     } else {
       Game::init();
       while(1) {
+        ESP.wdtFeed();
         while (!gb.update());
         gb.display.clear();
 

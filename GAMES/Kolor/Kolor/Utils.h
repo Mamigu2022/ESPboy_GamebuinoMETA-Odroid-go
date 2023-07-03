@@ -53,8 +53,7 @@ int PosValue(int x, int y){
   if(check==false){
     return map_layout[y][x];
   }
-
-  return 0;
+ return 0;
 }
 
 /***********

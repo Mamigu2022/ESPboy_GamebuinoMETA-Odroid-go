@@ -310,7 +310,7 @@ void setup(){
   gb.begin();
   gb.display.setPalette(PALETTE);
   gb.setFrameRate(36);
-  //Fill_TonBuffer(TON_LOW, TON_HIGH, TON_RATE);
+  Fill_TonBuffer(TON_LOW, TON_HIGH, TON_RATE);
   initGame();
 }
 

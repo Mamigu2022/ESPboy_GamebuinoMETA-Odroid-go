@@ -23,11 +23,9 @@ const PROGMEM byte warps[] = {
 #define F_ROCK_4    9
 #define F_ROCK_5    10
 #define F_ROCK_6    11
-
 boolean flag[] = {
   false, false, false, false, false, false, false, false, false, false, false, false
 };
-
 const PROGMEM boolean default_flag[] = {
   false, false, false, false, false, false, false, false, false, false, false, false
 };
@@ -63,7 +61,6 @@ const PROGMEM byte walk_triggered_scripts[] = {
 #define TEXT    0
 #define SCRIPT  1
 #define ACTION_SCRIPTS_LENGTH 6
-
 const PROGMEM byte action_triggered_scripts[] = {
   // X, Y, flag id (0 = no flag : constant event), tile id (0 = no tile), script type, script id
   36, 6, NO_FLAG, NO_TILE, TEXT, STR_CARTRIDGE,

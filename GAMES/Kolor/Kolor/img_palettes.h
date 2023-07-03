@@ -1,7 +1,7 @@
 #pragma once
 #include <Gamebuino-Meta.h>
 
-const Color PALETTE2[] = {
+const PROGMEM Color PALETTE2[] = {
 
     (Color) 0xffff, // 0x0
     (Color) 0x7ddf, // 0x1
@@ -23,7 +23,7 @@ const Color PALETTE2[] = {
 };
 
 
-const Color PALETTE[] = {
+const PROGMEM Color PALETTE[] = {
     (Color) 0xffff, // 0x0
     (Color) 0x7ddf, // 0x1
     (Color) 0x4439, // 0x2

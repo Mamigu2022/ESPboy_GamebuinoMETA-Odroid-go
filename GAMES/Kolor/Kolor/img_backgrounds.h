@@ -20,7 +20,7 @@ FULL_DARKBLUE
 FULL_PURPLE
 */
 
-const uint8_t PROGMEM TITLE[] = {
+const PROGMEM uint8_t TITLE[] = {
 
     // metadata
 
@@ -59,7 +59,7 @@ const uint8_t PROGMEM TITLE[] = {
 
 };
 
-const uint8_t PROGMEM RED_ORANGE_YELLOW[] = {
+const PROGMEM uint8_t RED_ORANGE_YELLOW[] = {
 
     // metadata
 
@@ -151,7 +151,7 @@ const uint8_t PROGMEM RED_ORANGE_YELLOW[] = {
 
 
 
-const uint8_t PROGMEM DARK_BLUE[] = {
+const PROGMEM uint8_t DARK_BLUE[] = {
 
     // metadata
 
@@ -235,7 +235,7 @@ const uint8_t PROGMEM DARK_BLUE[] = {
 
 
 
-const uint8_t PROGMEM JUST_BLUE[] = {
+const PROGMEM uint8_t JUST_BLUE[] = {
 
     // metadata
 
@@ -285,7 +285,7 @@ const uint8_t PROGMEM JUST_BLUE[] = {
 
 
 
-const uint8_t PROGMEM JUST_GREEN[] = {
+const PROGMEM uint8_t JUST_GREEN[] = {
 
     // metadata
 
@@ -339,7 +339,7 @@ const uint8_t PROGMEM JUST_GREEN[] = {
 
 
 
-const uint8_t PROGMEM JUST_RED[] = {
+const PROGMEM uint8_t JUST_RED[] = {
 
     // metadata
 
@@ -396,7 +396,7 @@ const uint8_t PROGMEM JUST_RED[] = {
 };
 
 
-const uint8_t PROGMEM JUST_PURPLE[] = {
+const PROGMEM uint8_t JUST_PURPLE[] = {
 
     // metadata
 
@@ -445,7 +445,7 @@ const uint8_t PROGMEM JUST_PURPLE[] = {
 };
 
 
-const uint8_t PROGMEM BLUE_PURPLE[] = {
+const PROGMEM uint8_t BLUE_PURPLE[] = {
 
     // metadata
 
@@ -537,7 +537,7 @@ const uint8_t PROGMEM BLUE_PURPLE[] = {
 };
 
 
-const uint8_t PROGMEM BLUE_GREEN_YELLOW[] = {
+const PROGMEM uint8_t BLUE_GREEN_YELLOW[] = {
 
     // metadata
 
@@ -607,7 +607,7 @@ const uint8_t PROGMEM BLUE_GREEN_YELLOW[] = {
 };
 
 
-const uint8_t PROGMEM FULL_RED[] = {
+const PROGMEM uint8_t FULL_RED[] = {
 
     // metadata
 
@@ -693,7 +693,7 @@ const uint8_t PROGMEM FULL_RED[] = {
 
 };
 
-const uint8_t PROGMEM FULL_ORANGE[] = {
+const PROGMEM uint8_t FULL_ORANGE[] = {
 
     // metadata
 
@@ -742,7 +742,7 @@ const uint8_t PROGMEM FULL_ORANGE[] = {
 };
 
 
-const uint8_t PROGMEM FULL_YELLOW[] = {
+const PROGMEM uint8_t FULL_YELLOW[] = {
 
     // metadata
 
@@ -831,7 +831,7 @@ const uint8_t PROGMEM FULL_YELLOW[] = {
 
 };
 
-const uint8_t PROGMEM FULL_GREEN[] = {
+const PROGMEM uint8_t FULL_GREEN[] = {
 
     // metadata
 
@@ -909,7 +909,7 @@ const uint8_t PROGMEM FULL_GREEN[] = {
 
 };
 
-const uint8_t PROGMEM FULL_DARKGREEN[] = {
+const PROGMEM uint8_t FULL_DARKGREEN[] = {
 
     // metadata
 
@@ -957,7 +957,7 @@ const uint8_t PROGMEM FULL_DARKGREEN[] = {
 
 };
 
-const uint8_t PROGMEM FULL_LIGHTBLUE[] = {
+const PROGMEM uint8_t FULL_LIGHTBLUE[] = {
 
     // metadata
 
@@ -1039,7 +1039,7 @@ const uint8_t PROGMEM FULL_LIGHTBLUE[] = {
 
 };
 
-const uint8_t PROGMEM FULL_BLUE[] = {
+const PROGMEM uint8_t FULL_BLUE[] = {
 
     // metadata
 
@@ -1121,7 +1121,7 @@ const uint8_t PROGMEM FULL_BLUE[] = {
 
 };
 
-const uint8_t PROGMEM FULL_DARKBLUE[] = {
+const PROGMEM uint8_t FULL_DARKBLUE[] = {
 
     // metadata
 
@@ -1226,7 +1226,7 @@ const uint8_t PROGMEM FULL_DARKBLUE[] = {
 
 };
 
-const uint8_t PROGMEM FULL_PURPLE[] = {
+const PROGMEM uint8_t FULL_PURPLE[] = {
 
     // metadata
 

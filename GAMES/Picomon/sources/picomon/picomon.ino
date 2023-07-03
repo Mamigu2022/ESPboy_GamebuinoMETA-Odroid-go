@@ -1,8 +1,8 @@
-#define DISPLAY_MODE DISPLAY_MODE_RGB565
-
 #include <Gamebuino-Meta.h>
-//#include "GSFX.h"
-//GSFX gsfx;
+#include "GSFX.h"
+#include "soundWav.h"
+
+GSFX gsfx;
 
 #define MAP_WIDTH   128
 #define MAP_HEIGHT  64
@@ -51,9 +51,6 @@
 #define STATS_MENU_MAP    0
 #define STATS_MENU_BATTLE 1
 #define STATS_MENU_ITEM   2
-
-void battle(const byte zone[], byte size);
-
 
 Color pico_8_palette[] = {
   (Color)0x0000,  // BLACK
@@ -129,37 +126,37 @@ int music = -1;
 #include "scripts.h"
 #include "graphics.h"
 
-const byte PROGMEM zone00[] = {
+const byte zone00[] = {
   SWOOTY, PIGGY, GROLDO, FEUXDINO, WATAWAMP, ROWPIM, BUZZCOR, PURBIRB, TINKERELLE, BOBERL,
   PLARADI, HATCELL, MOGMINE, CRUB, FLIPA, SNEG, PILO, LIMEGOO, DOGSHADE, PUKESUN, HUEVO
 };
-const byte PROGMEM zone01[] = { ROWPIM, PIGGY, PURBIRB };
-const byte PROGMEM zone02[] = { GROLDO, FEUXDINO, TINKERELLE };
-const byte PROGMEM zone03[] = { LIMEGOO };
-const byte PROGMEM zone04[] = { MOGMINE, HATCELL, PLARADI };
-const byte PROGMEM zone05[] = { DOGSHADE, BUZZCOR, SNEG };
-const byte PROGMEM zone06[] = { WATAWAMP, PILO };
-const byte PROGMEM zone07[] = { FLIPA, CRUB };
+const byte zone01[] = { ROWPIM, PIGGY, PURBIRB };
+const byte zone02[] = { GROLDO, FEUXDINO, TINKERELLE };
+const byte zone03[] = { LIMEGOO };
+const byte zone04[] = { MOGMINE, HATCELL, PLARADI };
+const byte zone05[] = { DOGSHADE, BUZZCOR, SNEG };
+const byte zone06[] = { WATAWAMP, PILO };
+const byte zone07[] = { FLIPA, CRUB };
 
-const byte PROGMEM map_menu[] = {
+const byte map_menu[] = {
   // x, y, w, h, option id
   45, 0, 35, 27,
   M_MONSTER, M_ITEM, M_SAVE, M_RESET
 };
 
-const byte PROGMEM first_release_menu[] = {
+const byte first_release_menu[] = {
   // x, y, w, h, option id
   22, 24, 35, 15,
   M_FIRST, M_RELEASE
 };
 
-const byte PROGMEM use_drop_menu[] = {
+const byte use_drop_menu[] = {
   // x, y, w, h, option id
   28, 24, 23, 15,
   M_USE, M_DROP
 };
 
-const byte PROGMEM no_yes_menu[] = {
+const byte no_yes_menu[] = {
   // x, y, w, h, option id
   14, 29, 15, 11,
   M_NO, M_YES
@@ -175,9 +172,10 @@ const SaveDefault savefileDefaults[] = {
 };
 
 void setup() {
+  //Serial.begin(115200);
   gb.begin();
   gb.sound.playOK();
-  //gsfx.init();
+  gsfx.init();
   gb.setFrameRate(40);
   gb.save.config(savefileDefaults);
   gb.display.colorIndex = pico_8_palette;
@@ -185,6 +183,7 @@ void setup() {
 
 void loop() {
 reset:
+  ESP.wdtFeed();
   load_game();
   player_kills = 0;
   title_screen();
@@ -202,6 +201,7 @@ reset:
   fade_out_map(FADE_DELAY);
   boolean object_collision = false;
   while (true) {
+    ESP.wdtFeed();
     if (gb.update()) {
       int x_direction = -gb.buttons.repeat(BUTTON_LEFT, 1) * (player_x > 0) + gb.buttons.repeat(BUTTON_RIGHT, 1) * (player_x < MAP_WIDTH - 1);
       int y_direction = -gb.buttons.repeat(BUTTON_UP, 1) * (player_y > 0) + gb.buttons.repeat(BUTTON_DOWN, 1) * (player_y < MAP_HEIGHT - 1);
@@ -240,8 +240,8 @@ reset:
             // check for warps
             for (byte i = 0; i < sizeof(warps); i += WARPS_LENGTH) {
               if (player_x == warps[i] && player_y == warps[i + 1]) {
-                gb.sound.tone(50,500);
                 //gb.sound.play("sounds/warp.wav");
+                gb.sound.play(warp);
                 fade_in_map(FADE_DELAY);
                 if (!(player_x > 32 && player_x < 56 && player_y < 10)) {
                   player_x = warps[i + 2];
@@ -341,6 +341,7 @@ reset:
         gb.sound.playOK();
         tmp = 0;
 map_menu_loop:
+        ESP.wdtFeed();
         while (!gb.update());
         update_map();
         switch (menu(map_menu, sizeof(map_menu), true, tmp)) {
@@ -366,7 +367,7 @@ map_menu_loop:
             text(STR_SURE, NO_RESET);
             while (!gb.update());
             if (menu(no_yes_menu, sizeof(no_yes_menu), false, 0) == M_YES) {
-              //gb.sound.stop(music);
+              gb.sound.stop(music);
               reset_game();
               //setup();
               goto reset;
@@ -381,12 +382,13 @@ map_menu_loop:
 }
 
 void title_screen() {
-  //gb.sound.stop(music);
+  gb.sound.stop(music);
   //music = gb.sound.play("musics/battle.wav", true);
-  gb.sound.tone(50,500);
+  music = gb.sound.play(battleMus, battleMus_size, false);
   byte picomon_offset = rand() % (21 - 6);
   long loop = 0;
   do {
+    ESP.wdtFeed();
     if (gb.update()) {
       loop++;
       gb.display.fill(WHITE);
@@ -400,99 +402,75 @@ void title_screen() {
       }
       gb.display.setColor(BLACK);
       gb.display.setCursor(14, 0);
-      gb.display.print(STR_TITLE);
+      gb.display.print(F(STR_TITLE));
       gb.display.setCursor(6 - 2 * (loop / 100 % 2 > 0), 59);
       if (loop / 100 % 2 > 0) {
-        gb.display.print(STR_AUTHOR_2);
+        gb.display.print(F(STR_AUTHOR_2));
       } else {
-        gb.display.print(STR_AUTHOR_1);
+        gb.display.print(F(STR_AUTHOR_1));
       }
     }
   } while (!gb.buttons.repeat(BUTTON_A, BUTTON_DELAY));
 }
 
-#define MAGICFLAG 0xABCF
-
-struct Save{
-  uint32_t magicflag;
-  byte player_x;
-  byte player_y;
-  byte player_direction;
-  boolean flag[12];
-  short unsigned int player_picomons[36];
-  byte player_items[10];
-}save_struct;
-
 void load_game() {
-  EEPROM.get(10, save_struct);
-  if(save_struct.magicflag == MAGICFLAG){
-    player_x = save_struct.player_x;
-    player_y = save_struct.player_y;
-    player_direction = save_struct.player_direction;
-    for (uint8_t i=0; i<12; i++) flag[i] = save_struct.flag[i];
-    for (uint8_t i=0; i<36; i++) player_picomons[i] = save_struct.player_picomons[i];
-    for (uint8_t i=0; i<10; i++) player_items[i] = save_struct.player_items[i];
-  }
-  else {
-    reset_game();
-    save_game();
-  }
+  player_x = gb.save.get(0);
+  player_y = gb.save.get(1);
+  player_direction = gb.save.get(2);
+  gb.save.get(3, flag);
+  gb.save.get(4, player_picomons);
+  gb.save.get(5, player_items);
 }
 
 void save_game() {
-    save_struct.magicflag = MAGICFLAG;
-    save_struct.player_x = player_x;
-    save_struct.player_y = player_y;
-    save_struct.player_direction = player_direction;
-    for (uint8_t i=0; i<12; i++) save_struct.flag[i] = flag[i];
-    for (uint8_t i=0; i<36; i++) save_struct.player_picomons[i]=player_picomons[i];
-    for (uint8_t i=0; i<10; i++) save_struct.player_items[i]=player_items[i];
-    EEPROM.put(10, save_struct);
-    EEPROM.commit();
+  gb.save.set(0, player_x);
+  gb.save.set(1, player_y);
+  gb.save.set(2, player_direction);
+  gb.save.set(3, flag);
+  gb.save.set(4, player_picomons);
+  gb.save.set(5, player_items);
 }
-
 
 void reset_game() {
-    save_struct.magicflag = MAGICFLAG;
-    player_x = PLAYER_X;
-    player_y = PLAYER_Y;
-    player_direction = PLAYER_DIRECTION;
-    for (uint8_t i=0; i<12; i++) flag[i] = default_flag[i];
-    for (uint8_t i=0; i<36; i++) player_picomons[i] = default_player_picomons[i];
-    for (uint8_t i=0; i<10; i++) player_items[i] = default_player_items[i];
+  gb.save.del(0);
+  gb.save.del(1);
+  gb.save.del(2);
+  gb.save.del(3);
+  gb.save.del(4);
+  gb.save.del(5);
 }
 
-
 void choose_music() {
-  //gb.sound.stop(music);
+  gb.sound.stop(music);
   if (player_x > 32 && player_x < 56 && player_y < 10) {
     //music = gb.sound.play("musics/inside.wav", true);
-    gb.sound.tone(50,500);
+    music = gb.sound.play(insideMus, insideMus_size, false);
   } else if (player_x > 68 && player_y < 22) {
     //music = gb.sound.play("musics/cave.wav", true);
-    gb.sound.tone(50,500);
+    music = gb.sound.play(caveMus, caveMus_size, false);
   } else {
     //music = gb.sound.play("musics/outside.wav", true);
-    gb.sound.tone(50,500);
+    music = gb.sound.play(outsideMus, outsideMus_size, false);
   }
 }
 
-
-void text(const char string[], boolean no_reset) {
+byte text(const char string[], boolean no_reset) {
   if (!no_reset) text_frame();
   for (byte i = 0; i < strlen(string); i++) {
+    ESP.wdtFeed();
     char c = (char) string[i];
     switch ((byte) c) {
       case 10:
         gb.display.setCursor(2, gb.display.getCursorY() + 6);
         break;
       case 112:
+        ESP.wdtFeed();
         text_pause();
         text_frame();
         break;
       default:
         gb.display.print(c);
-        //if (c > 64 && c < 91) gsfx.play(GSFX::FX{GSFX::WaveType::SQUARE, 10000, 0, 3000 + 500 * (c - 64), 0, 2000});
+        if (c > 64 && c < 91) gsfx.play(GSFX::FX{GSFX::WaveType::SQUARE, 10000, 0, 3000 + 500 * (c - 64), 0, 2000});
         while (!gb.update());
         break;
     }
@@ -501,6 +479,7 @@ void text(const char string[], boolean no_reset) {
     text_pause();
     update_map();
   }
+ return(0);
 }
 
 void text_frame() {
@@ -514,6 +493,7 @@ void text_frame() {
 void text_pause() {
   byte i = 0, quit = 0;
   while (!quit) {
+    ESP.wdtFeed();
     if (gb.update()) {
       i++;
       if (i % 2) {
@@ -522,6 +502,7 @@ void text_pause() {
       gb.display.drawChar(gb.display.getCursorX(), gb.display.getCursorY(), 21, 1);
       gb.display.setColor(BLACK);
       while (!gb.update());
+      ESP.wdtFeed();
       delay(TEXT_BLINK_DELAY);
       if (gb.buttons.repeat(BUTTON_A, TEXT_BUTTON_DELAY)) quit = 1;
     }
@@ -548,9 +529,10 @@ word menu(const byte data[], byte size, boolean frame, byte cursor_pos) {
 byte handle_vertical_cursor(byte options_number, byte x, byte y, byte cursor_pos) {
   byte prev_pos = (cursor_pos == 0);
   do {
+    ESP.wdtFeed();
     if (gb.update()) {
       if (cursor_pos != prev_pos) {
-        gb.sound.playTick();
+        //gb.sound.playTick();
         gb.display.setColor(WHITE);
         gb.display.drawChar(x, y + 6 * (prev_pos), 16, 1);
         gb.display.setColor(BLACK);
@@ -569,7 +551,7 @@ byte handle_vertical_cursor(byte options_number, byte x, byte y, byte cursor_pos
   return cursor_pos;
 }
 
-void script(byte script_id) {
+byte script(byte script_id) {
   byte i;
   switch (script_id) {
     case S_PHONE:
@@ -581,8 +563,8 @@ void script(byte script_id) {
       break;
     case S_PICOBALL:
       flag[F_PICOBALL] = true;
-      gb.sound.playOK();
       //gb.sound.play("sounds/take.wav");
+      gb.sound.play(take);
       add_picomon(0, SWOOTY, 2, calc_stat(SWOOTY, 2, HP), 0, MO_TACKLE, MO_LEER, NO_MOVE, NO_MOVE);
       text(str_starter, WITH_RESET);
       break;
@@ -599,7 +581,7 @@ void script(byte script_id) {
       break;
     case S_PICOSTOP:
       //gb.sound.play("sounds/picostop.wav");
-      gb.sound.playCancel();
+      gb.sound.play(picostop);
       for (i = 0; i < sizeof(player_picomons) / 2; i += PLAYER_PICOMONS_LENGTH) {
         if (player_picomons[i + ID] == MISSING_NO) break;
         player_picomons[i + CUR_HP] = calc_stat(player_picomons[i + ID], player_picomons[i + LVL], HP);
@@ -616,8 +598,8 @@ void script(byte script_id) {
           player_items[i] = rand() % 3;
           if (rand() % 100 < 5) player_items[i] = I_RESURRECT;
           text(STR_PICOSTOP, WITH_RESET);
-          gb.sound.playOK();
           //gb.sound.play("sounds/take.wav");
+          gb.sound.play(take);
           text_frame();
           text(STR_POINTS, NO_RESET);
           text(item_names[player_items[i]], NO_RESET);
@@ -641,8 +623,8 @@ void script(byte script_id) {
       if (search_item(I_GARDEN_KEY) == NO_ITEM) {
         text(STR_CORKS_ASSISTANT, WITH_RESET);
         if (search_item(NO_ITEM) != NO_ITEM) {
-          gb.sound.playOK();
           //gb.sound.play("sounds/take.wav");
+          gb.sound.play(take);
           text(STR_GARDEN_KEY, WITH_RESET);
           player_items[search_item(NO_ITEM)] = I_GARDEN_KEY;
         } else {
@@ -684,8 +666,8 @@ void script(byte script_id) {
         if (search_item(I_APPLE) == NO_ITEM) {
           text(STR_APPLE_DUDE, WITH_RESET);
         } else {
-          gb.sound.playOK();
           //gb.sound.play("sounds/take.wav");
+          gb.sound.play(take);
           text(STR_APPLE_DUDE_THX, WITH_RESET);
           player_items[search_item(I_APPLE)] = I_SWIM_SUIT;
         }
@@ -698,8 +680,8 @@ void script(byte script_id) {
         text(STR_FULL_INVENTORY, WITH_RESET);
         break;
       }
-      gb.sound.playOK();
       //gb.sound.play("sounds/take.wav");
+      gb.sound.play(take);
       text(STR_CANDY, WITH_RESET);
       player_items[search_item(NO_ITEM)] = I_CANDY;
       flag[F_CANDY] = true;
@@ -716,8 +698,8 @@ void script(byte script_id) {
         if (tmp >= CORKS_PRIZE_THRESHOLD) {
           text(STR_TAKE_HAMMER, WITH_RESET);
           if (search_item(NO_ITEM) != NO_ITEM) {
-            gb.sound.playOK();
             //gb.sound.play("sounds/take.wav");
+            gb.sound.play(take);
             text(STR_GET_HAMMER, WITH_RESET);
             player_items[search_item(NO_ITEM)] = I_HAMMER;
           } else {
@@ -773,6 +755,7 @@ void script(byte script_id) {
       }
       break;
   }
+ return(0);
 }
 
 void add_picomon(byte position, byte id, byte lvl, unsigned short hp, unsigned short xp, byte move_1, byte move_2, byte move_3, byte move_4) {
@@ -812,11 +795,13 @@ byte stats_menu(byte option) {
   }
   byte picomon_count, cursor_pos = 0, prev_pos = 1;
   while (true) {
+    ESP.wdtFeed();
     if (gb.update()) {
       do {
+        ESP.wdtFeed();
         if (gb.update()) {
           if (cursor_pos != prev_pos) {
-            gb.sound.playTick();
+            //gb.sound.playTick();
             gb.display.fill(WHITE);
             gb.display.setColor(BLACK);
             gb.display.drawRect(0, 0, 43, 64);
@@ -844,21 +829,21 @@ byte stats_menu(byte option) {
             gb.display.setCursor(11, 10);
             gb.display.print(element_names[picomon_stats[player_picomons[(cursor_pos * PLAYER_PICOMONS_LENGTH) + ID]*PICOMON_STATS_LENGTH + ELEMENT]]);
             gb.display.setCursor(2, 17);
-            gb.display.print(STR_LVL);
+            gb.display.print(F(STR_LVL));
             gb.display.setCursor(2, 23);
-            gb.display.print(STR_XP);
+            gb.display.print(F(STR_XP));
             gb.display.setCursor(2, 29);
-            gb.display.print(STR_HP);
+            gb.display.print(F(STR_HP));
             gb.display.setCursor(2, 35);
-            gb.display.print(STR_SPEED);
+            gb.display.print(F(STR_SPEED));
             gb.display.setCursor(2, 41);
-            gb.display.print(STR_DEFENSE);
+            gb.display.print(F(STR_DEFENSE));
             gb.display.setCursor(2, 47);
-            gb.display.print(STR_ATTACK);
+            gb.display.print(F(STR_ATTACK));
             gb.display.setCursor(26, 23);
-            gb.display.print(STR_SLASH);
+            gb.display.print(F(STR_SLASH));
             gb.display.setCursor(26, 29);
-            gb.display.print(STR_SLASH);
+            gb.display.print(F(STR_SLASH));
             gb.display.setCursor(18, 17);
             gb.display.print(player_picomons[(cursor_pos * PLAYER_PICOMONS_LENGTH) + LVL]);
             tmp = player_picomons[(cursor_pos * PLAYER_PICOMONS_LENGTH) + XP];
@@ -932,15 +917,17 @@ byte stats_menu(byte option) {
 byte item_menu(boolean during_battle) {
   byte items_count, cursor_pos = 0, prev_pos = 1;
   while (true) {
+    ESP.wdtFeed();
     if (gb.update()) {
       if (player_items[0] == NO_ITEM) {
         gb.sound.playCancel();
         return M_CANCEL;
       }
       do {
+        ESP.wdtFeed();
         if (gb.update()) {
           if (cursor_pos != prev_pos) {
-            gb.sound.playTick();
+            //gb.sound.playTick();
             gb.display.fill(WHITE);
             gb.display.setColor(BLACK);
             gb.display.drawRect(0, 0, 80, 64);
@@ -977,18 +964,14 @@ byte item_menu(boolean during_battle) {
                 if (player_picomons[prev_pos * PLAYER_PICOMONS_LENGTH + CUR_HP > 0]) {
                   tmp = calc_stat(player_picomons[prev_pos * PLAYER_PICOMONS_LENGTH + ID], player_picomons[prev_pos * PLAYER_PICOMONS_LENGTH + LVL], HP);
                   if (player_picomons[prev_pos * PLAYER_PICOMONS_LENGTH + CUR_HP] == tmp) {
-                    gb.sound.tone(50,500);
                     //gb.sound.play("sounds/cantheal.wav");
+                    gb.sound.play(cantheal);
                     text(picomon_names[player_picomons[prev_pos * PLAYER_PICOMONS_LENGTH + ID]], NO_RESET);
                     text(STR_ALREADY_HEALED, NO_RESET);
                     break;
                   }
-                  gb.sound.playCancel();
-                  delay(200);
-                  gb.sound.playCancel();
-                  delay(200);
-                  gb.sound.playOK();
                   //gb.sound.play("sounds/heal.wav");
+                  gb.sound.play(heal);
                   player_picomons[prev_pos * PLAYER_PICOMONS_LENGTH + CUR_HP] += 20;
                   if (player_picomons[prev_pos * PLAYER_PICOMONS_LENGTH + CUR_HP] > tmp) {
                     player_picomons[prev_pos * PLAYER_PICOMONS_LENGTH + CUR_HP] = tmp;
@@ -1017,18 +1000,14 @@ byte item_menu(boolean during_battle) {
               if (prev_pos != M_CANCEL) {
                 text_frame();
                 if (player_picomons[prev_pos * PLAYER_PICOMONS_LENGTH + CUR_HP] > 0) {
-                  gb.sound.tone(50,500);
                   //gb.sound.play("sounds/cantheal.wav");
+                  gb.sound.play(cantheal);
                   text(picomon_names[player_picomons[prev_pos * PLAYER_PICOMONS_LENGTH + ID]], NO_RESET);
                   text(STR_NOT_KO, NO_RESET);
                   break;
                 }
-                gb.sound.playCancel();
-                delay(200);
-                gb.sound.playCancel();
-                delay(200);
-                gb.sound.playOK();
                 //gb.sound.play("sounds/heal.wav");
+                gb.sound.play(heal);
                 player_picomons[prev_pos * PLAYER_PICOMONS_LENGTH + CUR_HP] = calc_stat(player_picomons[prev_pos * PLAYER_PICOMONS_LENGTH + ID], player_picomons[prev_pos * PLAYER_PICOMONS_LENGTH + LVL], HP) / 2;
                 text(picomon_names[player_picomons[prev_pos * PLAYER_PICOMONS_LENGTH + ID]], NO_RESET);
                 text(STR_HAS_BEEN_HEALED, NO_RESET);
@@ -1042,12 +1021,8 @@ byte item_menu(boolean during_battle) {
               while (!gb.update());
               prev_pos = stats_menu(STATS_MENU_ITEM);
               if (prev_pos != M_CANCEL) {
-                gb.sound.playCancel();
-                delay(200);
-                gb.sound.playCancel();
-                delay(200);
-                gb.sound.playOK();
                 //gb.sound.play("sounds/heal.wav");
+                gb.sound.play(heal);
                 text_frame();
                 if (rand() % 2) {
                   player_picomons[prev_pos * PLAYER_PICOMONS_LENGTH + DOUBLE_XP] = 1;
@@ -1128,16 +1103,15 @@ unsigned short opponent_stats[] = {
 };
 
 void battle(const byte zone[], byte size) {
-//  gb.sound.stop(music);
+  gb.sound.stop(music);
   //gb.sound.play("sounds/battle_intro.wav");
-  gb.sound.tone(50,500);
+   gb.sound.play(battle_intro, battle_intro_size);
   for (byte i = 0; i < 3; i++) {
     fade_in_map(BATTLE_TEXT_BLINK_DELAY);
     fade_out_map(BATTLE_TEXT_BLINK_DELAY);
   }
   //music = gb.sound.play("musics/battle.wav", true);
-  gb.sound.tone(50,500);
-
+  music = gb.sound.play(battleMus, battleMus_size, false);
   byte opponent_move_count = 1, escape_tries = 0, move_accuracy = 95, effectiveness, i, opponent_malus_def = 0, player_malus_def = 0;
   boolean critical;
   short damages;
@@ -1157,16 +1131,19 @@ void battle(const byte zone[], byte size) {
   if (opponent_stats[MOVE_1] == MO_LEER || rand() % 2) {
     opponent_move_count++;
     do {
+      ESP.wdtFeed();
       opponent_stats[MOVE_2] = rand() % (MO_SECOND_MAX + 1);
     } while (opponent_stats[MOVE_2] == opponent_stats[MOVE_1]);
     if (rand() % 2 && opponent_stats[LVL] > 5) {
       opponent_move_count++;
       do {
+        ESP.wdtFeed();
         opponent_stats[MOVE_3] = rand() % (MO_THIRD_MAX + 1);
       } while (opponent_stats[MOVE_3] == opponent_stats[MOVE_2]);
       if (rand() % 2 && opponent_stats[LVL] > 10) {
         opponent_move_count++;
         do {
+          ESP.wdtFeed();
           opponent_stats[MOVE_4] = rand() % (MO_FOURTH_MAX + 1);
         } while (opponent_stats[MOVE_4] == opponent_stats[MOVE_3]);
       }
@@ -1179,19 +1156,20 @@ void battle(const byte zone[], byte size) {
   battle_text(STR_WILD_MONSTER_2);
 
   while (true) {
+    ESP.wdtFeed();
     if (gb.update()) {
 battle_loop:
       byte cursor_pos = 1;
 battle_loop_skip_cursor:
       draw_battle_screen();
       gb.display.setCursor(23, 51);
-      gb.display.print(STR_FIGHT);
+      gb.display.print(F(STR_FIGHT));
       gb.display.setCursor(51, 51);
-      gb.display.print(STR_MONSTER);
+      gb.display.print(F(STR_MONSTER));
       gb.display.setCursor(23, 57);
-      gb.display.print(STR_ITEM);
+      gb.display.print(F(STR_ITEM));
       gb.display.setCursor(51, 57);
-      gb.display.print(STR_RUN);
+      gb.display.print(F(STR_RUN));
       switch (handle_battle_cursor(19, 28, cursor_pos, 4, false)) {
         case B_FIGHT:
           battle_text_frame();
@@ -1241,8 +1219,8 @@ battle_loop_skip_cursor:
                 tmp = opponent_stats[CUR_HP] - damages;
                 tmp *= (tmp > 0);
 
-                gb.sound.playCancel();
                 //gb.sound.play("sounds/damage.wav");
+                gb.sound.play(damage);
                 for (i = 0; i < DAMAGE_BLINK_LENGHT; i++) {
                   if (i % 2) {
                     tile_set.setFrame(picomon_stats[opponent_stats[ID]*PICOMON_STATS_LENGTH + SPRITE_ID]);
@@ -1277,8 +1255,8 @@ battle_loop_skip_cursor:
                   gb.display.print(tmp);
                   battle_text(STR_XP_EXCLAMATION);
                   if (player_picomons[XP] > pow(player_picomons[LVL] * 10, 1.2) && player_picomons[LVL] < 100) {
-                    gb.sound.playOK();
                     //gb.sound.play("sounds/take.wav");
+                    gb.sound.play(take);
                     player_picomons[LVL]++;
                     player_picomons[CUR_HP] = calc_stat(player_picomons[ID], player_picomons[LVL], HP);
                     player_picomons[XP] = 0;
@@ -1321,8 +1299,8 @@ battle_loop_skip_cursor:
                   battle_text(picomon_names[opponent_stats[ID]]);
                   battle_text(STR_EXCLAMATION);
                 } else {
-                  gb.sound.playOK();
                   //gb.sound.play("sounds/take.wav");
+                  gb.sound.play(take);
                   battle_text(STR_CAUGHT);
                   battle_text(picomon_names[opponent_stats[ID]]);
                   battle_text(STR_EXCLAMATION);
@@ -1376,8 +1354,8 @@ battle_loop_skip_cursor:
           tmp = player_picomons[CUR_HP] - damages;
           tmp *= (tmp > 0);
 
-          gb.sound.playCancel();
           //gb.sound.play("sounds/damage.wav");
+          gb.sound.play(damage);
           for (i = 0; i < DAMAGE_BLINK_LENGHT; i++) {
             if (i % 2) {
               tile_set.setFrame(picomon_stats[player_picomons[ID]*PICOMON_STATS_LENGTH + SPRITE_ID]);
@@ -1416,6 +1394,7 @@ battle_loop_skip_cursor:
               if (player_picomons[i * PLAYER_PICOMONS_LENGTH + CUR_HP] > 0) break;
             }
             do {
+              ESP.wdtFeed();
               while (!gb.update());
               i = stats_menu(STATS_MENU_ITEM);
               if (player_picomons[i * PLAYER_PICOMONS_LENGTH + CUR_HP] == 0) i = M_CANCEL;
@@ -1436,10 +1415,10 @@ void draw_battle_screen() {
   gb.display.setCursor(3, 1);
   gb.display.print(picomon_names[opponent_stats[ID]]);
   gb.display.setCursor(3, 7);
-  gb.display.print(STR_L);
+  gb.display.print(F(STR_L));
   gb.display.print(opponent_stats[LVL]);
   gb.display.setCursor(3, 13);
-  gb.display.print(STR_HP_);
+  gb.display.print(F(STR_HP_));
   draw_HP_box(15, 14, 38, 4, (float) opponent_stats[CUR_HP] / calc_stat(opponent_stats[ID], opponent_stats[LVL], HP));
   tile_set.setFrame(picomon_stats[opponent_stats[ID]*PICOMON_STATS_LENGTH + SPRITE_ID]);
   gb.display.drawImage(55, 1, tile_set, -24, 24);
@@ -1448,10 +1427,10 @@ void draw_battle_screen() {
   gb.display.setCursor(78 - strlen(picomon_names[player_picomons[ID]]) * 4, 30);
   gb.display.print(picomon_names[player_picomons[ID]]);
   gb.display.setCursor(66 - 4 * (player_picomons[LVL] > 9) - 4 * (player_picomons[LVL] > 99), 36);
-  gb.display.print(STR_L);
+  gb.display.print(F(STR_L));
   gb.display.print(player_picomons[LVL]);
   gb.display.setCursor(27, 41);
-  gb.display.print(STR_HP_);
+  gb.display.print(F(STR_HP_));
   draw_HP_box(39, 42, 38, 4, (float) player_picomons[CUR_HP] / calc_stat(player_picomons[ID], player_picomons[LVL], HP));
   tile_set.setFrame(picomon_stats[player_picomons[ID]*PICOMON_STATS_LENGTH + SPRITE_ID]);
   gb.display.drawImage(1, 24, tile_set, 24, 24);
@@ -1475,7 +1454,7 @@ void battle_text_frame() {
   gb.display.setCursor(2, 51);
 }
 
-void battle_text(const char string[]) {
+byte battle_text(const char string[]) {
   for (byte i = 0; i < strlen(string); i++) {
     char c = (char) string[i];
     switch ((byte) c) {
@@ -1488,19 +1467,21 @@ void battle_text(const char string[]) {
         break;
       default:
         gb.display.print(c);
-        //if (c > 64 && c < 91) gsfx.play(GSFX::FX{GSFX::WaveType::SQUARE, 10000, 0, 3000 + 500 * (c - 64), 0, 2000});
+        if (c > 64 && c < 91) gsfx.play(GSFX::FX{GSFX::WaveType::SQUARE, 10000, 0, 3000 + 500 * (c - 64), 0, 2000});
         while (!gb.update());
         break;
     }
   }
+  return (0);
 }
 
 byte handle_battle_cursor(byte x, byte w, byte cursor_pos, byte options_number, boolean allow_cancel) {
   byte prev_pos = 4;
   do {
+    ESP.wdtFeed();
     if (gb.update()) {
       if (cursor_pos != prev_pos) {
-        gb.sound.playTick();
+        //gb.sound.playTick();
         gb.display.setColor(WHITE);
         gb.display.drawChar(x + w * !(prev_pos % 2), 51 + 6 * (prev_pos > 2), 16, 1);
         gb.display.setColor(BLACK);

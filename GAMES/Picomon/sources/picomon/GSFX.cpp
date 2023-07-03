@@ -65,6 +65,7 @@ bool GSFX::Sound_Handler_GSFX::init()
     _current_pattern_fx = UINT8_MAX;
 
     resetGenerators();
+return (0);
 }
 
 void GSFX::Sound_Handler_GSFX::update()

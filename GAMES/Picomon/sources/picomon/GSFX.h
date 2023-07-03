@@ -3,8 +3,6 @@
 #include <Gamebuino-Meta.h>
 #include <utility/Sound.h>
 
-#define SOUND_FREQ 44100
-
 class GSFX
 {
 public:

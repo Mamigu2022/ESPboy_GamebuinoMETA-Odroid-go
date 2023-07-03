@@ -3,7 +3,7 @@
 
 
 //########################################################################################## PLAYER 1
-const uint8_t PROGMEM PLAYER1[] = {
+const PROGMEM uint8_t PLAYER1[] = {
     6, 6, 0x01, 0x00, 0, 0x0,  1,
     0xba, 0xaa, 0xab, 
     0xaa, 0xda, 0xda, 
@@ -13,7 +13,7 @@ const uint8_t PROGMEM PLAYER1[] = {
     0xba, 0xaa, 0xab
 };
 
-const uint8_t PROGMEM PAINT1[] = {
+const PROGMEM uint8_t PAINT1[] = {
     6,6,0x01,0x00,0,0x0,1,
     0xbb, 0xbb, 0xbb,
     0xbb, 0xbb, 0xbb,
@@ -23,7 +23,7 @@ const uint8_t PROGMEM PAINT1[] = {
     0xbb, 0xbb, 0xbb
 };
 
-const uint8_t PROGMEM CPU1[] = {
+const PROGMEM uint8_t CPU1[] = {
     6, 6, 0x01, 0x00, 0, 0x0,  1,
     0xbb, 0xaa, 0xbb,
     0xef, 0xff, 0xff,
@@ -34,7 +34,7 @@ const uint8_t PROGMEM CPU1[] = {
 };
 
 //########################################################################################## PLAYER 2
-const uint8_t PROGMEM PLAYER2[] = {
+const PROGMEM uint8_t PLAYER2[] = {
     6, 6, 0x01, 0x00, 0, 0x0,  1,
     0x12, 0x22, 0x21,
     0x22, 0xd2, 0xd2,
@@ -43,7 +43,7 @@ const uint8_t PROGMEM PLAYER2[] = {
     0x22, 0x00, 0x22,
     0x12, 0x22, 0x21
 };
-const uint8_t PROGMEM PAINT2[] = {
+const PROGMEM uint8_t PAINT2[] = {
     6,6,0x01,0x00,0,0x0,1,
     0x11, 0x11, 0x11,
     0x11, 0x11, 0x11,
@@ -53,7 +53,7 @@ const uint8_t PROGMEM PAINT2[] = {
     0x11, 0x11, 0x11
 };
 
-const uint8_t PROGMEM CPU2[] = {
+const PROGMEM uint8_t CPU2[] = {
     6, 6, 0x01, 0x00, 0, 0x0,  1,
     0x11, 0x22, 0x11,
     0xef, 0xff, 0xff,
@@ -65,7 +65,7 @@ const uint8_t PROGMEM CPU2[] = {
 
 
 //########################################################################################## PLAYER 3
-const uint8_t PROGMEM PLAYER3[] = {
+const PROGMEM uint8_t PLAYER3[] = {
     6, 6, 0x01, 0x00, 0, 0x0,  1,
     0x54, 0x44, 0x45,
     0x44, 0xd4, 0xd4,
@@ -74,7 +74,7 @@ const uint8_t PROGMEM PLAYER3[] = {
     0x44, 0x00, 0x44,
     0x54, 0x44, 0x45
 };
-const uint8_t PROGMEM PAINT3[] = {
+const PROGMEM uint8_t PAINT3[] = {
     6,6,0x01,0x00,0,0x0,1,
     0x55, 0x55, 0x55,
     0x55, 0x55, 0x55,
@@ -84,7 +84,7 @@ const uint8_t PROGMEM PAINT3[] = {
     0x55, 0x55, 0x55
 };
 
-const uint8_t PROGMEM CPU3[] = {
+const PROGMEM uint8_t CPU3[] = {
     6, 6, 0x01, 0x00, 0, 0x0,  1,
     0x55, 0x44, 0x55,
     0xef, 0xff, 0xff,
@@ -96,7 +96,7 @@ const uint8_t PROGMEM CPU3[] = {
 
 
 //########################################################################################## PLAYER 4
-const uint8_t PROGMEM PLAYER4[] = {
+const PROGMEM uint8_t PLAYER4[] = {
     6, 6, 0x01, 0x00, 0, 0x0,  1,
     0x69, 0x99, 0x96,
     0x99, 0xd9, 0xd9,
@@ -105,7 +105,7 @@ const uint8_t PROGMEM PLAYER4[] = {
     0x99, 0x00, 0x99,
     0x69, 0x99, 0x96
 };
-const uint8_t PROGMEM PAINT4[] = {
+const PROGMEM uint8_t PAINT4[] = {
     6,6,0x01,0x00,0,0x0,1,
     0x66, 0x66, 0x66,
     0x66, 0x66, 0x66,
@@ -115,7 +115,7 @@ const uint8_t PROGMEM PAINT4[] = {
     0x66, 0x66, 0x66
 };
 
-const uint8_t PROGMEM CPU4[] = {
+const PROGMEM uint8_t CPU4[] = {
     6, 6, 0x01, 0x00, 0, 0x0,  1,
     0x66, 0x99, 0x66,
     0xef, 0xff, 0xff,
@@ -127,7 +127,7 @@ const uint8_t PROGMEM CPU4[] = {
 
 
 //########################################################################################## LANDSCAPE
-const uint8_t PROGMEM GROUND_6X6[] = {
+const PROGMEM uint8_t GROUND_6X6[] = {
     12, 6, 0x01, 0x00, 0, 0xff, 1,
     0xee, 0xee, 0xed, 0x00, 0x00, 0x00,
     0xed, 0xed, 0xed, 0x00, 0x00, 0x00,
@@ -139,7 +139,7 @@ const uint8_t PROGMEM GROUND_6X6[] = {
 
 
 //########################################################################################## ARROWS LEFT / RIGHT
-const uint8_t PROGMEM POINTERLEFT[] = {
+const PROGMEM uint8_t POINTERLEFT[] = {
     6, 6, 0x01, 0x00, 0, 0xff, 1, 0x00, 0xd0, 0x0f,
     0x0d, 0xd0, 0xff,
     0xdd, 0xdf, 0xff,
@@ -148,7 +148,7 @@ const uint8_t PROGMEM POINTERLEFT[] = {
     0x00, 0xd0, 0x0f
 };
 
-const uint8_t PROGMEM POINTERRIGHT[] = {
+const PROGMEM uint8_t POINTERRIGHT[] = {
     6, 6, 0x01, 0x00, 0, 0xff, 1,
     0xd0, 0x0f, 0x00,
     0xdd, 0x0f, 0xf0,
@@ -160,7 +160,7 @@ const uint8_t PROGMEM POINTERRIGHT[] = {
 
 
 //########################################################################################## BUTTONS
-const uint8_t PROGMEM BUTTONS[] = {
+const PROGMEM uint8_t BUTTONS[] = {
     21, 7, 0x01, 0x00, 0, 0x1, 1,
     0x11, 0xff, 0xf1, 0x11, 0xff, 0xff, 0xf1, 0x1f, 0xff, 0xff, 0x10,
     0x11, 0xff, 0xf1, 0x1f, 0xff, 0xdf, 0xff, 0xff, 0xdd, 0xff, 0xf0,
@@ -171,7 +171,7 @@ const uint8_t PROGMEM BUTTONS[] = {
     0x11, 0xee, 0xe1, 0x11, 0xee, 0xee, 0xe1, 0x1e, 0xee, 0xee, 0x10
 };
 
-const uint8_t PROGMEM BUTTONMENU[] = {
+const PROGMEM uint8_t BUTTONMENU[] = {
     17, 7, 0x01, 0x00, 0, 0x1, 1,
     0x1f, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0x10,
     0xfd, 0xed, 0xdf, 0xff, 0xff, 0xff, 0xff, 0xff, 0xf0,
@@ -184,7 +184,7 @@ const uint8_t PROGMEM BUTTONMENU[] = {
 
 
 //########################################################################################## PODIUM
-const uint8_t PROGMEM PODIUM[] = {
+const PROGMEM uint8_t PODIUM[] = {
     60,   // frame width
     30,   // frame height
     0x01, // frames (lower byte)
@@ -226,7 +226,7 @@ const uint8_t PROGMEM PODIUM[] = {
 
 
 //########################################################################################## ICONS WEAPONS
-const uint8_t PROGMEM WEAPON1[] = {
+const PROGMEM uint8_t WEAPON1[] = {
     21,   // frame width
     21,   // frame height
     0x01, // frames (lower byte)
@@ -258,7 +258,7 @@ const uint8_t PROGMEM WEAPON1[] = {
 };
 
 
-const uint8_t PROGMEM WEAPON2[] = {
+const PROGMEM uint8_t WEAPON2[] = {
     21,   // frame width
     21,   // frame height
     0x01, // frames (lower byte)
@@ -289,7 +289,7 @@ const uint8_t PROGMEM WEAPON2[] = {
     0xff, 0xdd, 0xdd, 0xdd, 0xdd, 0xdd, 0xdd, 0xdd, 0xdd, 0xdf, 0xf0
 };
 
-const uint8_t PROGMEM WEAPON3[] = {
+const PROGMEM uint8_t WEAPON3[] = {
     21,   // frame width
     21,   // frame height
     0x01, // frames (lower byte)
@@ -322,7 +322,7 @@ const uint8_t PROGMEM WEAPON3[] = {
 
 
 
-const uint8_t PROGMEM WEAPON4[] = {
+const PROGMEM uint8_t WEAPON4[] = {
     21,   // frame width
     21,   // frame height
     0x01, // frames (lower byte)
@@ -354,7 +354,7 @@ const uint8_t PROGMEM WEAPON4[] = {
 };
 
 
-const uint8_t PROGMEM GIVEUP[] = {
+const PROGMEM uint8_t GIVEUP[] = {
     21,   // frame width
     21,   // frame height
     0x01, // frames (lower byte)

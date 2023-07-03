@@ -1,4 +1,4 @@
-const uint8_t PROGMEM tiles[]={
+const PROGMEM uint8_t tiles[]={
   8, 8,   // tiles width & height
   105, 0, // frames (tiles) amount lower & upper 8-bit
   0,      // frames loop (0 = no animation)
@@ -847,7 +847,7 @@ const uint8_t PROGMEM tiles[]={
 };
 Image tile_set(tiles);
 
-const uint8_t PROGMEM player_sprites[]={
+const PROGMEM uint8_t player_sprites[]={
   8, 8,   // sprites width & height
   12, 0,  // sprites amount lower & upper 8-bit
   0,      // frames loop (0 = no animation)

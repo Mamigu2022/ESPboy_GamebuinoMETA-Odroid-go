@@ -80,24 +80,24 @@
 #define STR_L                 ":L"
 #define STR_HP_               "HP:"
 
-const char PROGMEM str_cartridge[] = "THE CARTRIDGE IS\nSTUCK...";
-const char PROGMEM str_computer[] = "IT'S MY DUSTY AND\nBROKEN COMPUTER.";
-const char PROGMEM str_books[] = "A BUNCHA BOOKS";
-const char PROGMEM str_tv[] = "*...AND FINN THE\nHUMAN, THE FUN\nWILL NEVER END...*";
-const char PROGMEM str_phone[] = "THERE IS A MESSAGE:\n\pHEY COULD YOU TAKE\nTHE SWOOTY OUTSIDE\nFOR A WALK?\pIT'S IN THE\nPICOBALL ON THE\nLEFT WALL.";
-const char PROGMEM str_no_messages[] = "- NO NEW MESSAGES -\n";
-const char PROGMEM str_take_picoball[] = "I SHOULD PROBABLY\nLOOK AROUND FIRST.";
-const char PROGMEM str_starter[] = "YOU FIND A SWOOTY!";
-const char PROGMEM str_hint[] = "HINT: PRESS \27 TO\nOPEN THE MENU.\nSAVE OFTEN.";
-const char PROGMEM str_picotown_sign[] = "WELCOME TO\nPICOTOWN. DON'T\nTHROW SHADE AT IT,\nFAM.";
-const char PROGMEM str_corks_sign[] = "PROF CORKS LAB";
-const char PROGMEM str_cave_sign[] = "CAVE TO VERTEBRAE\nCITY";
-const char PROGMEM str_mailman[] = "I'M KEVIN THE\nPOSTMAN.\pI TRIED TO DELIVER\nMAIL TO PROF\nCORK.\pBUT IT SEEMS HE'S\nOUT.\pIF YOU SEE HIM TELL\nHIM I HAVE\nSOMETHING FOR HIM!";
-const char PROGMEM str_groldo_map[] = "IT GIVES YOU A\nWEIRD LOOK";
-const char PROGMEM str_groldo_owner[] = "MY GROLDO IS NICE\nBUT A FEUXDINO\nWOULD BE LIT!";
-const char PROGMEM str_runner[] = "IF THE PICOSTOPS\nDON'T PAY OUT WITH\nNEW RUNNING SHOES\nSOON\pI MIGHT HAVE TO RUN\nBARE FEET.";
-const char PROGMEM str_obvious_guy[] = "WHERE ARE THE DOORS\nON THESE HOUSES?";
-const char PROGMEM str_girl2[] = "WE ABOLISHED\nCAPITALISM FOR A\nPICOSTOP BASED\nECONOMY.\pWORKS FINE BUT I\nWONDER WHERE THE\nITEMS COME FROM?";
+const PROGMEM char str_cartridge[] = "THE CARTRIDGE IS\nSTUCK...";
+const PROGMEM char str_computer[] = "IT'S MY DUSTY AND\nBROKEN COMPUTER.";
+const PROGMEM char str_books[] = "A BUNCHA BOOKS";
+const PROGMEM char str_tv[] = "*...AND FINN THE\nHUMAN, THE FUN\nWILL NEVER END...*";
+const PROGMEM char str_phone[] = "THERE IS A MESSAGE:\n\pHEY COULD YOU TAKE\nTHE SWOOTY OUTSIDE\nFOR A WALK?\pIT'S IN THE\nPICOBALL ON THE\nLEFT WALL.";
+const PROGMEM char str_no_messages[] = "- NO NEW MESSAGES -\n";
+const PROGMEM char str_take_picoball[] = "I SHOULD PROBABLY\nLOOK AROUND FIRST.";
+const PROGMEM char str_starter[] = "YOU FIND A SWOOTY!";
+const PROGMEM char str_hint[] = "HINT: PRESS \27 TO\nOPEN THE MENU.\nSAVE OFTEN.";
+const PROGMEM char str_picotown_sign[] = "WELCOME TO\nPICOTOWN. DON'T\nTHROW SHADE AT IT,\nFAM.";
+const PROGMEM char str_corks_sign[] = "PROF CORKS LAB";
+const PROGMEM char str_cave_sign[] = "CAVE TO VERTEBRAE\nCITY";
+const PROGMEM char str_mailman[] = "I'M KEVIN THE\nPOSTMAN.\pI TRIED TO DELIVER\nMAIL TO PROF\nCORK.\pBUT IT SEEMS HE'S\nOUT.\pIF YOU SEE HIM TELL\nHIM I HAVE\nSOMETHING FOR HIM!";
+const PROGMEM char str_groldo_map[] = "IT GIVES YOU A\nWEIRD LOOK";
+const PROGMEM char str_groldo_owner[] = "MY GROLDO IS NICE\nBUT A FEUXDINO\nWOULD BE LIT!";
+const PROGMEM char str_runner[] = "IF THE PICOSTOPS\nDON'T PAY OUT WITH\nNEW RUNNING SHOES\nSOON\pI MIGHT HAVE TO RUN\nBARE FEET.";
+const PROGMEM char str_obvious_guy[] = "WHERE ARE THE DOORS\nON THESE HOUSES?";
+const PROGMEM char str_girl2[] = "WE ABOLISHED\nCAPITALISM FOR A\nPICOSTOP BASED\nECONOMY.\pWORKS FINE BUT I\nWONDER WHERE THE\nITEMS COME FROM?";
 
 #define STR_CARTRIDGE     0
 #define STR_COMPUTER      1
@@ -139,16 +139,16 @@ const PROGMEM char* strings[] = {
   str_girl2
 };
 
-const char PROGMEM str_monster[] = "MONSTER";
-const char PROGMEM str_item[] = "ITEM";
-const char PROGMEM str_save[] = "SAVE";
-const char PROGMEM str_reset[] = "RESET";
-const char PROGMEM str_first[] = "FIRST";
-const char PROGMEM str_release[] = "RELEASE";
-const char PROGMEM str_use[] = "USE";
-const char PROGMEM str_drop[] = "DROP";
-const char PROGMEM str_no[] = "NO";
-const char PROGMEM str_yes[] = "YES";
+const PROGMEM char str_monster[] = "MONSTER";
+const PROGMEM char str_item[] = "ITEM";
+const PROGMEM char str_save[] = "SAVE";
+const PROGMEM char str_reset[] = "RESET";
+const PROGMEM char str_first[] = "FIRST";
+const PROGMEM char str_release[] = "RELEASE";
+const PROGMEM char str_use[] = "USE";
+const PROGMEM char str_drop[] = "DROP";
+const PROGMEM char str_no[] = "NO";
+const PROGMEM char str_yes[] = "YES";
 #define M_CANCEL  255
 #define M_MONSTER 0
 #define M_ITEM    1
@@ -160,7 +160,7 @@ const char PROGMEM str_yes[] = "YES";
 #define M_DROP    7
 #define M_NO      8
 #define M_YES     9
-const PROGMEM char* menu_strings[] = {
+const char* menu_strings[] = {
   str_monster,
   str_item,
   str_save,
@@ -173,65 +173,65 @@ const PROGMEM char* menu_strings[] = {
   str_yes
 };
 
-const char PROGMEM str_swooty[] = "SWOOTY";
-const char PROGMEM str_piggy[] = "PIGGY";
-const char PROGMEM str_groldo[] = "GROLDO";
-const char PROGMEM str_feuxdino[] = "FEUXDINO";
-const char PROGMEM str_watawamp[] = "WATAWAMP";
-const char PROGMEM str_rowpim[] = "ROWPIM";
-const char PROGMEM str_buzzcor[] = "BUZZCOR";
-const char PROGMEM str_purbirb[] = "PURBIRB";
-const char PROGMEM str_tinkerelle[] = "TINKERELLE";
-const char PROGMEM str_boberl[] = "BOBERL";
-const char PROGMEM str_plaradi[] = "PLARADI";
-const char PROGMEM str_hatcell[] = "HATCELL";
-const char PROGMEM str_mogmine[] = "MOGMINE";
-const char PROGMEM str_crub[] = "CRUB";
-const char PROGMEM str_flipa[] = "FLIPA";
-const char PROGMEM str_sneg[] = "SNEG";
-const char PROGMEM str_pilo[] = "PILO";
-const char PROGMEM str_limegoo[] = "LIMEGOO";
-const char PROGMEM str_dogshade[] = "DOGSHADE";
-const char PROGMEM str_pukesun[] = "PUKESUN";
-const char PROGMEM str_huevo[] = "HUEVO";
+const PROGMEM char str_swooty[] = "SWOOTY";
+const PROGMEM char str_piggy[] = "PIGGY";
+const PROGMEM char str_groldo[] = "GROLDO";
+const PROGMEM char str_feuxdino[] = "FEUXDINO";
+const PROGMEM char str_watawamp[] = "WATAWAMP";
+const PROGMEM char str_rowpim[] = "ROWPIM";
+const PROGMEM char str_buzzcor[] = "BUZZCOR";
+const PROGMEM char str_purbirb[] = "PURBIRB";
+const PROGMEM char str_tinkerelle[] = "TINKERELLE";
+const PROGMEM char str_boberl[] = "BOBERL";
+const PROGMEM char str_plaradi[] = "PLARADI";
+const PROGMEM char str_hatcell[] = "HATCELL";
+const PROGMEM char str_mogmine[] = "MOGMINE";
+const PROGMEM char str_crub[] = "CRUB";
+const PROGMEM char str_flipa[] = "FLIPA";
+const PROGMEM char str_sneg[] = "SNEG";
+const PROGMEM char str_pilo[] = "PILO";
+const PROGMEM char str_limegoo[] = "LIMEGOO";
+const PROGMEM char str_dogshade[] = "DOGSHADE";
+const PROGMEM char str_pukesun[] = "PUKESUN";
+const PROGMEM char str_huevo[] = "HUEVO";
 const PROGMEM char* picomon_names[] = {
   str_swooty, str_piggy, str_groldo, str_feuxdino, str_watawamp, str_rowpim, str_buzzcor, str_purbirb, str_tinkerelle, str_boberl,
   str_plaradi, str_hatcell, str_mogmine, str_crub, str_flipa, str_sneg, str_pilo, str_limegoo, str_dogshade, str_pukesun, str_huevo
 };
 
-const char PROGMEM str_air[] = "(AIR)";
-const char PROGMEM str_fire[] = "(FIRE)";
-const char PROGMEM str_earth[] = "(EARTH)";
-const char PROGMEM str_water[] = "(WATER)";
+const PROGMEM char str_air[] = "(AIR)";
+const PROGMEM char str_fire[] = "(FIRE)";
+const PROGMEM char str_earth[] = "(EARTH)";
+const PROGMEM char str_water[] = "(WATER)";
 const PROGMEM char* element_names[] = {
   str_air, str_fire, str_earth, str_water
 };
 
-const char PROGMEM str_scratch[] = "SCRATCH";
-const char PROGMEM str_leer[] = "LEER";
-const char PROGMEM str_tackle[] = "TACKLE";
-const char PROGMEM str_punch[] = "PUNCH";
-const char PROGMEM str_counter[] = "COUNTER";
-const char PROGMEM str_bubble[] = "BUBBLE";
-const char PROGMEM str_bash[] = "BASH";
-const char PROGMEM str_rage[] = "RAGE";
-const char PROGMEM str_burn[] = "BURN";
-const char PROGMEM str_takedown[] = "TAKEDOWN";
+const PROGMEM char str_scratch[] = "SCRATCH";
+const PROGMEM char str_leer[] = "LEER";
+const PROGMEM char str_tackle[] = "TACKLE";
+const PROGMEM char str_punch[] = "PUNCH";
+const PROGMEM char str_counter[] = "COUNTER";
+const PROGMEM char str_bubble[] = "BUBBLE";
+const PROGMEM char str_bash[] = "BASH";
+const PROGMEM char str_rage[] = "RAGE";
+const PROGMEM char str_burn[] = "BURN";
+const PROGMEM char str_takedown[] = "TAKEDOWN";
 #define NO_MOVE     255
 const PROGMEM char* move_names[] = {
   str_scratch, str_leer, str_tackle, str_punch, str_counter, str_bubble, str_bash, str_rage, str_burn, str_takedown
 };
 
-const char PROGMEM str_potion[] = "POTION";
-const char PROGMEM str_picoball[] = "PICOBALL";
-const char PROGMEM str_smokeball[] = "SMOKEBALL";
-const char PROGMEM str_resurrect[] = "RESURRECT";
-const char PROGMEM str_candy[] = "CANDY";
-const char PROGMEM str_garden_key[] = "GARDEN KEY";
-const char PROGMEM str_swim_suit[] = "SWIM SUIT";
-const char PROGMEM str_apple[] = "APPLE";
-const char PROGMEM str_hammer[] = "HAMMER";
-//const char str_running_shoes[] = "RUNNING SHOES";
-const PROGMEM char* item_names[] = {
+const PROGMEM char str_potion[] = "POTION";
+const PROGMEM char str_picoball[] = "PICOBALL";
+const PROGMEM char str_smokeball[] = "SMOKEBALL";
+const PROGMEM char str_resurrect[] = "RESURRECT";
+const PROGMEM char str_candy[] = "CANDY";
+const PROGMEM char str_garden_key[] = "GARDEN KEY";
+const PROGMEM char str_swim_suit[] = "SWIM SUIT";
+const PROGMEM char str_apple[] = "APPLE";
+const PROGMEM char str_hammer[] = "HAMMER";
+//const PROGMEM char str_running_shoes[] = "RUNNING SHOES";
+const char* item_names[] = {
   str_potion, str_picoball, str_smokeball, str_resurrect, str_candy, str_garden_key, str_swim_suit, str_apple, str_hammer//, str_running_shoes
 };

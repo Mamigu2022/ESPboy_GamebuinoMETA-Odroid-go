@@ -86,7 +86,6 @@ const PROGMEM byte moves_base[] = {
 #define MOVE_2    6
 #define MOVE_3    7
 #define MOVE_4    8
-
 unsigned short player_picomons[] = {
   // picomon id, lvl, current hp, xp, double xp, move 1 id, move 2 id, move 3 id, move 4 id
   MISSING_NO, 0, 0, 0, 0, NO_MOVE, NO_MOVE, NO_MOVE, NO_MOVE,
@@ -95,7 +94,7 @@ unsigned short player_picomons[] = {
   MISSING_NO, 0, 0, 0, 0, NO_MOVE, NO_MOVE, NO_MOVE, NO_MOVE
 };
 
-const unsigned short PROGMEM default_player_picomons[] = {
+const PROGMEM unsigned short default_player_picomons[] = {
   MISSING_NO, 0, 0, 0, 0, NO_MOVE, NO_MOVE, NO_MOVE, NO_MOVE,
   MISSING_NO, 0, 0, 0, 0, NO_MOVE, NO_MOVE, NO_MOVE, NO_MOVE,
   MISSING_NO, 0, 0, 0, 0, NO_MOVE, NO_MOVE, NO_MOVE, NO_MOVE,
@@ -119,6 +118,6 @@ const unsigned short PROGMEM default_player_picomons[] = {
 byte player_items[] = {
   NO_ITEM, NO_ITEM, NO_ITEM, NO_ITEM, NO_ITEM, NO_ITEM, NO_ITEM, NO_ITEM, NO_ITEM, NO_ITEM
 };
-const byte PROGMEM default_player_items[] = {
+const PROGMEM byte default_player_items[] = {
   NO_ITEM, NO_ITEM, NO_ITEM, NO_ITEM, NO_ITEM, NO_ITEM, NO_ITEM, NO_ITEM, NO_ITEM, NO_ITEM
 };

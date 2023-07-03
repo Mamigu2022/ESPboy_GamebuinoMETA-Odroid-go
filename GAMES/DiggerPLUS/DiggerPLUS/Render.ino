@@ -116,23 +116,24 @@ void drawWorld() {
   // LED_FX and sound_FX
   if (gb.frameCount % 4 == 0) {
     if (sfx_diamond) {
-      gb.sound.playOK();
+      //gb.sound.playOK();
       gb.lights.setRGB(0,10,0);
-     // gb.sound.play( ton_buffer[TON_DIAMANT], ton_laenge[TON_DIAMANT] );
+      gb.sound.play( ton_buffer[TON_DIAMANT], ton_laenge[TON_DIAMANT] );
      // gb.lights.drawImage(0, 0, ledsprite_collect);
      sfx_diamond = false;
     }
     else if ( sfx_rock ) {
-      gb.sound.tone(50,50);
+      //gb.sound.tone(50,50);
       gb.lights.setRGB(0,0,3);
-      //gb.sound.play( ton_buffer[TON_STEIN], ton_laenge[TON_STEIN] );
+      gb.sound.play( ton_buffer[TON_STEIN], ton_laenge[TON_STEIN] );
       //gb.lights.drawImage(0, 0, ledsprite_falled);
       sfx_rock = false;
     }
     else if ( sfx_step ){
-      gb.sound.playTick();
-      sfx_step = false;}
-      //gb.sound.play( ton_buffer[TON_SCHRITT], ton_laenge[TON_SCHRITT] );
+      //gb.sound.playTick();
+      sfx_step = false;
+      gb.sound.play( ton_buffer[TON_SCHRITT], ton_laenge[TON_SCHRITT] );
+    }
     else if ( dead ){
       gb.lights.setRGB(5,0,0);
       gb.sound.tone(10,30);

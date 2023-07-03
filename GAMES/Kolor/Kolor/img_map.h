@@ -1,5 +1,4 @@
-
-const uint8_t PROGMEM MAP_DATA[] = {
+const PROGMEM uint8_t MAP_DATA[] = {
     // metadata
 
     104,  // frame width

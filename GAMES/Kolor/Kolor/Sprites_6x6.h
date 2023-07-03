@@ -3,7 +3,7 @@
 
 
 //########################################################################################## PLAYER
-const uint8_t  PROGMEM PLAYERS[] = {
+const PROGMEM uint8_t PLAYERS[] = {
     // metadata
 
     24,   // frame width
@@ -26,7 +26,7 @@ const uint8_t  PROGMEM PLAYERS[] = {
 };
 
 //########################################################################################## PAINT
-const uint8_t  PROGMEM PAINT_1_6X6[] = {
+const PROGMEM uint8_t PAINT_1_6X6[] = {
     6,    // frame width
     6,    // frame height
     0x01, // frames (lower byte)
@@ -51,7 +51,7 @@ const uint8_t  PROGMEM PAINT_1_6X6[] = {
 };
 
 
-const uint8_t  PROGMEM PAINT_2_6X6[] = {
+const PROGMEM uint8_t PAINT_2_6X6[] = {
     6,    // frame width
     6,    // frame height
     0x01, // frames (lower byte)
@@ -75,7 +75,7 @@ const uint8_t  PROGMEM PAINT_2_6X6[] = {
     0x11, 0x11, 0x1a
 };
 
-const uint8_t  PROGMEM PAINT_3_6X6[] = {
+const PROGMEM uint8_t PAINT_3_6X6[] = {
     6,    // frame width
     6,    // frame height
     0x01, // frames (lower byte)
@@ -99,7 +99,7 @@ const uint8_t  PROGMEM PAINT_3_6X6[] = {
     0x55, 0x55, 0x51
 };
 
-const uint8_t  PROGMEM PAINT_4_6X6[] = {
+const PROGMEM uint8_t PAINT_4_6X6[] = {
     6,    // frame width
     6,    // frame height
     0x01, // frames (lower byte)
@@ -125,7 +125,7 @@ const uint8_t  PROGMEM PAINT_4_6X6[] = {
 
 
 //########################################################################################## LANDSCAPE
-const uint8_t  PROGMEM GROUND_6X6[] = {
+const PROGMEM uint8_t GROUND_6X6[] = {
 
     // metadata
 
@@ -148,7 +148,7 @@ const uint8_t  PROGMEM GROUND_6X6[] = {
 
 };
 
-const uint8_t  PROGMEM POINTERLEFT[] = {
+const PROGMEM uint8_t POINTERLEFT[] = {
 
     // metadata
 
@@ -171,7 +171,7 @@ const uint8_t  PROGMEM POINTERLEFT[] = {
 
 };
 
-const uint8_t  PROGMEM POINTERRIGHT[] = {
+const PROGMEM uint8_t POINTERRIGHT[] = {
 
     // metadata
 
@@ -195,7 +195,7 @@ const uint8_t  PROGMEM POINTERRIGHT[] = {
 };
 
 
-const uint8_t  PROGMEM BUTTONS[] = {
+const PROGMEM uint8_t BUTTONS[] = {
 
     // metadata
 
@@ -219,7 +219,7 @@ const uint8_t  PROGMEM BUTTONS[] = {
 
 };
 
-const uint8_t  PROGMEM PODIUM[] = {
+const PROGMEM uint8_t PODIUM[] = {
 
     // metadata
 
@@ -266,7 +266,7 @@ const uint8_t  PROGMEM PODIUM[] = {
 
 };
 /*
-const uint8_t GROUND_6X6[] = {
+const PROGMEM uint8_t GROUND_6X6[] = {
 
     // metadata
 

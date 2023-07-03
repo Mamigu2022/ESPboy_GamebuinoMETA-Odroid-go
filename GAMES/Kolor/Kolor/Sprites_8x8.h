@@ -4,7 +4,7 @@
 
 
 /*
-const uint8_t PLAYER[] = {
+const PROGMEM uint8_t PLAYER[] = {
     32,   // frame width
     8,    // frame height
     0x01, // frames (lower byte)
@@ -29,7 +29,7 @@ const uint8_t PLAYER[] = {
 
 
 
-const uint8_t PROGMEM PLAYER_1[] = {
+const PROGMEM uint8_t PLAYER_1[] = {
 
     // metadata
 
@@ -68,7 +68,7 @@ const uint8_t PROGMEM PLAYER_1[] = {
 
 
 
-const uint8_t PROGMEM GROUND[] = {
+const PROGMEM uint8_t GROUND[] = {
 
     // metadata
 
