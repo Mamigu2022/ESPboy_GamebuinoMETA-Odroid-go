@@ -36,3 +36,7 @@ void Lights::drawPixel(uint8_t x, uint8_t y, const Gamebuino_Meta::ColorIndex cl
 void Lights::setRGB(uint8_t r, uint8_t g, uint8_t b){
   LEDld -> setRGB (r,g,b);
 }
+
+void Lights::setColor(Gamebuino_Meta::ColorIndex colorIndex){
+  fill(Gamebuino_Meta::Color{colorIndex});
+};
