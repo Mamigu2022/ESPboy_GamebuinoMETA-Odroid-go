@@ -1,0 +1,4 @@
+#define DISPLAY_MODE DISPLAY_MODE_INDEX
+#define FOLDER_NAME "BreakTheWall"
+#define SOUND_CHANNELS 1
+#define SOUND_FREQ 44100
