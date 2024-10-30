@@ -3,7 +3,7 @@
 // To use a font in your Arduino sketch, #include the corresponding .h
 // file and pass address of GFXfont struct to setFont().  Pass NULL to
 // revert to 'classic' fixed-space bitmap font.
-
+/*
 #ifndef _GFXFONT_H_
 #define _GFXFONT_H_
 
@@ -28,3 +28,4 @@ typedef struct { // Data stored for FONT AS A WHOLE:
 } // namespace Gamebuino_Meta
 
 #endif // _GFXFONT_H_
+*/
