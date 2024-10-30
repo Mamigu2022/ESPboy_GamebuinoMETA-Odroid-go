@@ -12,16 +12,15 @@ Authors:
 #define	_GAMEBUINO_META_H_
 
 
-#include "Arduino.h"
+#include <Arduino.h>
 #include "config/config.h"
-
+#include "utility/Graphics.h"
 #include "utility/Buttons.h"
 #include "utility/Sound.h"
 #include "utility/Gui.h"
 #include "utility/Collide.h"
 
 #include "utility/Display-ST7735.h"
-#include "utility/Graphics.h"
 #include "utility/Image.h"
 #include "utility/Language.h"
 #include "utility/Save.h"
@@ -29,9 +28,10 @@ Authors:
 
 #include "utility/ESPboyLED.h"
 #include "utility/ESPboyLogo.h"
-#include <Adafruit_MCP23017.h> 
-#include <Adafruit_MCP4725.h>
-#include <ESP8266WiFi.h> 
+
+//#include <Adafruit_MCP23017.h> 
+//#include <Adafruit_MCP4725.h>
+//#include <ESP8266WiFi.h> 
 
 #if USE_LITTLEFS
 #include "LittleFS.h"
@@ -63,8 +63,8 @@ class Gamebuino {
 public:
 	Display_ST7735 tft;
     Gui gui;
-    Adafruit_MCP23017 mcp;
-    Adafruit_MCP4725 dac;
+    //Adafruit_MCP23017 mcp;
+    //Adafruit_MCP4725 dac;
     ESPboyLED myLED;
     Lights lights = Lights(&myLED);
 	Buttons buttons;

@@ -36,29 +36,28 @@ Gamebuino::Gamebuino(){
 void Gamebuino::begin() {  
   //Serial.begin(115200); 
   
-  dac.begin(MCP4725address);
-  dac.setVoltage(0, false);
+  //dac.begin(MCP4725address);
+  //dac.setVoltage(0, false);
     
-  timePerFrame = 40; //25 FPS
+  timePerFrame = 60; //25 FPS
   frameEndFlag = true;
-  mcp.begin(MCP23017address);
-  delay(100);
-  mcp.pinMode(CSTFTPIN, OUTPUT);
-  delay(100);
-  mcp.digitalWrite(CSTFTPIN, LOW);
-  buttons.begin(&mcp);
+ // mcp.begin(MCP23017address);
+  //delay(100);
+  //mcp.pinMode(CSTFTPIN, OUTPUT);
+  //delay(100);
+  //mcp.digitalWrite(CSTFTPIN, LOW);
+  buttons.begin();
   
   tft.init();
-  tft.setRotation(Rotation::left);	 
-
+  tft.setRotation(Rotation::down);	 
   tft.fillScreen(TFT_BLACK);
-  tft.drawXBitmap(30,24, g_espboy, 68, 64, TFT_YELLOW);
+  tft.drawXBitmap(120,24, g_espboy, 68, 64, TFT_YELLOW);
   tft.setTextSize(1);
   tft.setTextColor(TFT_YELLOW);
-  tft.drawString (PSTR("Gamebuino META"), 21, 102);
+  tft.drawString (PSTR("Gamebuino META"), 120, 102);
 
-  for(uint8_t i=0; i<200; i++) {dac.setVoltage(i*10, false); delay(10);}
-  dac.setVoltage(4095, true);
+  //for(uint8_t i=0; i<200; i++) {dac.setVoltage(i*10, false); delay(10);}
+  //dac.setVoltage(4095, true);
 
   //Check OTA2
 /*
@@ -72,13 +71,13 @@ void Gamebuino::begin() {
     OTA2obj -> checkOTA();
   }
   */
-  WiFi.mode(WIFI_OFF); 
+  //WiFi.mode(WIFI_OFF); 
 
   #if USE_LITTLEFS
   LittleFS.begin();
   #endif
   
-  myLED.begin(&mcp);
+  myLED.begin();
   myLED.setRGB(5,0,0); delay(200);
   myLED.setRGB(0,5,0); delay(200);
   myLED.setRGB(0,0,5); delay(200);
@@ -185,8 +184,9 @@ void Gamebuino::waitForUpdate() {
 
 
 void IRAM_ATTR Gamebuino::updateDisplay() {
+//#if DISPLAY_MODE != 0
 #if DISPLAY_MODE != DISPLAY_MODE_INDEX 
-  tft.drawImage(0, 0, (Image&)display, 128, 128);
+  tft.drawImage(0, 0, (Image&)display, 240, 240);
 #else
   static bool flagNewBuf = false;
   static uint16_t *bufPointer;
@@ -240,8 +240,8 @@ Rotation Gamebuino::getScreenRotation() {
 	return tft.getRotation();
 }
 
-uint8_t Gamebuino::getKeys() { return (~mcp.readGPIOAB() & 255); }
-
+//uint8_t Gamebuino::getKeys() { return (~mcp.readGPIOAB() & 255); }
+uint8_t Gamebuino::getKeys() {  }
 
 bool Gamebuino::collidePointRect(int16_t x1, int16_t y1 ,int16_t x2 ,int16_t y2, int16_t w, int16_t h){
 	return collide.pointRect(x1, y1, x2, y2, w, h);
