@@ -854,5 +854,6 @@ void Image::drawImage(int16_t x, int16_t y, Image& img) {
 	}
 	Graphics::drawImage(x, y, img);
 }
-*/
+
 } // namespace Gamebuino_Meta
+*/
