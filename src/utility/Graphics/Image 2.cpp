@@ -6,7 +6,7 @@ Authors:
  - Aurelien Rodot
  - Sorunome
 */
-
+/*
 #include "Image.h"
 #include "../../Gamebuino-Meta.h"
 
@@ -854,5 +854,5 @@ void Image::drawImage(int16_t x, int16_t y, Image& img) {
 	}
 	Graphics::drawImage(x, y, img);
 }
-
+*/
 } // namespace Gamebuino_Meta
